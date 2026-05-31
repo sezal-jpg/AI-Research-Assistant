@@ -1,0 +1,11 @@
+streamlit
+langgraph
+langchain
+langchain-community
+chromadb
+sentence-transformers
+pypdf
+google-generativeai
+tavily-python
+python-dotenv
+```
