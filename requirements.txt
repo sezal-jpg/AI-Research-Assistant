@@ -8,4 +8,4 @@ pypdf
 google-generativeai
 tavily-python
 python-dotenv
-```
+

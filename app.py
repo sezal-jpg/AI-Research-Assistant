@@ -18,6 +18,8 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 
 from langchain_community.vectorstores import Chroma
+from langchain_community.retrievers import BM25Retriever
+from sentence_transformers import CrossEncoder
 
 # LOAD ENV
 
@@ -32,6 +34,7 @@ genai.configure(api_key=GEMINI_API_KEY)
 
 model = genai.GenerativeModel(
     "models/gemini-2.5-flash")
+reranker=CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
 # TAVILY
 
 
@@ -106,7 +109,7 @@ if uploaded_files:
 
     embedding_model = HuggingFaceEmbeddings(
 
-        model_name="sentence-transformers/all-MiniLM-L6-v2"
+        model_name="intfloat/e5-base-v2"
     )
 
 
@@ -126,13 +129,14 @@ if uploaded_files:
     # RETRIEVER
     
 
-    retriever = vectorstore.as_retriever(
+    semantic_retriever = vectorstore.as_retriever(
 
         search_type="mmr",
 
         search_kwargs={"k": 3}
     )
-
+    bm25_retriever=BM25Retriever.from_documents(chunks)
+    bm25_retriever.k=3
     # GRAPH STATE
     
 
@@ -150,22 +154,45 @@ if uploaded_files:
     
 
     def retrieve(state):
+        
 
         question = state["question"]
+        # BM25 Retrieval
+        bm25_docs = bm25_retriever.invoke(question)
+        # Semantic Retrieval
+        semantic_docs = semantic_retriever.invoke(question)
+        docs = bm25_docs + semantic_docs
+         # remove duplicates 
+        unique_docs=[]
+        seen =set()
+        for r in docs:
+          if r.page_content not in seen:
+              unique_docs.append(r)
+              seen.add(r.page_content)
+        # reranking 
+        pairs =[(question,doc.page_content)
+                for doc in unique_docs]
+        scores=reranker.predict(pairs)
+        ranked_docs=sorted(zip(unique_docs,scores),key=lambda x: x[1],reverse=True)    
+        top_docs=[
+            doc for doc,score in ranked_docs[:3]
+            
+        ]
+        docs=[]
+        for doc in top_docs:
+            docs.append(f"""
+        SOURCE: {doc.metadata.get('source', 'Unknown')}
 
-        results = retriever.invoke(question)
+        PAGE: {doc.metadata.get('page', 'Unknown')}
 
-        docs = []
-
-        for r in results:
-
-            docs.append(r.page_content)
-
+        CONTENT:
+        {doc.page_content}
+        """
+        )
         return {
-
-            "documents": docs
-        }
-
+            'documents':docs
+        }    
+        
     # NODE 2
    
 
@@ -173,7 +200,7 @@ if uploaded_files:
 
         docs = state["documents"]
 
-        if len(docs) > 0:
+        if len(docs) >=2:
 
             return "answer"
 
