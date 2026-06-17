@@ -1,91 +1,165 @@
-
 # 🔬 AI Research Assistant
 
-An AI-powered research assistant built using:
-
-- LangGraph
-- RAG (Retrieval-Augmented Generation)
-- Gemini API
-- Chroma Vector Database
-- Streamlit
-- Tavily Web Search
+An AI-powered Research Assistant built using **RAG (Retrieval-Augmented Generation)**, **LangGraph**, and **Gemini 2.5 Flash**. The application allows users to upload multiple PDF documents, ask questions in natural language, and receive context-aware answers generated from document content and web search when required.
 
 
-# 🚀 Features
+## 🚀 Features
 
-✅ Upload multiple PDFs  
-✅ Semantic document retrieval  
-✅ Vector embeddings using HuggingFace  
-✅ LangGraph agent workflow  
-✅ Conditional routing  
-✅ Web search fallback  
-✅ Gemini-powered grounded answers  
-✅ Streamlit UI  
+* 📄 Multi-PDF Upload Support
+* ✂️ Intelligent Text Chunking with Overlap
+* 🧠 Hugging Face Embeddings
+* 🗄️ Chroma Vector Database
+* 🔍 Hybrid Retrieval
+
+  * BM25 Keyword Search
+  * Semantic Search
+* 🎯 Cross-Encoder Reranking
+* 🤖 Gemini 2.5 Flash Integration
+* 🌐 Tavily Web Search Fallback
+* 🔄 LangGraph Agent Workflow
+* 📚 Source Attribution
+* 🎨 Interactive Streamlit Interface
 
 
-# 🧠 Architecture
+## 🏗️ Architecture
 
+```text
 User Question
-↓
-PDF Retrieval (RAG)
-↓
-Decision Node
-├── Enough Context → Answer
-└── Not Enough → Tavily Web Search
-↓
-Gemini Final Response
+      ↓
+Hybrid Retrieval
+(BM25 + Semantic Search)
+      ↓
+Deduplication
+      ↓
+Cross-Encoder Reranker
+      ↓
+Top Relevant Chunks
+      ↓
+LangGraph Agent
+      ↓
+Gemini 2.5 Flash
+      ↓
+Answer + Sources
+```
+
+## 🧠 Tech Stack
+
+### Frontend
+
+* Streamlit
+
+### AI & LLM
+
+* Gemini 2.5 Flash
+* Hugging Face Embeddings
+* Sentence Transformers
+
+### Retrieval & RAG
+
+* LangChain
+* LangGraph
+* ChromaDB
+* BM25 Retriever
+* Cross-Encoder Reranker
+
+### Search
+
+* Tavily Search API
+
+### Language
+
+* Python
 
 
-# 📦 Tech Stack
+## 📂 Workflow
 
-- Python
-- Streamlit
-- LangChain
-- LangGraph
-- ChromaDB
-- HuggingFace Embeddings
-- Gemini API
-- Tavily API
+### 1. Document Processing
+
+* Upload PDF documents
+* Extract text using PyPDFLoader
+* Split text into chunks using RecursiveCharacterTextSplitter
+
+### 2. Embedding Generation
+
+* Convert chunks into dense vector embeddings
+* Store embeddings inside ChromaDB
+
+### 3. Hybrid Retrieval
+
+* BM25 retrieves exact keyword matches
+* Semantic search retrieves contextually relevant chunks
+* Results are merged and deduplicated
+
+### 4. Reranking
+
+* Cross-Encoder reranks retrieved chunks
+* Most relevant chunks are selected
+
+### 5. Agent Decision
+
+* LangGraph determines:
+
+  * Answer from documents
+  * Or use Tavily Web Search when document context is insufficient
+
+### 6. Answer Generation
+
+* Gemini 2.5 Flash generates final response using retrieved context
 
 
-# ⚙️ Installation
+## 🎯 Key Concepts Implemented
 
-git clone <your_repo_url>
+* Retrieval-Augmented Generation (RAG)
+* Chunking Strategies
+* Embeddings
+* Cosine Similarity
+* Vector Databases
+* Hybrid Retrieval
+* BM25 Search
+* Semantic Search
+* Reranking
+* Agentic Workflows
+* LangGraph State Management
+* LLM-Powered Question Answering
 
+
+## ▶️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/sezal-jpg/AI-Research-Assistant.git
 cd AI-Research-Assistant
+```
 
-python -m venv venv
+Install dependencies:
 
-venv\Scripts\activate
-
+```bash
 pip install -r requirements.txt
-
-
-# 🔑 Environment Variables
+```
 
 Create a `.env` file:
 
-GEMINI_API_KEY=your_key
+```env
+GEMINI_API_KEY=your_api_key
+TAVILY_API_KEY=your_api_key
+```
 
-TAVILY_API_KEY=your_key
+Run the application:
 
-
-# ▶️ Run App
-
+```bash
 streamlit run app.py
+```
 
 
+## 📈 Future Improvements
 
-# 📸 Demo
+* Query Rewriting
+* Query Expansion
+* Advanced RAG Evaluation
+* Multiple Vector Database Support
+* Conversation Memory
+* Feedback-Based Retrieval Optimization
+* Docker Deployment
 
-(Add screenshots here later)
-
-
-# 🚀 Future Improvements
-
-* Conversational memory
-* Multi-agent workflows
-* Hybrid search
-* Reranking
-* Deployment
 
