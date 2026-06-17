@@ -57,7 +57,14 @@ st.title("🔬 AI Research Assistant")
 st.write(
     "Upload PDFs and ask intelligent research questions."
 )
+with st.sidebar:
+    st.header("📊 Project Information")
 
+    st.write("🤖 Model: Gemini 2.5 Flash")
+    st.write("🗄️ Vector DB: ChromaDB")
+    st.write("🔍 Retrieval: BM25 + Semantic Search")
+    st.write("🧠 Framework: LangGraph")
+    st.write("🌐 Search Tool: Tavily")
 # PDF UPLOAD
 
 uploaded_files = st.file_uploader(
@@ -85,8 +92,8 @@ if uploaded_files:
         docs = loader.load()
 
         all_docs.extend(docs)
-
-    st.success(f"Loaded {len(all_docs)} pages")
+    with st.sidebar:
+     st.success(f"Loaded {len(all_docs)} pages")
 
 
     # SPLITTING
@@ -100,8 +107,8 @@ if uploaded_files:
     )
 
     chunks = splitter.split_documents(all_docs)
-
-    st.success(f"Created {len(chunks)} chunks")
+    with st.sidebar:
+     st.success(f"Created {len(chunks)} chunks")
 
 
     # EMBEDDINGS
@@ -122,8 +129,8 @@ if uploaded_files:
 
         embedding=embedding_model
     )
-
-    st.success("✅ Vector DB Ready")
+    with st.sidebar:
+     st.success("✅ Vector DB Ready")
 
 
     # RETRIEVER
@@ -181,11 +188,11 @@ if uploaded_files:
         docs=[]
         for doc in top_docs:
             docs.append(f"""
-        SOURCE: {doc.metadata.get('source', 'Unknown')}
+         📃SOURCE: {doc.metadata.get('source', 'Unknown')}
 
-        PAGE: {doc.metadata.get('page', 'Unknown')}
+         📄PAGE: {doc.metadata.get('page', 'Unknown')}
 
-        CONTENT:
+         📝CONTENT:
         {doc.page_content}
         """
         )
@@ -325,7 +332,7 @@ QUESTION:
 
         st.subheader("🤖 AI Answer")
 
-        st.write(response["answer"])
+        st.markdown(response["answer"])
 
 
         # DOCS
@@ -334,17 +341,20 @@ QUESTION:
 
         for i, doc in enumerate(response["documents"]):
 
-            st.markdown(f"### Chunk {i+1}")
-
-            st.write(doc)
-
-            st.divider()
+          if len(doc.strip())> 50:
+              with st.expander(
+                 f"Chunk {i+1}" 
+              ):
+                  st.write(doc)
 
         # WEB SEARCH
 
         if response.get("web_search"):
 
-            st.subheader("🌐 Web Search Used")
+           with st.subheader("🌐 Web Search Results"):
 
             st.write(response["web_search"])
-
+        st.divider()
+        st.caption(
+    "Built with Streamlit • LangChain • LangGraph • ChromaDB • Gemini"
+)
