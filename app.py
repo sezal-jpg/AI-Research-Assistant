@@ -150,20 +150,35 @@ if uploaded_files:
     class GraphState(TypedDict):
 
         question: str
-
+        rewritten_query: str
         documents: List[str]
-
+        rerank_scores: List
+        top_score:float
         web_search: str
-
         answer: str
-
-    # NODE 1
-    
-
-    def retrieve(state):
         
+        # query rewriting
+    def rewrite_query(question: str):
+        prompt=f""" Rewrite the following question
+    to improve document retrieval.
 
-        question = state["question"]
+    Question:
+    {question}
+
+    Return only the rewritten query.
+    """
+        response=model.generate_content(prompt)
+        return response.text.strip()
+    
+    # NODE 1
+    def rewrite(state):
+        question =state["question"]
+        rewritten=rewrite_query(question)
+        return { "rewritten_query": rewritten}
+    
+    
+    def retrieve(state):
+        question = state["rewritten_query"]
         # BM25 Retrieval
         bm25_docs = bm25_retriever.invoke(question)
         # Semantic Retrieval
@@ -180,24 +195,23 @@ if uploaded_files:
         pairs =[(question,doc.page_content)
                 for doc in unique_docs]
         scores=reranker.predict(pairs)
-        ranked_docs=sorted(zip(unique_docs,scores),key=lambda x: x[1],reverse=True)    
+        ranked_docs=sorted(zip(unique_docs,scores),key=lambda x: x[1],reverse=True) 
+        rerank_scores=[]
+        for doc,score in ranked_docs:
+            rerank_scores.append({
+            'score':float(score),
+            'content':doc.page_content[:200]  
+            }) 
+        if ranked_docs:
+         top_score=float(ranked_docs[0][1]) 
+        else:
+            top_score=0.0    
         top_docs=[
-            doc for doc,score in ranked_docs[:3]
-            
-        ]
-        docs=[]
-        for doc in top_docs:
-            docs.append(f"""
-         📃SOURCE: {doc.metadata.get('source', 'Unknown')}
-
-         📄PAGE: {doc.metadata.get('page', 'Unknown')}
-
-         📝CONTENT:
-        {doc.page_content}
-        """
-        )
+            doc for doc,score in ranked_docs[:3]]
         return {
-            'documents':docs
+            'documents':top_docs,
+            'rerank_scores':rerank_scores,
+            'top_score':top_score
         }    
         
     # NODE 2
@@ -205,15 +219,9 @@ if uploaded_files:
 
     def decide(state):
 
-        docs = state["documents"]
-
-        if len(docs) >=2:
-
-            return "answer"
-
-        else:
-
-            return "web_search"
+        if state['top_score']>0.75:
+            return 'answer'
+        return 'web_search'
 
     # NODE 3
     
@@ -244,8 +252,8 @@ if uploaded_files:
         docs = state.get("documents", [])
 
         web = state.get("web_search", "")
-
-        context = "\n\n".join(docs)
+        print(type(docs[0]))
+        context = "\n\n".join(doc.page_content for doc in docs)
 
         prompt = f"""
 You are an intelligent AI Research Assistant.
@@ -273,7 +281,7 @@ QUESTION:
     
 
     workflow = StateGraph(GraphState)
-
+    workflow.add_node('rewrite',rewrite)
     workflow.add_node("retrieve", retrieve)
 
     workflow.add_node("web_search", web_search)
@@ -281,13 +289,12 @@ QUESTION:
     workflow.add_node("answer", generate_answer)
 
 
-    workflow.set_entry_point("retrieve")
+    workflow.set_entry_point("rewrite")
 
 
     workflow.add_conditional_edges(
 
         "retrieve",
-
         decide,
 
         {
@@ -298,14 +305,13 @@ QUESTION:
         }
     )
 
-
+    workflow.add_edge('rewrite','retrieve')
     workflow.add_edge(
 
         "web_search",
 
         "answer"
     )
-
 
     app_graph = workflow.compile()
 
@@ -333,19 +339,34 @@ QUESTION:
         st.subheader("🤖 AI Answer")
 
         st.markdown(response["answer"])
-
-
+        st.subheader(" Rewritten Query")
+        st.write(response['rewritten_query'])
+        st.subheader("  Reranker Scores")
+        for item in response['rerank_scores']:
+            st.write(f"score: {item['score']:.3f}")
+            st.write(f"content:{item['content']}")
+            st.divider()
         # DOCS
 
         st.subheader("📄 Retrieved Chunks")
 
         for i, doc in enumerate(response["documents"]):
 
-          if len(doc.strip())> 50:
-              with st.expander(
-                 f"Chunk {i+1}" 
-              ):
-                  st.write(doc)
+          if len(doc.page_content.strip()) > 50:
+
+           with st.expander(f"Chunk {i+1}"):
+
+            st.markdown(
+                f"""
+📃 Source: {doc.metadata.get('source','Unknown')}
+
+📄 Page: {doc.metadata.get('page','Unknown')}
+
+📝 Content:
+
+{doc.page_content}
+"""
+            )
 
         # WEB SEARCH
 
