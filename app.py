@@ -20,6 +20,7 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_community.retrievers import BM25Retriever
 from sentence_transformers import CrossEncoder
+from langchain_core.documents import Document
 
 # LOAD ENV
 
@@ -154,29 +155,53 @@ if uploaded_files:
         documents: List[str]
         rerank_scores: List
         top_score:float
+        compressed_docs: List[str]
         web_search: str
         answer: str
         
         # query rewriting
+    @st.cache_data    
     def rewrite_query(question: str):
-        prompt=f""" Rewrite the following question
-    to improve document retrieval.
+        prompt=f""" Rewrite the question for retrieval.
 
-    Question:
-    {question}
+Keep all important entities,
+topics and context.
 
-    Return only the rewritten query.
+Do not shorten the query.
+
+Question:
+{question}
+
+Return only the rewritten query.
     """
         response=model.generate_content(prompt)
         return response.text.strip()
     
-    # NODE 1
     def rewrite(state):
         question =state["question"]
         rewritten=rewrite_query(question)
         return { "rewritten_query": rewritten}
     
+    # contextual compression
+    def compress_docs(question, docs):
+     combined_context="\n\n".join(doc.page_content for doc in docs)
+     
+     prompt = f"""
+        Extract only the information
+        relevant to the question.
+
+        Question:
+        {question}
+
+        Context:
+        {combined_context}
+
+        Return only relevant content.
+        """
+     response = model.generate_content(prompt)
+     return [response.text]
     
+    # node 1
     def retrieve(state):
         question = state["rewritten_query"]
         # BM25 Retrieval
@@ -191,9 +216,22 @@ if uploaded_files:
           if r.page_content not in seen:
               unique_docs.append(r)
               seen.add(r.page_content)
+        if not unique_docs:
+            return {
+                'documents':[],
+                'rerank_scores':[],
+                'top_score':0.0
+            }      
         # reranking 
         pairs =[(question,doc.page_content)
                 for doc in unique_docs]
+        # safety check
+        if not pairs:
+            return {
+                'documents':[],
+                'rerank_scores':[],
+                'top_score':0.0
+            }
         scores=reranker.predict(pairs)
         ranked_docs=sorted(zip(unique_docs,scores),key=lambda x: x[1],reverse=True) 
         rerank_scores=[]
@@ -212,14 +250,23 @@ if uploaded_files:
             'documents':top_docs,
             'rerank_scores':rerank_scores,
             'top_score':top_score
-        }    
+        }   
+         
+        # create compression node
         
+    def compress(state):
+        question =state['question']
+        docs =state['documents']
+        compressed_docs=compress_docs(question,docs)
+        return {
+            'compressed_docs':compressed_docs
+        }
     # NODE 2
    
 
     def decide(state):
 
-        if state['top_score']>0.75:
+        if state['documents']:
             return 'answer'
         return 'web_search'
 
@@ -248,13 +295,9 @@ if uploaded_files:
     def generate_answer(state):
 
         question = state["question"]
-
-        docs = state.get("documents", [])
-
-        web = state.get("web_search", "")
-        print(type(docs[0]))
-        context = "\n\n".join(doc.page_content for doc in docs)
-
+        docs = state.get("compressed_docs", [])
+        web = state.get("web_search", "")      
+        context = "\n\n".join(docs)
         prompt = f"""
 You are an intelligent AI Research Assistant.
 
@@ -283,13 +326,12 @@ QUESTION:
     workflow = StateGraph(GraphState)
     workflow.add_node('rewrite',rewrite)
     workflow.add_node("retrieve", retrieve)
-
     workflow.add_node("web_search", web_search)
-
+    workflow.add_node('compress',compress)
     workflow.add_node("answer", generate_answer)
 
-
     workflow.set_entry_point("rewrite")
+
 
 
     workflow.add_conditional_edges(
@@ -299,13 +341,15 @@ QUESTION:
 
         {
 
-            "answer": "answer",
+            "answer": "compress",
 
             "web_search": "web_search"
         }
     )
 
     workflow.add_edge('rewrite','retrieve')
+    workflow.add_edge('retrieve','compress')
+    workflow.add_edge('compress','answer')
     workflow.add_edge(
 
         "web_search",
@@ -367,6 +411,9 @@ QUESTION:
 {doc.page_content}
 """
             )
+        st.subheader('Compressed context')
+        for cod in response['compressed_docs']:
+            st.write(doc)
 
         # WEB SEARCH
 
@@ -375,7 +422,4 @@ QUESTION:
            with st.subheader("🌐 Web Search Results"):
 
             st.write(response["web_search"])
-        st.divider()
-        st.caption(
-    "Built with Streamlit • LangChain • LangGraph • ChromaDB • Gemini"
-)
+        
