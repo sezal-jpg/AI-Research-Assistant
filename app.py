@@ -73,8 +73,9 @@ uploaded_files = st.file_uploader(
     type="pdf",
     accept_multiple_files=True
 )
-
-
+pdf_names=[file.name for file in uploaded_files]
+selected_pdf=st.selectbox('Filter by PDF',['All PDFs'] + pdf_names)
+st.info(f'Active Filter: {selected_pdf}')
 # PROCESS PDFs
 
 
@@ -151,8 +152,9 @@ if uploaded_files:
     class GraphState(TypedDict):
 
         question: str
+        selected_pdf:str
         rewritten_query: str
-        documents: List[str]
+        documents: List[Document]
         rerank_scores: List
         top_score:float
         compressed_docs: List[str]
@@ -162,12 +164,13 @@ if uploaded_files:
         # query rewriting
     @st.cache_data    
     def rewrite_query(question: str):
-        prompt=f""" Rewrite the question for retrieval.
+        prompt=f""" Rewrite the query for document retrieval.
 
-Keep all important entities,
-topics and context.
-
-Do not shorten the query.
+Rules:
+1. Keep important keywords.
+2. Keep technical terms.
+3. Do not make the query longer than necessary.
+4. Preserve the original meaning.
 
 Question:
 {question}
@@ -203,6 +206,7 @@ Return only the rewritten query.
     
     # node 1
     def retrieve(state):
+        selected_pdf=state['selected_pdf']
         question = state["rewritten_query"]
         # BM25 Retrieval
         bm25_docs = bm25_retriever.invoke(question)
@@ -221,7 +225,37 @@ Return only the rewritten query.
                 'documents':[],
                 'rerank_scores':[],
                 'top_score':0.0
-            }      
+            }  
+        if selected_pdf!='All PDFs':
+            filtered_by_pdf=[]
+            for doc in unique_docs:
+                source=doc.metadata.get('source',"")
+                if selected_pdf in source:
+                    filtered_by_pdf.append(doc)
+            unique_docs=filtered_by_pdf
+                
+            # filter useless chunks
+        filtered_docs=[]
+        for doc in unique_docs:
+            text=doc.page_content.strip()
+            if len(text)<30:
+                continue
+            if any(keyword in text.lower() for keyword in [ 
+        "thank you",
+        "references",
+        "acknowledgement",
+        "acknowledgements",
+        "submitted by",
+        "mini-project",
+        "course",
+        "roll no",
+        "university",
+        "names"
+            ]):
+                continue
+            filtered_docs.append(doc)
+        unique_docs=filtered_docs
+                
         # reranking 
         pairs =[(question,doc.page_content)
                 for doc in unique_docs]
@@ -234,24 +268,33 @@ Return only the rewritten query.
             }
         scores=reranker.predict(pairs)
         ranked_docs=sorted(zip(unique_docs,scores),key=lambda x: x[1],reverse=True) 
-        rerank_scores=[]
-        for doc,score in ranked_docs:
-            rerank_scores.append({
-            'score':float(score),
-            'content':doc.page_content[:200]  
-            }) 
         if ranked_docs:
-         top_score=float(ranked_docs[0][1]) 
+            top_score = float(ranked_docs[0][1])
+            max_score = ranked_docs[0][1]
+            min_score = ranked_docs[-1][1]
         else:
-            top_score=0.0    
-        top_docs=[
-            doc for doc,score in ranked_docs[:3]]
+            top_score = 0.0
+            max_score=0.0 
+            min_score = 0.0
+        rerank_scores = []
+        for doc, score in ranked_docs:
+            if max_score != min_score:
+                relative_score = (
+                (score - min_score) / (max_score - min_score)
+        ) * 100
+            else:
+                relative_score = 100
+            rerank_scores.append({
+        "score": float(score),
+        "relative_score": float(relative_score),
+        "content": doc.page_content[:200]
+    })
+        top_docs=[doc for doc,score in ranked_docs[:3]]
         return {
-            'documents':top_docs,
-            'rerank_scores':rerank_scores,
-            'top_score':top_score
-        }   
-         
+     "documents": top_docs,
+    "rerank_scores": rerank_scores,
+    "top_score": top_score
+         }
         # create compression node
         
     def compress(state):
@@ -265,8 +308,8 @@ Return only the rewritten query.
    
 
     def decide(state):
-
-        if state['documents']:
+        docs=state.get('documents',[])
+        if docs:
             return 'answer'
         return 'web_search'
 
@@ -348,7 +391,6 @@ QUESTION:
     )
 
     workflow.add_edge('rewrite','retrieve')
-    workflow.add_edge('retrieve','compress')
     workflow.add_edge('compress','answer')
     workflow.add_edge(
 
@@ -374,24 +416,25 @@ QUESTION:
             response = app_graph.invoke(
 
                 {
-                    "question": question
+                    "question": question,
+                    "selected_pdf": selected_pdf
                 }
             )
 
         # ANSWER
 
         st.subheader("🤖 AI Answer")
-
         st.markdown(response["answer"])
         st.subheader(" Rewritten Query")
         st.write(response['rewritten_query'])
         st.subheader("  Reranker Scores")
+        rank=1
         for item in response['rerank_scores']:
-            st.write(f"score: {item['score']:.3f}")
-            st.write(f"content:{item['content']}")
-            st.divider()
+           st.write( f"Rank {rank} | Relevance: {item['relative_score']:.1f}%")
+           st.write(f"Content: {item['content']}")
+           st.divider()
+           rank+=1
         # DOCS
-
         st.subheader("📄 Retrieved Chunks")
 
         for i, doc in enumerate(response["documents"]):
@@ -412,7 +455,7 @@ QUESTION:
 """
             )
         st.subheader('Compressed context')
-        for cod in response['compressed_docs']:
+        for doc in response['compressed_docs']:
             st.write(doc)
 
         # WEB SEARCH

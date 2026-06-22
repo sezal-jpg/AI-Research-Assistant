@@ -10,10 +10,11 @@ An AI-powered Research Assistant built using **RAG (Retrieval-Augmented Generati
 * 🧠 Hugging Face Embeddings
 * 🗄️ Chroma Vector Database
 * 🔍 Hybrid Retrieval
-
   * BM25 Keyword Search
   * Semantic Search
+  *  Query Rewriting
 * 🎯 Cross-Encoder Reranking
+* MetaData Filtering
 * 🤖 Gemini 2.5 Flash Integration
 * 🌐 Tavily Web Search Fallback
 * 🔄 LangGraph Agent Workflow
@@ -26,6 +27,8 @@ An AI-powered Research Assistant built using **RAG (Retrieval-Augmented Generati
 ```text
 User Question
       ↓
+Query Rewriting
+      ↓     
 Hybrid Retrieval
 (BM25 + Semantic Search)
       ↓
@@ -75,7 +78,7 @@ Answer + Sources
 
 ### 1. Document Processing
 
-* Upload PDF documents
+* Upload PDF documents and MetaData will filter the source file
 * Extract text using PyPDFLoader
 * Split text into chunks using RecursiveCharacterTextSplitter
 
@@ -118,6 +121,7 @@ Answer + Sources
 * BM25 Search
 * Semantic Search
 * Reranking
+* MetaData Filtering
 * Agentic Workflows
 * LangGraph State Management
 * LLM-Powered Question Answering
@@ -154,7 +158,6 @@ streamlit run app.py
 
 ## 📈 Future Improvements
 
-* Query Rewriting
 * Query Expansion
 * Advanced RAG Evaluation
 * Multiple Vector Database Support
