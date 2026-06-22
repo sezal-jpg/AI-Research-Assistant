@@ -15,6 +15,7 @@ An AI-powered Research Assistant built using **RAG (Retrieval-Augmented Generati
   *  Query Rewriting
 * 🎯 Cross-Encoder Reranking
 * MetaData Filtering
+* Contextual Compression
 * 🤖 Gemini 2.5 Flash Integration
 * 🌐 Tavily Web Search Fallback
 * 🔄 LangGraph Agent Workflow
@@ -32,9 +33,13 @@ Query Rewriting
 Hybrid Retrieval
 (BM25 + Semantic Search)
       ↓
+Metadata Filtering
+      ↓
 Deduplication
       ↓
 Cross-Encoder Reranker
+      ↓
+Contextual Compression
       ↓
 Top Relevant Chunks
       ↓
@@ -98,6 +103,9 @@ Answer + Sources
 * Cross-Encoder reranks retrieved chunks
 * Most relevant chunks are selected
 
+### 5. Contextual Compression
+
+* The User's query gets compressed in a precise way to get high Quality answers and improve Retrieval.
 ### 5. Agent Decision
 
 * LangGraph determines:
@@ -120,8 +128,9 @@ Answer + Sources
 * Hybrid Retrieval
 * BM25 Search
 * Semantic Search
-* Reranking
 * MetaData Filtering
+* Reranking
+* Contextual Filtering
 * Agentic Workflows
 * LangGraph State Management
 * LLM-Powered Question Answering
