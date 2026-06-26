@@ -1,14 +1,16 @@
+fastapi
+uvicorn
 streamlit
-langgraph
+google-generativeai
+chromadb
 langchain
 langchain-community
-chromadb
+langchain-text-splitters
 sentence-transformers
+transformers
+torch
+huggingface-hub
 pypdf
-google-generativeai
-tavily-python
 python-dotenv
-<<<<<<< HEAD
-
-=======
->>>>>>> a661ae758d9a1c18be2c64eb7677d66f385226c9
+python-multipart
+requests
