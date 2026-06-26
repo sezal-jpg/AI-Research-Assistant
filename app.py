@@ -129,7 +129,8 @@ if uploaded_files:
 
         documents=chunks,
 
-        embedding=embedding_model
+        embedding=embedding_model,
+        persist_directory='db'
     )
     with st.sidebar:
      st.success("✅ Vector DB Ready")
@@ -412,7 +413,6 @@ QUESTION:
     if question:
 
         with st.spinner("Researching..."):
-
             response = app_graph.invoke(
 
                 {

@@ -13,6 +13,7 @@ An AI-powered Research Assistant built using **RAG (Retrieval-Augmented Generati
   * BM25 Keyword Search
   * Semantic Search
   *  Query Rewriting
+  * Query Expansion
 * 🎯 Cross-Encoder Reranking
 * MetaData Filtering
 * Contextual Compression
@@ -29,7 +30,9 @@ An AI-powered Research Assistant built using **RAG (Retrieval-Augmented Generati
 User Question
       ↓
 Query Rewriting
-      ↓     
+      ↓  
+Query Expansion     
+      ↓ 
 Hybrid Retrieval
 (BM25 + Semantic Search)
       ↓
@@ -167,11 +170,12 @@ streamlit run app.py
 
 ## 📈 Future Improvements
 
-* Query Expansion
 * Advanced RAG Evaluation
 * Multiple Vector Database Support
 * Conversation Memory
 * Feedback-Based Retrieval Optimization
 * Docker Deployment
+* Hallucination Guard
+
 
 
