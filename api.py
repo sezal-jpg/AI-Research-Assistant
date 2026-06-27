@@ -1,6 +1,8 @@
 from config import model
+import logging
 from rag import generate_answer
 from fastapi import FastAPI
+from fastapi import HTTPException
 from langchain_community.document_loaders import PyPDFLoader
 from retriever import rerank_docs
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -10,12 +12,13 @@ from langchain_community.retrievers import BM25Retriever
 from pydantic import BaseModel
 from fastapi import UploadFile, File
 from typing import List 
-
+logging.basicConfig(level=logging.INFO,format="%(asctime)s | %(levelname)s | %(message)s")
+logger=logging.getLogger(__name__)
 embedding_model=HuggingFaceEmbeddings(model_name="intfloat/e5-base-v2")
 app=FastAPI()
 vectorstore=None
 bm25_retriever=None
-
+conversation_history=[]
 all_chunks=[]
 try:
     vectorstore=Chroma(persist_directory='db',embedding_function=embedding_model)
@@ -29,10 +32,10 @@ async def upload_pdfs(
     files: List[UploadFile]=File(...)):
     global vectorstore
     global bm25_retriever
-
+    global all_chunks
     all_docs = []
     for file in files:
-        print(file.filename)
+        logger.info(f'Uploaded PDF: {file.filename}')
         with open(file.filename, "wb") as f:
           f.write(await file.read())
         loader = PyPDFLoader(file.filename)
@@ -48,14 +51,14 @@ async def upload_pdfs(
     chunks = splitter.split_documents(all_docs)
     global all_chunks
     all_chunks=chunks
-    print(chunks[0].metadata)
+    logger.info(f'First Chunk Metadata: {chunks[0].metadata}')
 
     vectorstore = Chroma.from_documents(
         documents=chunks,
         embedding=embedding_model,
         persist_directory="db"
     )
-
+    logger.info(f'created {len(chunks)} chunks.')
     bm25_retriever = BM25Retriever.from_documents(
         chunks
     )
@@ -66,8 +69,8 @@ async def upload_pdfs(
         "uploaded_pdfs":len(files),
         "chunks": len(chunks)
     }
-
- 
+    
+logger.info('BM25 Retriever Initialized')
 class QuestionRequest(BaseModel):
     question: str
     selected_pdf: str
@@ -78,11 +81,13 @@ def ask_question(request: QuestionRequest):
     global vectorstore
     global bm25_retriever
     global all_chunks
-    print("Selected PDF:", request.selected_pdf)
-    if vectorstore is None:
-        return {
-            "error": "Please upload a PDF first"
-        }
+    global conversation_history
+    logger.info(f'selected pdf: {request.selected_pdf}')
+    if vectorstore is None or bm25_retriever is None:
+       raise HTTPException(
+           status_code=400,
+           detail='please upload one or more PDFs first.'
+       )
 
     # -----------------------------
     # Semantic Retrieval
@@ -99,7 +104,7 @@ def ask_question(request: QuestionRequest):
     else:
         semantic_docs = vectorstore.similarity_search(
             request.question,
-            k=3,
+            k=8,
             filter={
                 "source_pdf": request.selected_pdf
             }
@@ -112,7 +117,7 @@ def ask_question(request: QuestionRequest):
         filtered_bm25 = BM25Retriever.from_documents(
             filtered_chunks
         )
-        filtered_bm25.k = 3
+        filtered_bm25.k = 8
         bm25_docs = filtered_bm25.invoke(
             request.question
         )
@@ -135,10 +140,32 @@ def ask_question(request: QuestionRequest):
         request.question,
         unique_docs
     )
+    if not ranked_docs:
+        return {
+        "answer": "I couldn't find relevant information in the uploaded PDF(s).",
+        "confidence": "Very Low",
+        "sources": [],
+        "retrieved_chunks": 0
+        }
     top_docs = [
         doc
         for doc, score in ranked_docs[:3]
     ]
+    logger.info(f'Retrived {len(top_docs)} relevant chunks')
+    
+    sources=[]
+    for doc in docs:
+        sources.append({
+            'pdf':doc.metadata.get("source_pdf","unknown PDF"),
+            'page':doc.metadata.get('page','unknown')+1
+        })
+    unique_sources=[]
+    seen=set()
+    for source in sources:
+        key=(source['pdf'],source['page'])
+        if key not in seen:
+            unique_sources.append(source)    
+            seen.add(key)
 
     # -----------------------------
     # Build Context
@@ -170,19 +197,65 @@ Content:
             "score": float(score),
             "content": doc.page_content[:150]
         })
-
+    top_score=float(ranked_docs[0][1])
+    MIN_RELEVANCE_SCORE=1.5
+    if top_score<MIN_RELEVANCE_SCORE:
+        return {
+        "answer": "I couldn't find relevant information in the uploaded PDF(s).",
+        "confidence": "Very Low",
+        "sources": [],
+        "retrieved_chunks": 0
+        }
+    if top_score>=7:
+        confidence="Very high" 
+    elif top_score>=5:
+        confidence='high'
+    elif top_score>=3:
+        confidence='medium'
+    else:
+        confidence='low'               
+    history=""
+    for chat in conversation_history[-5:]:
+        history+=f"""
+        user: {chat['question']}
+        assistant: {chat['answer']}
+        """
     # -----------------------------
     # Single Gemini Call
     # -----------------------------
-    answer = generate_answer(
+    try:
+     answer = generate_answer(
         request.question,
-        context
+        context,
+        history
     )
-
+     logger.info('Answer generated successfully.')
+     # empty answer safeguard
+     if not answer.strip():
+        answer="I couldn't find this information in the uploaded PDF(s)."  
+     bad_phrases = ["I think","I believe","In general","Typically","Usually"]
+     for bad_phrase in bad_phrases:
+            if bad_phrase.lower() in answer.lower():
+                confidence='Low'
+                break  
+     logger.info(f'confidence level: {confidence}')       
+     conversation_history.append({
+        "question": request.question,
+        "answer": answer
+    })
+     logger.info('conversation history')
+     logger.info(conversation_history)
+     conversation_history = conversation_history[-10:]                      
+    except Exception as e:
+       logger.error(f'Gemini Error: {str(e)}'
+        ) 
+       raise HTTPException(status_code=500,detail='Gemini Error')
     return {
         "answer": answer,
         "retrieved_chunks": len(top_docs),
-        "rerank_scores": rerank_scores
+        "rerank_scores": rerank_scores,
+        "sources":unique_sources,
+        'confidence':confidence
     }
     
 

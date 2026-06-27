@@ -1,38 +1,44 @@
 from config import model
 def generate_answer(
     question,
-    context
+    context,
+    history
 ):
 
     prompt = f"""
 You are an AI Research Assistant.
 
-The following context has already been retrieved using:
+You must follow these rules strictly.
 
-- Hybrid Search (BM25 + Semantic Search)
-- CrossEncoder Reranking
+RULES
 
-Your task:
+1. Use ONLY the retrieved context.
 
-1. Understand the user's intent.
+2. Never use your own knowledge.
 
-2. Internally identify important keywords and concepts.
+3. Never guess.
 
-3. Ignore duplicated information.
+4. Never fabricate information.
 
-4. Ignore irrelevant information.
+5. Never invent citations.
 
-5. Combine facts from multiple chunks.
+6.Use the conversation history only to understand follow-up questions.
 
-6. Answer ONLY using the provided context.
+7. If the context is insufficient,
+reply exactly:
 
-7. If the answer is not present, reply exactly:
+"I couldn't find this information in the uploaded PDF(s)."
 
-"I could not find this information in the uploaded PDFs."
+8. If multiple PDFs contain different information,
+mention that.
 
-8. Mention the PDF names naturally whenever possible.
+9. Keep answers concise and factual.
 
-Context:
+
+conversation_history:
+{history}
+
+ Retrieved Context:
 
 {context}
 
@@ -42,7 +48,9 @@ Question:
 
 Answer:
 """
-
+    print("========== PROMPT ==========")
+    print(prompt)
+    print("============================")
     response = model.generate_content(
         prompt
     )

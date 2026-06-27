@@ -50,6 +50,8 @@ LangGraph Agent
       ↓
 Gemini 2.5 Flash
       ↓
+Conversation History
+      ↓
 Answer + Sources
 ```
 
@@ -118,7 +120,7 @@ Answer + Sources
 
 ### 6. Answer Generation
 
-* Gemini 2.5 Flash generates final response using retrieved context
+* Gemini 2.5 Flash generates final response using retrieved context and chat history.
 
 
 ## 🎯 Key Concepts Implemented
@@ -172,10 +174,13 @@ streamlit run app.py
 
 * Advanced RAG Evaluation
 * Multiple Vector Database Support
-* Conversation Memory
+* Query Decomposition
+* Multi-Query Retrieval
+* Reciprocal Rank Fusion (RRF)
+* Parent-Child Retrieval
 * Feedback-Based Retrieval Optimization
 * Docker Deployment
-* Hallucination Guard
+
 
 
 
