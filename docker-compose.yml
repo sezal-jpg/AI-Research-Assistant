@@ -1,0 +1,35 @@
+
+services:
+
+  backend:
+    build:
+      context: ./backend
+
+    container_name: ai-backend
+
+    ports:
+      - "8000:8000"
+
+    volumes:
+      - chroma-db:/app/db
+
+    env_file:
+      - ./backend/.env
+
+  frontend:
+    build:
+      context: ./frontend
+
+    container_name: ai-frontend
+
+    ports:
+      - "8501:8501"
+
+    environment:
+      - API_URL=http://backend:8000
+
+    depends_on:
+      - backend
+
+volumes:
+  chroma-db:
