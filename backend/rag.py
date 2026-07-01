@@ -1,9 +1,7 @@
 from config import model
-def generate_answer(
-    question,
-    context,
-    history
-):
+
+
+def generate_answer(question, context, history):
 
     prompt = f"""
 You are an AI Research Assistant.
@@ -51,8 +49,6 @@ Answer:
     print("========== PROMPT ==========")
     print(prompt)
     print("============================")
-    response = model.generate_content(
-        prompt
-    )
+    response = model.generate_content(prompt)
 
     return response.text
