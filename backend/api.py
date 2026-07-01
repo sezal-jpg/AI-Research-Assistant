@@ -257,7 +257,7 @@ Content:
         "sources":unique_sources,
         'confidence':confidence
     }
-def math():
+def math(
 
 
 
