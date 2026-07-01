@@ -1,0 +1,38 @@
+name: AI Research Assistant CI
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  backend-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install Backend Dependencies
+        run: |
+          cd backend
+          pip install -r requirements.txt
+
+      - name: Verify Backend Imports
+        run: |
+          cd backend
+          python -c "import fastapi"
+          python -c "import chromadb"
+          python -c "import langchain"
+
+      - name: Workflow Completed
+        run: echo "Backend checks passed successfully!"
