@@ -12,11 +12,9 @@ on:
 jobs:
 
   backend-check:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -24,13 +22,14 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
-      - name: Cache pip packages
-      uses: actions/cache@v4
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('backend/requirements.txt') }}
-        restore-keys: |
-           ${{ runner.os }}-pip-
+
+      - name: Cache Backend Dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-backend-${{ hashFiles('backend/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-backend-
 
       - name: Install Backend Dependencies
         run: |
@@ -39,10 +38,7 @@ jobs:
 
       - name: Check Backend Syntax
         run: |
-          python -m py_compile backend/api.py
-          python -m py_compile backend/rag.py
-          python -m py_compile backend/retriever.py
-          python -m py_compile backend/config.py
+          python -m compileall backend
 
       - name: Verify Backend Imports
         run: |
@@ -51,12 +47,13 @@ jobs:
           python -c "import chromadb"
           python -c "import langchain"
 
-  frontend-check:
+      - name: Backend Check Complete
+        run: echo "Backend validation successful!"
 
+  frontend-check:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -64,6 +61,14 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
+
+      - name: Cache Frontend Dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-frontend-${{ hashFiles('frontend/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-frontend-
 
       - name: Install Frontend Dependencies
         run: |
@@ -74,15 +79,16 @@ jobs:
         run: |
           python -m py_compile frontend/frontend.py
 
-      - name: Verify Requests Module
+      - name: Verify Frontend Imports
         run: |
           cd frontend
+          python -c "import streamlit"
           python -c "import requests"
 
-      - name: Workflow Completed
-        run: echo "Frontend checks passed!"
-    docker-build:
+      - name: Frontend Check Complete
+        run: echo "Frontend validation successful!"
 
+  docker-build:
     runs-on: ubuntu-latest
 
     needs:
@@ -90,7 +96,6 @@ jobs:
       - frontend-check
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -105,5 +110,5 @@ jobs:
         run: |
           docker build -t ai-frontend ./frontend
 
-      - name: Docker Build Successful
+      - name: Docker Build Complete
         run: echo "Docker images built successfully!"
