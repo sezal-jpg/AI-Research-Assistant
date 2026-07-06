@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY requirements.txt .
 
-RUN pip install --default-timeout=300 --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-EXPOSE 8501
+EXPOSE 8080
 
-CMD ["streamlit","run","frontend.py","--server.address=0.0.0.0","--server.port=8501"]
+CMD ["sh", "-c", "streamlit run frontend.py --server.port=${PORT:-8080} --server.address=0.0.0.0"]
