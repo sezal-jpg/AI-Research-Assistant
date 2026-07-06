@@ -1,10 +1,10 @@
 
 import logging
-from backend.rag import generate_answer
+from rag import generate_answer
 from fastapi import FastAPI
 from fastapi import HTTPException
 from langchain_community.document_loaders import PyPDFLoader
-from backend.retriever import rerank_docs
+from retriever import rerank_docs
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
