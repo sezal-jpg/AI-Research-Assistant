@@ -17,18 +17,29 @@ logging.basicConfig(
     level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s"
 )
 logger = logging.getLogger(__name__)
-embedding_model = HuggingFaceEmbeddings(model_name="intfloat/e5-base-v2")
+embedding_model = HuggingFaceEmbeddings(
+    model_name="intfloat/e5-base-v2"
+)
+
 app = FastAPI()
+
 vectorstore = None
 bm25_retriever = None
 conversation_history = []
 all_chunks = []
-try:
-    vectorstore = Chroma(persist_directory="db", embedding_function=embedding_model)
-    print(" ✅ Existing Vector DB Loaded")
-except Exception:
-    vectorstore = None
-    print("⚠️ No Existing Vector DB Found")
+@app.on_event("startup")
+def startup():
+    global vectorstore
+
+    try:
+        vectorstore = Chroma(
+            persist_directory="db",
+            embedding_function=embedding_model,
+        )
+        logger.info("Existing Vector DB Loaded")
+    except Exception as e:
+        vectorstore = None
+        logger.warning(f"No Existing Vector DB Found: {e}")
 
 
 @app.post("/upload")
