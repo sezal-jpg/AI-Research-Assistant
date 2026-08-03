@@ -1,4 +1,5 @@
-from config import model
+from app.services.llm_service import get_model
+model=get_model()
 
 
 def generate_answer(question, context, history):

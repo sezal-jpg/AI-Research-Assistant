@@ -1,6 +1,6 @@
 
 import logging
-from rag import generate_answer
+from backend.app.services.generation_service import generate_answer
 from fastapi import FastAPI
 from fastapi import HTTPException
 from langchain_community.document_loaders import PyPDFLoader
@@ -42,7 +42,7 @@ def startup():
         logger.warning(f"No Existing Vector DB Found: {e}")
 
 
-@app.post("/upload")
+# @app.post("/upload")
 async def upload_pdfs(files: List[UploadFile] = File(...)):
     global vectorstore
     global bm25_retriever
