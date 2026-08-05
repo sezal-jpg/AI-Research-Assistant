@@ -1,8 +1,7 @@
-from app.services.llm_service import get_model
-model=get_model()
+from app.core.config import model
+class GenerationService:
 
-
-def generate_answer(question, context, history):
+ def generate(self,question:str, context:str, history:str):
 
     prompt = f"""
 You are an AI Research Assistant.
@@ -47,9 +46,8 @@ Question:
 
 Answer:
 """
-    print("========== PROMPT ==========")
-    print(prompt)
-    print("============================")
     response = model.generate_content(prompt)
 
     return response.text
+generation_service=GenerationService()
+
