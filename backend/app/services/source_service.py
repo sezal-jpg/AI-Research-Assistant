@@ -8,32 +8,43 @@ class SourceService:
         sources = []
 
         for doc in docs:
+            source_file=doc.metadata.get('source_file')
+            source_url=doc.metadata.get('source_url')
+            
+            if source_file:
 
-            sources.append(
-                {
-                    "pdf": doc.metadata.get(
-                        "source_file",
-                        "Unknown PDF",
-                    ),
-                    "page": doc.metadata.get(
-                        "page",
-                        0,
-                    )
-                    + 1,
-                }
-            )
+                page = doc.metadata.get("page", 0)
+
+                sources.append(
+                    {
+                        "type": "file",
+                        "pdf": source_file,
+                        "page": int(page) + 1,
+                    }
+                )
+
+            elif source_url:
+
+                sources.append(
+                    {
+                        "type": "website",
+                        "url": source_url,
+                    }
+                ) 
 
         unique_sources = []
 
         seen = set()
 
         for source in sources:
-
-            key = (
+            if source['type']=='file':
+             key = ('file',
                 source["pdf"],
                 source["page"],
             )
-
+            else:
+                key=('website',source['url'],)
+                
             if key not in seen:
 
                 unique_sources.append(source)

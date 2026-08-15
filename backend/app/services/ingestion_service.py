@@ -2,13 +2,8 @@ from typing import List
 from pathlib import Path
 from fastapi import UploadFile
 from app.core.logger import logger
-from app.core.app_state import state
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from app.services.embedding_service import get_embedding_model
-from app.services.document_loader import document_loader
-from langchain_community.vectorstores import Chroma
-from langchain_community.retrievers import BM25Retriever
-embedding_model=get_embedding_model()
+from app.services.indexing_service import indexing_service
+from app.services.loader_factory import loader_factory
 
 class IngestionService:
     def __init__(self):
@@ -34,25 +29,22 @@ class IngestionService:
         all_docs=[]
         
         for file_path in saved_files:
-            logger.info(f'Loading {file_path.name}')
-            docs=document_loader.load(file_path)
-            docs=self.add_metadata(docs,file_path.name)
+            logger.info(f'Processing {file_path.name}')
+            
+            loader=loader_factory.get_loader(file_path)
+            if loader is None:
+                logger.warning(f'Unsupported file: {file_path.name}')
+                continue
+            docs=loader.load(file_path)
+            
+            docs=self.add_metadata(docs,file_path.name,)
             all_docs.extend(docs)
             
-        splitter=RecursiveCharacterTextSplitter(chunk_size=500,chunk_overlap=50,) 
-        chunks=splitter.split_documents(all_docs)
-        logger.info(f'created {len(chunks)} chunks')
-        state.all_chunks=chunks  
-        
-        state.vectorstore=Chroma.from_documents(documents=chunks,embedding=embedding_model,persist_directory='db')
-         
-        state.bm25_retriever=BM25Retriever.from_documents(chunks)
-        state.bm25_retriever.k=3
+        chunks=indexing_service.index_documents(all_docs)
         
         logger.info(f'total documents : {len(all_docs)}')
         logger.info(f'total chunks :{len(chunks)}')
-        logger.info(f'vector DB created :{state.vectorstore is not None}')
-        logger.info(f"BM25 Created : {state.bm25_retriever is not None}")
+
         
         return {
             'message':'Documents indexed successfully',

@@ -12,5 +12,10 @@ sentence-transformers==2.7.0
 pypdf
 python-dotenv
 python-multipart
-
+python-docx
+python-pptx
+openpyxl
+pandas
+xlrd
+odfpy
 rank-bm25
