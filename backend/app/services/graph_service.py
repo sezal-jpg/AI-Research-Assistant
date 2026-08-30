@@ -58,20 +58,21 @@ class GraphService:
         return list(self.nodes.values())
     
     def search(self,query):
-        query=query.lower().strip()
-        if not query:
-            return []
-        
+        query=query.lower().strip() 
         results=[]
         
-        matched_nodes=set()
+        matched_nodes=[]
         for node_id,node in self.nodes.items():
-            if query in node_id.lower():
+            node_name=node_id.lower().strip()
+            
+            if node_name in query:
                 matched_nodes.append(node_id)
-                
+        logger.info(f'Graph search matched nodes: {matched_nodes}') 
+            
         for edge in self.edges:
             if(edge['source'] in matched_nodes or edge['target'] in matched_nodes):
-                results.append(edge)
+                if edge not in results:
+                 results.append(edge)
                 
         logger.info(f'Graph search found'
                 f"{len(results)} relationships")     

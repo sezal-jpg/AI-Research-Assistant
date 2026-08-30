@@ -5,6 +5,7 @@ from app.services.context_builder import context_builder_service
 from app.services.generation_service import generation_service
 from app.services.memory_service import memory_service
 from app.core.gemini_utils import log_gemini_error
+from app.services.graph_retrieval_service import graph_retrieval_service
 from app.core.config import model
 
 
@@ -33,6 +34,14 @@ def retrieve_node(state):
         "retrieved_docs": docs
     }
 
+def graph_retrieval_node(state):
+    logger.info('Agent node: graph retrieval started')
+    question=state.get('question',"")
+    graph_results=graph_retrieval_service.retrieve(question)
+    logger.info(f'Agent graph retrieval returned'
+                f"{len(graph_results)} relationships")
+    
+    return{'graph_results':graph_results}
 
 def rerank_node(state):
     logger.info("Agent node: reranking started")
@@ -75,30 +84,46 @@ def context_node(state):
         "ranked_docs",
         []
     )
-
-    if not ranked_docs:
-        logger.warning(
-            "No ranked documents available"
-        )
-
-        return {
-            "context": "",
-            "top_docs": []
-        }
-
-    context, top_docs = (
+    graph_results=state.get('graph_results',[])
+    context=""
+    top_docs=[]
+    
+    if ranked_docs:
+        context, top_docs = (
         context_builder_service.build_context(
             ranked_docs
         )
     )
-
+    else:
+        logger.warning('No ranked documents available')    
+        
+    graph_context=""
+    if graph_results:
+        graph_lines=[]
+        
+        for edge in graph_results:
+            graph_lines.append(f"{edge['source']}"
+                               f"--[{edge['relationship']}]-->"
+                               f"{edge['target']}")
+            
+            graph_context="\n".join(graph_lines)
+            
+    combined_context=context
+    if graph_context:        
+        
+        if combined_context:
+            combined_context+=("\n\nGRAPH CONTEXT:\n"+graph_context)  
+        else:
+            combined_context=('GRAPH CONTEXT:\n'+graph_context) 
+                     
     logger.info(
         f"Agent context contains "
-        f"{len(top_docs)} documents"
+        f"{len(top_docs)} documents and"
+        f"{len(graph_results)} graph relationships"
     )
 
     return {
-        "context": context,
+        "context": combined_context,
         "top_docs": top_docs
     }
     

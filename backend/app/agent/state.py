@@ -12,6 +12,7 @@ class AgentState(TypedDict,total=False):
     # retrieval
     retrieved_docs:List[Any]
     ranked_docs:List[Any]
+    graph_results:List[Any]
     
     # context
     context:str
@@ -29,3 +30,5 @@ class AgentState(TypedDict,total=False):
     
     # control
     retry_count:int
+    search_query:str
+    previous_query:str
