@@ -4,6 +4,7 @@ from fastapi import UploadFile
 from app.core.logger import logger
 from app.services.indexing_service import indexing_service
 from app.services.loader_factory import loader_factory
+from app.services.youtube_service import youtube_service
 
 class IngestionService:
     def __init__(self):
@@ -54,6 +55,20 @@ class IngestionService:
             
         }
             
+    async def process_youtube(self,url:str):
+        logger.info(f'Processing YouTube URL: {url}')   
+        docs=(youtube_service.get_transcript(url))
+        if not docs:
+            logger.warning('No YouTube transcript found')  
+            
+            return {'message':'could not extract YouTube transcipt','documents':0,'chunks':0,} 
+        
+        chunks=(indexing_service.index_documents(docs))  
+        logger.info(f'YouTube documents:' f'{len(chunks)}')
+        logger.info(f'YouTube chunks:' f'{len(chunks)}')
+        
+        return {'message':'YouTube indexed successfully','documents':len(docs),'chunks':len(chunks),}
+    
         
     def add_metadata(self,docs,filename):
         for doc in docs:

@@ -8,10 +8,15 @@ st.title("🌐 OmniResearch Assistant")
 # Session state
 if 'website_urls' not in st.session_state:
     st.session_state.website_urls=[]
-
+    
+if 'youtube_sources' not in st.session_state:
+    st.session_state['youtube_sources']=[]    
+    
 # upload pdf to fastapi
 st.subheader(" 📁 Upload Files")
-uploaded_files = st.file_uploader("Upload files", type=["pdf",
+uploaded_files = st.file_uploader("Upload files", type=[
+    # Documents
+    "pdf",
     "docx",
     "pptx",
     "xlsx",
@@ -25,11 +30,28 @@ uploaded_files = st.file_uploader("Upload files", type=["pdf",
     "html",
     "htm",
     "xml",
+    
+    #Images
     "png",
     "jpg",
     "jpeg",
     "bmp",
-    "webp",], accept_multiple_files=True)
+    "webp",
+    
+    #Audio
+    "mp3",
+    "wav",
+    "m4a",
+    "flac",
+    "ogg",
+    
+    #Video
+    "mp4",
+    "avi",
+    "mov",
+    "mkv",
+    "webm",    ], accept_multiple_files=True)
+
 uploaded_file_names = []
 
 if uploaded_files:
@@ -147,8 +169,43 @@ if st.button("Add Website"):
 
             st.error(
                 f"Website upload error: {e}"
-            )       
+            )  
+            
+# Add YouTube        
+st.subheader(' Add YouTube')
+youtube_url=st.text_input('YouTube URL',placeholder='https://www.youtube.com/watch?v=...')   
+
+if st.button('Add YouTube'):
+    if not youtube_url:
+        st.warning('please enter a Youtube url')
+        
+    else:
+        try:
+            response=requests.post(f'{API_URL}/youtube/upload',json={'url':youtube_url},timeout=300)   
+            
+            if response.status_code ==200:
+            
+                result=response.json()
+                st.success(result.get('message','youtube indexed successfully'))       
+                
+                st.write(f'Documents:' f"{result.get('documents',0)}")
+                st.write(f'chunks:'f"{result.get('chunks',0)}")
+                
+                if youtube_url not in st.session_state.youtube_sources:
+                    st.session_state.youtube_sources.append(youtube_url)
+                
+            else:
+                st.error(f'YouTube Error'
+                         f'({response.status_code})')    
                        
+                try:
+                    st.json(response.json())       
+                    
+                except:
+                    st.text(response.text) 
+                    
+        except Exception as e:
+            st.error(f'YouTube upload error:{e}')               
 
 #source selection
 st.subheader("🔍🔎 Search IN")
@@ -156,19 +213,34 @@ source_options=[ 'All Files']
 
 source_options.extend(uploaded_file_names)
 source_options.extend(st.session_state.website_urls)
+
+source_options.extend(st.session_state.youtube_sources)
+
 selected_source=st.selectbox('Selected source',source_options)
 st.info(f'Selected Source: {selected_source}')
 
 # ask a question
-question = st.text_input("Ask a question")
-
+question = st.text_input(
+    "Ask a question",
+    key="question_input"
+)
+  
+  
 if st.button("Ask"):
-    if not question:
-        st.warning("Please enter a question.")
+    typed_question=question.strip()
+    voice_question = st.session_state.get(
+    "voice_question",
+    "")
+    final_question=typed_question or voice_question
+    
+    if not final_question:
+        final_question=st.session_state.get('voice_question',"").strip()
+    if not final_question:    
+         st.warning("Please enter or record a question.")
     else:
       try:  
         response = requests.post(
-            f"{API_URL}/ask", json={"question": question, "selected_pdf": selected_source},timeout=300
+            f"{API_URL}/ask", json={"question": final_question, "selected_pdf": selected_source},timeout=300
         )
         if response.status_code == 200:
             
@@ -177,6 +249,19 @@ if st.button("Ask"):
             st.subheader("🤖 Answer")
             
             st.write(result["answer"])
+            
+            st.subheader('🔉 Listen to answer')
+            try:
+                tts_response=requests.post(f'{API_URL}/tts',json={'text':result['answer']},timeout=120)
+                
+                if tts_response.status_code==200:
+                    st.audio(tts_response.content,format='audio/wav')
+                    
+                else:
+                    st.warning('could not generate audio')
+                    
+            except Exception as e:
+                st.warning(f'TTS error: {e}')            
 
             st.success(f"Confidence: {result['confidence']}")
             st.subheader("📃 Sources")
@@ -195,3 +280,26 @@ if st.button("Ask"):
                 st.text(response.text)
       except Exception as e:
           st.error(f'Request error: {e}')
+
+audio_input=st.audio_input('🎙️ record your question')
+if audio_input:
+    st.audio(audio_input)
+    
+    if st.button('Transcribe Voice'):
+     try:
+        files={"file":('voice_question.wav',audio_input.getvalue(),"audio/wav")}
+        
+        response=requests.post(f'{API_URL}/transcribe',files=files,timeout=300)
+        
+        if response.status_code ==200:
+            result=response.json()
+            
+            st.session_state['voice_question']=result['text']
+            st.success('Voice transcribed successfully')
+            st.write('Transcript:',result['text'])
+            
+        else:
+            st.error(f'Transcription error'f"({response.status_code})") 
+            
+     except Exception as e:
+        st.error(f'Voice transcription error: {e}')        

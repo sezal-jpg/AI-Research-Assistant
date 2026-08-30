@@ -21,9 +21,8 @@ class RetrievalService:
             f"Selected source: {selected_file}"
         )
 
-        # =====================================================
         # ALL FILES
-        # =====================================================
+    
 
         if selected_file == "All Files":
 
@@ -35,10 +34,22 @@ class RetrievalService:
             bm25_docs = state.bm25_retriever.invoke(
                 question
             )
-
-        # =====================================================
-        # SPECIFIC SOURCE
-        # =====================================================
+            
+           # YouTube Source
+        elif selected_file.startswith( "https://www.youtube.com/") or selected_file.startswith("https://youtu.be/"):
+            semantic_docs=(state.vectorstore.similarity_search(question,k=8,filter={'source_url':selected_file}))
+            filtered_chunks=[chunk for chunk in state.all_chunks
+                             if chunk.metadata.get('source_url')==selected_file]
+            
+            if not filtered_chunks:
+                logger.warning(f'No chunks found for youtube:' f'{selected_file}')
+                return []
+            
+            filtered_bm25=(BM25Retriever.from_documents(filtered_chunks))
+            filtered_bm25.k=8
+            bm25_docs=(filtered_bm25.invoke(question))
+            
+               
 
         else:
 
@@ -134,31 +145,46 @@ class RetrievalService:
             f"BM25 results: {len(bm25_docs)}"
         )
 
-        # =====================================================
-        # MERGE RESULTS
-        # =====================================================
+        # RECIPROCAL RANK FUSION(RRF)
 
-        docs = semantic_docs + bm25_docs
+        rrf_scores={}
+        doc_map={}
+        
+        rrf_k=60
 
-        # =====================================================
-        # REMOVE DUPLICATES
-        # =====================================================
-
-        unique_docs = []
-        seen = set()
-
-        for doc in docs:
-
-            content = doc.page_content.strip()
-
-            if content and content not in seen:
-
-                unique_docs.append(doc)
-                seen.add(content)
-
-        logger.info(
-            f"Retrieved {len(unique_docs)} unique documents"
-        )
+        # SEmantic Search Ranking
+        
+        for rank,doc in enumerate(semantic_docs,start=1):
+            content=doc.page_content.strip()
+            
+            if not content:
+                continue
+            
+            if content not in doc_map:
+                doc_map[content]=doc
+                
+            rrf_scores[content]=(rrf_scores.get(content,0)+1/(rrf_k+rank)) 
+            
+            # BM25 Ranking
+            
+        for rank,doc in enumerate(bm25_docs,start=1): 
+            content=doc.page_content.strip()
+            
+            if not content:
+                continue
+            
+            if content not in doc_map:
+                doc_map[content]=doc
+                
+            rrf_scores[content]=(rrf_scores.get(content,0)+1/(rrf_k+rank))     
+            
+            # Sort by rrf score
+            
+        ranked_contents=sorted(rrf_scores,key=rrf_scores.get,reverse=True)
+        
+        unique_docs=[doc_map[content] for content in ranked_contents]   
+        logger.info(f'Hybrid RRF results: {len(unique_docs)}')  
+               
 
         # =====================================================
         # LOG SOURCES

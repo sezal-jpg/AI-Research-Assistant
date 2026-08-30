@@ -18,7 +18,7 @@ class CLIPService:
     def image_embedding(self,image_path:str):
         logger.info(f'Generating CLIP image embedding :{image_path}')
         
-        image=Image.oprn(image_path).convert('RGB') 
+        image=Image.open(image_path).convert('RGB') 
         inputs=self.processor(images=image,return_tensors='pt')
         
         with torch.no_grad():

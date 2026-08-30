@@ -1,4 +1,6 @@
 from app.core.config import model
+from app.core.gemini_utils import log_gemini_error
+
 class GenerationService:
 
  def generate(self,question:str, context:str, history:str):
@@ -46,8 +48,18 @@ Question:
 
 Answer:
 """
-    response = model.generate_content(prompt)
-
-    return response.text
+    try:
+     response = model.generate_content(prompt)
+     return response.text
+    
+    except Exception as e:
+        error_type=log_gemini_error('answer generation',e)
+        
+        if error_type=='quota':
+         return ("The AI service is temporarily unavailable "
+            "because the Gemini API quota has been reached.")
+        return (
+        "I couldn't generate an answer at this time."
+    )
 generation_service=GenerationService()
 
