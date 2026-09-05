@@ -1,12 +1,21 @@
 import streamlit as st
 import requests
 import os
-import streamlit.components.v1 as components
+from pathlib import Path
 
 API_URL = os.getenv("API_URL", "http://127.0.0.1:8000")
+st.set_page_config(page_title="OmniResearch Assistant",
+    page_icon="🌐",
+    layout="wide"
+)
+
+# Logo
+logo_path = Path(__file__).parent / "assets" / "OmniResearch-Logo-Final.png"
+
 
 st.markdown("""
 <style>
+
 .main-title {
     font-size: 42px;
     font-weight: 700;
@@ -39,344 +48,17 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-components.html("""
-<style>
-
-body {
-    margin: 0;
-    padding: 0;
-    background: transparent;
-    overflow: hidden;
-}
-
-/* =========================================
-   MAIN HEADER
-   ========================================= */
-
-.header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-    height: 145px;
-    box-sizing: border-box;
-}
-
-/* =========================================
-   LEFT LOGO SECTION
-   ========================================= */
-
-.logo-section {
-    width: 130px;
-    height: 150px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-    gap: 0;
-}
-
-/* =========================================
-   SMALL OMNIRESEARCH ABOVE LOGO
-   ========================================= */
-
-.logo-top-title {
-     font-family: Arial, sans-serif;
-    font-size: 13px;
-    font-weight: 800;
-    line-height: 13px;
-    white-space: nowrap;
-    margin: 0 0 -3px 0;   /* closer to logo */
-    padding: 0;
-}
-
-.logo-top-title .logo-omni {
-    color: #f5f7ff;
-}
-
-.logo-top-title .logo-research {
-    color: #2864e8;
-}
-
-/* =========================================
-   LOGO
-   ========================================= */
-
-.logo {
-    width: 90px;
-    height: 90px;
-    flex-shrink: 0;
-}
-
-/* =========================================
-   ROTATING CIRCLE + BLUE POINTS
-   ========================================= */
-
-.logo-main {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: rotateLogo 8s linear infinite;
-}
-
-/* =========================================
-   ROTATING ELLIPSE
-   ========================================= */
-
-.logo-ellipse {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: rotateEllipse 5s linear infinite;
-}
-
-/* =========================================
-   SMALL ASSISTANT BELOW LOGO
-   ========================================= */
-
-.logo-bottom-title {
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-    font-weight: 800;
-    line-height: 13px;
-    white-space: nowrap;
-    margin: -3px 0 0 0;   /* closer to logo */
-    padding: 0;
-    color: #8fa0b8;
-}
-
-/* =========================================
-   LARGE STATIC TITLE
-   ========================================= */
-
-.static-title {
-    font-family: Arial, sans-serif;
-    font-size: 34px;
-    font-weight: 800;
-    line-height: 1;
-
-    white-space: nowrap;
-}
-
-.static-title .omni {
-    color: #f5f7ff;
-}
-
-.static-title .research {
-    color: #2864e8;
-}
-
-.static-title .assistant {
-    color: #8fa0b8;
-}
-
-/* =========================================
-   ANIMATIONS
-   ========================================= */
-
-@keyframes rotateLogo {
-
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-
-}
-
-@keyframes rotateEllipse {
-
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-
-}
-
-</style>
-
-<div class="header">
-
-    <!-- ================================= -->
-    <!-- LEFT: STATIC TEXT + ROTATING LOGO -->
-    <!-- ================================= -->
-
-    <div class="logo-section">
-
-        <!-- STATIC OmniResearch -->
-
-        <div class="logo-top-title">
-
-            <span class="logo-omni">Omni</span><span class="logo-research">Research</span>
-
-        </div>
-
-        <!-- ================================= -->
-        <!-- ROTATING LOGO -->
-        <!-- ================================= -->
-
-        <svg
-            class="logo"
-            viewBox="0 0 200 200"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-
-            <!-- ================================= -->
-            <!-- ROTATING OUTER CIRCLE + POINTS -->
-            <!-- ================================= -->
-
-            <g class="logo-main">
-
-                <!-- Outer circle -->
-
-                <circle
-                    cx="100"
-                    cy="100"
-                    r="78"
-                    fill="none"
-                    stroke="#202020"
-                    stroke-width="7"
-                    stroke-dasharray="8 6"
-                />
-
-                <!-- Top point -->
-
-                <circle
-                    cx="100"
-                    cy="22"
-                    r="7"
-                    fill="#2864e8"
-                />
-
-                <!-- Left point -->
-
-                <circle
-                    cx="22"
-                    cy="100"
-                    r="7"
-                    fill="#2864e8"
-                />
-
-                <!-- Right point -->
-
-                <circle
-                    cx="178"
-                    cy="100"
-                    r="7"
-                    fill="#2864e8"
-                />
-
-                <!-- Bottom point -->
-
-                <circle
-                    cx="100"
-                    cy="178"
-                    r="7"
-                    fill="#2864e8"
-                />
-
-
-            </g>
-
-            <!-- ================================= -->
-            <!-- FIXED AXES -->
-            <!-- ================================= -->
-
-            <line
-                x1="22"
-                y1="100"
-                x2="178"
-                y2="100"
-                stroke="#555555"
-                stroke-width="2"
-            />
-
-            <line
-                x1="100"
-                y1="22"
-                x2="100"
-                y2="178"
-                stroke="#555555"
-                stroke-width="2"
-            />
-
-            <!-- ================================= -->
-            <!-- ROTATING ELLIPSE -->
-            <!-- ================================= -->
-
-            <g class="logo-ellipse">
-
-                <ellipse
-                    cx="100"
-                    cy="100"
-                    rx="78"
-                    ry="30"
-                    fill="none"
-                    stroke="#8fa0b8"
-                    stroke-width="2"
-                />
-
-            </g>
-
-            <!-- ================================= -->
-            <!-- CENTER STAR -->
-            <!-- ================================= -->
-
-            <polygon
-                points="
-                    100,65
-                    108,88
-                    133,88
-                    113,102
-                    121,128
-                    100,113
-                    79,128
-                    87,102
-                    67,88
-                    92,88
-                "
-                fill="#2864e8"
-            />
-
-        </svg>
-
-
-        <!-- STATIC Assistant -->
-
-        <div class="logo-bottom-title">
-
-            Assistant
-
-        </div>
-
-    </div>
-
-    <!-- ================================= -->
-    <!-- LARGE STATIC TITLE ON RIGHT -->
-    <!-- ================================= -->
-
-    <div class="static-title">
-
-        <span class="omni">Omni</span><span class="research">Research</span><span class="assistant"> Assistant</span>
-
-    </div>
-
-</div>
-
-""", height=160, scrolling=False)
-
+st.markdown(
+    '<div class="main-title">🌐 OmniResearch Assistant</div>',
+    unsafe_allow_html=True
+)
 
 st.markdown(
     '<div class="subtitle">'
     'Research across documents, websites and YouTube using an AI-powered agent.'
     '</div>',
-    unsafe_allow_html=True)
+    unsafe_allow_html=True
+)
 
 # Session state
 if 'website_urls' not in st.session_state:
