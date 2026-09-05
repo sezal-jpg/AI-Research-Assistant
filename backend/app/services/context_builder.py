@@ -13,7 +13,7 @@ class ContextBuilderService:
             
             parent_id=doc.metadata.get('parent_id')
             
-            #Hierarchial RAG
+            # Hierarchial RAG
             
             if parent_id and parent_id in state.parent_chunks:
                 parent_doc=state.parent_chunks[parent_id]

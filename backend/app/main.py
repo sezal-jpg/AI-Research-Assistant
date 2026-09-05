@@ -1,4 +1,6 @@
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
+from app.services.persistence_service import persistence_service
 from app.api.upload import router as upload_router
 from app.api.chat import router as chat_router
 from app.api.health import router as health_router
@@ -9,7 +11,13 @@ from app.api.youtube import router as youtube_router
 from app.api.agent import router as agent_router
 from app.core.exceptions import(AppException,app_exception_handler,generic_exception_handler,)
 
-app=FastAPI(title='OmniResearch AI',version='1.0.0')
+@asynccontextmanager
+async def lifespan(app:FastAPI):
+    persistence_service.restore_all()
+    yield
+    
+
+app=FastAPI(title='OmniResearch AI',version='1.0.0',lifespan=lifespan)
 
 app.add_exception_handler(AppException,app_exception_handler,)
 app.add_exception_handler(Exception,generic_exception_handler,)

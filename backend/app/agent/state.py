@@ -30,5 +30,4 @@ class AgentState(TypedDict,total=False):
     
     # control
     retry_count:int
-    search_query:str
-    previous_query:str
+    

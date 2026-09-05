@@ -3,8 +3,8 @@ from langchain_community.vectorstores import Chroma
 from langchain_community.retrievers import BM25Retriever
 from app.core.app_state import state
 from app.core.logger import logger
+from app.services.persistence_service import (persistence_service)
 from app.services.graph_construction_service import (graph_construction_service)
-from langchain_community.vectorstores.utils import filter_complex_metadata
 from app.services.embedding_service import get_embedding_model
 
 class IndexingService:
@@ -47,12 +47,11 @@ class IndexingService:
                 
         logger.info(f'created {len(chunks)} chunks')  
         
-        for parent in parent_chunks:
-            try:
-                graph_construction_service.build_from_document(parent)
-                
-            except Exception as e:
-                logger.error(f'Graph construction failed: {e}')   
+        try:
+            graph_construction_service.build_from_documents(chunks)
+            
+        except Exception as e:
+            logger.error(f' Graph construction failed: {e}')    
                 
         if not chunks:
             logger.warning('No chunks were created.skipping indexing')
@@ -83,6 +82,9 @@ class IndexingService:
         state.bm25_retriever.k=3
         
         logger.info("BM25 retriever created successfully")
+        persistence_service.save_chunks()
+        persistence_service.save_graph()
+        logger.info('persistence state saved successfully')
         return chunks
     
 indexing_service=IndexingService()    

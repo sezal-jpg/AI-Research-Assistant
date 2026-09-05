@@ -1,0 +1,848 @@
+{
+  "nodes": [
+    {
+      "id": "The New Era of Prospecting: Mastering Social Selling",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Social Selling",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "Prospecting",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "Sezal",
+      "type": "Person",
+      "properties": {}
+    },
+    {
+      "id": "The Death of the Cold Call",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Cold Call",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "The Power of the Human Brand",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Human Brand",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "B2B",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Personal authority",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Corporate marketing",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Marketing",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "The 4 Pillars of Success",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Expert Brand",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Boolean queries",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "Relationships",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "milestones",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "conversations",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "advisory relationships",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "platform power",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "process",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "tools",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "social selling",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "alerts",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "workflow",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "LinkedIn Sales Navigator",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "account lists",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "lead recommendations",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "real-time updates",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Social Listening",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "hashtags",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "industry news",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "trigger events",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "CRM Integration",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "social interactions",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "engagement",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "signals",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "actions",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "CRM",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "seller",
+      "type": "Person",
+      "properties": {}
+    },
+    {
+      "id": "trusted advisor",
+      "type": "Person",
+      "properties": {}
+    },
+    {
+      "id": "problems",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "product questions",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "depth of relationship",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "micro-engagements",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "prospects",
+      "type": "Person",
+      "properties": {}
+    },
+    {
+      "id": "insights",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "templates",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "quick audits",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "pain points",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "engagement quality",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "introductions",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "vanity metrics",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Social selling",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "reputation",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "pipeline",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "30-day plan",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Example Domain",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Wikipedia",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Jump to content",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Main menu",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Navigation",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Main page",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Contents",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Current events",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Random article",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "About Wikipedia",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Contact us",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Contribute",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Help",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Learn to edit",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Community portal",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Recent changes",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Upload file",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "Special pages",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Search",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "Appearance",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Donate",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "Create account",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "Log in",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "Talk",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "English",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Read",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "View source",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "View history",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "Tools",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Actions",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "General",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "What links here",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Permanent link",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Page information",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Cite this page",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "Get shortened URL",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "Switch to legacy parser",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "Print/export",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Download as PDF",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "Printable version",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "In other projects",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Abstract Wikipedia",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Wikimedia Commons",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Wikimedia Foundation",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "MediaWiki",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "Meta-Wiki",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Wikimedia Outreach",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Wikispecies",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Wikibooks",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Wikidata",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Wikifunctions",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Wikimania",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Wikinews",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Wikiquote",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Wikisource",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Wikiversity",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Wikivoyage",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Wiktionary",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Wikidata item",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "encyclopedia",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "active editors",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "articles",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "featured article",
+      "type": "Concept",
+      "properties": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "The New Era of Prospecting: Mastering Social Selling",
+      "relationship": "is about",
+      "target": "Prospecting"
+    },
+    {
+      "source": "The New Era of Prospecting: Mastering Social Selling",
+      "relationship": "is about",
+      "target": "Social Selling"
+    },
+    {
+      "source": "Social Selling",
+      "relationship": "is a method for",
+      "target": "Prospecting"
+    },
+    {
+      "source": "The Death of the Cold Call",
+      "relationship": "is about",
+      "target": "Cold Call"
+    },
+    {
+      "source": "The Power of the Human Brand",
+      "relationship": "is about",
+      "target": "Human Brand"
+    },
+    {
+      "source": "Human Brand",
+      "relationship": "is relevant in",
+      "target": "B2B"
+    },
+    {
+      "source": "Personal authority",
+      "relationship": "is important in",
+      "target": "B2B"
+    },
+    {
+      "source": "Personal authority",
+      "relationship": "matters more than",
+      "target": "Corporate marketing"
+    },
+    {
+      "source": "Corporate marketing",
+      "relationship": "is a type of",
+      "target": "Marketing"
+    },
+    {
+      "source": "The 4 Pillars of Success",
+      "relationship": "includes",
+      "target": "Expert Brand"
+    },
+    {
+      "source": "Boolean queries",
+      "relationship": "are a tool used in",
+      "target": "The 4 Pillars of Success"
+    },
+    {
+      "source": "conversations",
+      "relationship": "convert into",
+      "target": "advisory relationships"
+    },
+    {
+      "source": "platform power",
+      "relationship": "blend with",
+      "target": "process"
+    },
+    {
+      "source": "tools",
+      "relationship": "make",
+      "target": "social selling"
+    },
+    {
+      "source": "alerts",
+      "relationship": "integrate with",
+      "target": "workflow"
+    },
+    {
+      "source": "LinkedIn Sales Navigator",
+      "relationship": "provides",
+      "target": "account lists"
+    },
+    {
+      "source": "LinkedIn Sales Navigator",
+      "relationship": "provides",
+      "target": "lead recommendations"
+    },
+    {
+      "source": "LinkedIn Sales Navigator",
+      "relationship": "provides",
+      "target": "real-time updates"
+    },
+    {
+      "source": "Social Listening",
+      "relationship": "monitors",
+      "target": "hashtags"
+    },
+    {
+      "source": "Social Listening",
+      "relationship": "monitors",
+      "target": "industry news"
+    },
+    {
+      "source": "Social Listening",
+      "relationship": "monitors",
+      "target": "trigger events"
+    },
+    {
+      "source": "CRM",
+      "relationship": "captures",
+      "target": "social interactions"
+    },
+    {
+      "source": "CRM",
+      "relationship": "scores",
+      "target": "engagement"
+    },
+    {
+      "source": "signals",
+      "relationship": "convert into",
+      "target": "actions"
+    },
+    {
+      "source": "actions",
+      "relationship": "are inside",
+      "target": "CRM"
+    },
+    {
+      "source": "seller",
+      "relationship": "transforms into",
+      "target": "trusted advisor"
+    },
+    {
+      "source": "seller",
+      "relationship": "answers",
+      "target": "problems"
+    },
+    {
+      "source": "seller",
+      "relationship": "does not answer",
+      "target": "product questions"
+    },
+    {
+      "source": "seller",
+      "relationship": "prioritizes",
+      "target": "depth of relationship"
+    },
+    {
+      "source": "seller",
+      "relationship": "prioritizes",
+      "target": "micro-engagements"
+    },
+    {
+      "source": "insights",
+      "relationship": "solve",
+      "target": "pain points"
+    },
+    {
+      "source": "templates",
+      "relationship": "solve",
+      "target": "pain points"
+    },
+    {
+      "source": "quick audits",
+      "relationship": "solve",
+      "target": "pain points"
+    },
+    {
+      "source": "introductions",
+      "relationship": "are a component of",
+      "target": "engagement quality"
+    },
+    {
+      "source": "engagement quality",
+      "relationship": "is tracked over",
+      "target": "vanity metrics"
+    },
+    {
+      "source": "Social selling",
+      "relationship": "builds",
+      "target": "reputation"
+    },
+    {
+      "source": "Social selling",
+      "relationship": "fills",
+      "target": "pipeline"
+    }
+  ],
+  "processed_chunks": [
+    "The Path Forward\nTransform from seller to trusted advisor: answer problems, not product questions. Prioritize depth of relationship and consistent micro-engagements.\n1\nShow Up\nBe present where prospects research — post, comment, and share useful ideas weekly.\n2\nAdd Value\nOffer insights, templates, or quick audits that solve immediate pain points.\n3\nMeasure What Matters\nTrack engagement quality (conversations, introductions) over vanity metrics.\n4\nRepeat",
+    "From today's featured article",
+    "Wikipedia's sister projects\n\nWikipedia is written by volunteer editors and hosted by the Wikimedia Foundation, a non-profit organization that also hosts a range of other volunteer projects:\n\n\n\n\nCommonsFree media repository\n\n\n\nMediaWikiWiki software development\n\n\n\nMeta-WikiWikimedia project coordination\n\n\n\nWikibooksFree textbooks and manuals\n\n\n\nWikidataFree knowledge base\n\n\n\nWikifunctionsCatalog of computer functions\n\n\n\nWikiquoteCollection of quotations\n\n\n\nWikisourceFree-content library",
+    "Privacy policy\nAbout Wikipedia\nDisclaimers\nContact Wikipedia\nLegal & safety contacts\nCode of Conduct\nDevelopers\nStatistics\nCookie statement\nMobile view\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSearch\n\n\n\n\n\n\n\n\n\n\n\n\n\nSearch\n\n\n\n\n\nMain Page\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n349 languages\n\n\nAdd topic",
+    "This Wikipedia is written in English. Many other Wikipedias are available; some of the largest are listed below.\n\n\n\n\n1,000,000+ articles\n\n\n\nالعربية\nDeutsch\nEspañol\nفارسی‎\nFrançais\nItaliano\nNederlands\n日本語\nPolski\nPortuguês\nРусский\nSvenska\nУкраїнська\nTiếng Việt\n中文\n\n\n\n\n\n250,000+ articles",
+    "Edit links\n\n\n\n\n\n\n\n\n\n This page was last edited on 12 June 2026, at 07:37 (UTC).\nPage was rendered with Parsoid.\nText is available under the Creative Commons Attribution-ShareAlike 4.0 License;\nadditional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.",
+    "WikisourceFree-content library\n\n\n\nWikispeciesDirectory of species\n\n\n\nWikiversityFree learning tools\n\n\n\nWikivoyageFree travel guide\n\n\n\nWiktionaryDictionary and thesaurus\n\n\n\nWikipedia languages\n\nThis Wikipedia is written in English. Many other Wikipedias are available; some of the largest are listed below.\n\n\n\n\n1,000,000+ articles",
+    "The season was released on the streaming platform Paramount+ from February 23 to April 6, 2025. (Full article...)",
+    "/ inuktitut日本語PatoisLa .lojban.JawaქართულიQaraqalpaqshaTaqbaylitKarai-karaiJjuАдыгэбзэKabɩyɛTyapKongoKumoringGĩkũyũҚазақшаKalaallisutភាសាខ្មែរಕನ್ನಡYerwa Kanuri한국어Перем",
+    "Build Relationships\nFollow up with personalized value, celebrate milestones, and convert conversations into advisory relationships.",
+    "Ongoing: \nIran war (Lebanon war)\nRusso-Ukrainian war\ntimeline\nRecent deaths: \nDavid McDermott\nAntonino Fogliani\nRukidi IV of Tooro\nWendell Berry\nAda Yonath\nJaroslav Olejár\nMore current events\nNominate an article\n\nOn this day\n\nSeptember 5",
+    "The series stars Helen Mirren (pictured), Harrison Ford, Brandon Sklenar, Julia Schlaepfer, Jerome Flynn, Darren Mann, Isabel May, Michelle Randolph, and Timothy Dalton. Sheridan wrote all eight of the second season's episodes. The series revolves around a generation of the Dutton family, and is set in the U.S. state of Montana between 1923 and 1924. The Duttons face the struggles of winter and attempt to protect their ranch against developers. The season was released on the streaming platform",
+    "Tools of the Trade\nBlend platform power with process. The right tools make social selling scalable and measurable.\nTip: Integrate alerts with your workflow to act within 24 hours of a trigger event.\nLinkedIn Sales Navigator\nPrecision prospecting: account lists, lead recommendations, and real-time updates.\nSocial Listening\nMonitor hashtags, industry news, and trigger events to engage at the right moment.\nCRM Integration",
+    "Wikipedia, the free encyclopedia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJump to content\n\n\n\n\n\n\n\nMain menu\n\n\n\n\n\nMain menu\nmove to sidebar\nhide\n\n\n\n\t\tNavigation\n\t\n\n\nMain pageContentsCurrent eventsRandom articleAbout WikipediaContact us\n\n\n\n\n\n\t\tContribute\n\t\n\n\nHelpLearn to editCommunity portalRecent changesUpload fileSpecial pages\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSearch\n\n\n\n\n\n\n\n\n\n\n\nSearch\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAppearance\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDonate\n\nCreate account\n\nLog in\n\n\n\n\n\n\n\n\nPersonal tools\n\n\n\n\n\n\nDonate\n\n\nCreate account",
+    "2005 – Mandala Airlines Flight 091 crashed shortly after take-off in Indonesia due to pilot error, killing 100 out of the 117 people on board along with 49 more on the ground.\nNap Lajoie  (b. 1874)Carmen Petra Basacopol (b. 1926)Freddie Mercury  (b. 1946)Adam Exner  (d. 2023)\nMore anniversaries: \nSeptember 4\nSeptember 5\nSeptember 6",
+    "faka-TongaToki ponaTok PisinTürkçeSeediqXitsongaТатарча / tatarçaChiTumbukaTwiReo tahitiТыва дылУдмуртئۇيغۇرچە / UyghurcheУкраїнськаاردوOʻzbekcha /",
+    "The Power of the Human Brand\nIn B2B the relationship is person-to-person. Individual credibility — expertise, consistency, and authenticity — often matters more than corporate marketing.\nPersonal authority creates trust faster than logo recognition.\nProspects are 5x more likely to engage through a mutual connection.\nConsistent content turns passive visitors into warm leads.\nAction: Audit your profile — headline, photo, and value-focused summary.",
+    "King Harald V of Norway dies at the age of 89 and is succeeded by Haakon VIII.",
+    "... that Drew Talbert's more than two decades as a server inspired him to create his TikTok sitcom series Bistro Huddy?\n... that a painting commissioned by Korean royalty is believed to have been looted by a Japanese general?\n... that journalist McKenzie Porter brought a photographer to a secret luncheon, prompting attendees to flee through a back exit?",
+    "4\nRepeat\nSocial selling compounds: consistent effort builds reputation and fills the pipeline.\nReady to start? Pick one pillar this week and create a 30-day plan around it.",
+    "CRM Integration\nCapture social interactions, score engagement, and convert signals into actions inside your CRM.",
+    "faka-TongaToki ponaTok PisinTürkçeSeediqXitsongaТатарча / tatarçaChiTumbukaTwiReo tahitiТыва дылУдмуртئۇيغۇرچە / UyghurcheУкраїнськаاردوOʻzbekcha / ўзбекчаTshivendaVènetoVepsän kel’Tiếng ViệtWest-VlamsVolapükWalonWinarayWolof吴语ХальмгIsiXhosaმარგალურიייִדישYorùbáVahcuenghZeêuwsⵜⴰⵎⴰⵣⵉⵖⵜ ⵜⴰⵏⴰⵡⴰⵢⵜ文言閩南語 / Bân-lâm-gí粵語中文IsiZulu",
+    "... that Franz Schubert wrote Variations on \"Trockne Blumen\" for flute and piano while suffering from a relapse of syphilis?\n... that Swiss artist Martin Disler, a leading representative of the Neue Wilde movement, began painting while working as a nursing assistant at a psychiatric clinic?\n... that the mascot of a Mexican pharmacy chain evolved from often being tackled in the streets to a plush toy gifted to musicians during concerts?",
+    "250,000+ articles\n\n\n\nBahasa Indonesia\nBahasa Melayu\nBân-lâm-gú\nБългарски\nCatalà\nČeština\nDansk\nEesti\nΕλληνικά\nEsperanto\nEuskara\nעברית\nՀայերեն\n한국어\nMagyar\nNorsk bokmål\nRomână\nSimple English\nSlovenčina\nSrpski\nSrpskohrvatski\nSuomi\nTürkçe\nOʻzbekcha\n\n\n\n\n\n50,000+ articles\n\n\n\nAsturianu\nAzərbaycanca\nবাংলা\nBosanski\nکوردی\nFrysk\nGaeilge\nGalego\nHrvatski\nქართული\nKurdî\nLatviešu\nLietuvių\nമലയാളം\nМакедонски\nမြန်မာဘာသာ\nNorsk nynorsk\nਪੰਜਾਬੀ\nShqip\nSlovenščina\nไทย\nతెలుగు\nاردو",
+    "Content portals – A unique way to navigate the encyclopedia.",
+    "The second and final season of 1923, an American neo-Western television series, was announced in February 2023. As a limited-run series, 1923 was not originally intended to extend beyond its initial eight-episode order. The second season was developed after Taylor Sheridan, its creator and showrunner, decided that more episodes were needed to tell the story. A part of the Yellowstone franchise, 1923 is a sequel to 1883 and a prequel to Yellowstone. The series stars Helen Mirren (pictured),",
+    "Chantal Jaquet... that French philosopher Chantal Jaquet (pictured) coined the term \"transclass\" for people who move between social classes?\n... that Niko Resources pleaded guilty to bribery in Canada over the Chhatak Gas Field explosion, but the Bangladeshi officials whom it bribed were acquitted at home?\n... that NFL player Dan Garza was also a Navy SEAL and a dentist?",
+    "Personal tools\n\n\n\n\n\n\nDonate\n\n\nCreate account\n\n\nLog in\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMain Page\n\n\n\n\n\n\n\n\n\n\nMain Page\n\nTalk\n\n\n\n\n\n\nEnglish\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRead\n\nView source\n\nView history\n\n\n\n\n\n\n\n\n\nTools\n\n\n\n\n\nTools\nmove to sidebar\nhide\n\n\n\n\t\tActions\n\t\n\n\n\nRead\n\n\nView source\n\n\nView history\n\n\n\n\n\n\n\t\tGeneral\n\t\n\n\nWhat links hereRelated changesUpload filePermanent linkPage informationCite this pageGet shortened URLSwitch to legacy parser\n\n\n\n\n\n\t\tPrint/export\n\t\n\n\nDownload as PDFPrintable version",
+    "THANK YOU",
+    "ꯂꯣꯟဘာသာမန်MooreमराठीКырык марыBahasa MelayuMaltiMirandésမြန်မာဘာသာЭрзяньمازِرونیNāhuatlNapulitanoNedersaksiesPlattdüütschनेपालीनेपाल भाषाLi NihaNederlandsNorsk nynorskNorsk bokmålNovialߒߞߏIsiNdebele seSewulaNouormandSesotho sa LeboaNupeDiné bizaadChi-ChewaOccitanLivvinkarjalaOromooଓଡ଼ିଆИронਪੰਜਾਬੀPangasinanKapampanganPapiamentuPicardNaijáDeitschPälzischपालिPolskiPiemontèisپنجابیΠοντιακάNawatپښتوPortuguêsPinayuananRuna Simiရခိုင်RumantschRomani",
+    "Freddie Mercury (born Farrokh Bulsara; 5 September 1946 – 24 November 1991) was a British singer and songwriter who achieved global fame as the lead vocalist and pianist of the rock band Queen. Regarded as one of the greatest singers in the history of rock music, he was known for his flamboyant stage persona and four-octave vocal range. Mercury defied the conventions of a rock frontman with his theatrical style, influencing the artistic direction of Queen. Born in 1946 in Zanzibar to",
+    "Download as PDFPrintable version\n\n\n\n\n\n\t\tIn other projects\n\t\n\n\nAbstract WikipediaWikimedia CommonsWikimedia FoundationMediaWikiMeta-WikiWikimedia OutreachMultilingual WikisourceWikispeciesWikibooksWikidataWikifunctionsWikimaniaWikinewsWikiquoteWikisourceWikiversityWikivoyageWiktionaryWikidata item\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAppearance\nmove to sidebar\nhide\n\n\n\n\n\n\n\n\nFrom Wikipedia, the free encyclopedia",
+    "Other areas of Wikipedia\nCommunity portal – The central hub for editors, with resources, links, tasks, and announcements.\nVillage pump – Forum for discussions about Wikipedia itself, including policies and technical issues.\nSite news – Sources of news about Wikipedia and the broader Wikimedia movement.\nTeahouse – Ask basic questions about using or editing Wikipedia.\nHelp desk – Ask questions about using or editing Wikipedia.\nReference desk – Ask research questions about encyclopedic topics.",
+    "Simiရခိုင်RumantschRomani čhibIkirundiRomânăArmãneashtiTarandíneРускиРусскийРусиньскыйIkinyarwandaसंस्कृतम्Саха тылаᱥᱟᱱᱛᱟᱲᱤSarduSicilianuScotsسنڌيDavvisámegiellaSängöSrpskohrvatski / српскохрватскиTaclḥitတႆးසිංහලSimple EnglishSlovenčinaسرائیکیSlovenščinaGagana SamoaAnarâškielâChiShonaSoomaaligaShqipСрпски / srpskiSranantongoSiSwatiSesothoSeelterskSundaSvenskaKiswahiliꠍꠤꠟꠐꠤŚlůnskiSakizayaதமிழ்Tayalತುಳುᥖᥭᥰ ᥖᥬᥲ ᥑᥨᥒᥰతెలుగుTetunТоҷикӣไทยትግርኛትግሬTürkmençeTagalogTolışiSetswanaLea faka-TongaToki ponaTok",
+    "Recently featured: \nHeard Island and McDonald Islands\nHuhu beetle\nLaguna Miscanti\n\nArchive\nBy email\nMore featured articles\nAbout\n\nDid you know ...",
+    "The New Era of Prospecting: Mastering Social Selling\nMove beyond interruptions. Learn how to attract, engage, and convert modern buyers by using personal authority, targeted outreach, and consistent value-driven engagement.\nName-Sezal\nUID- 24BAI70653\nSection-24AML-3B\n.",
+    "gwiyannenGàidhligGalegoگیلکیAvañe'ẽगोंयची कोंकणी / Gõychi KonknniBahasa Hulontalo𐌲𐌿𐍄𐌹𐍃𐌺Ghanaian PidginગુજરાતીWayuunaikiFarefareGungbeGaelgHausa客家語 / Hak-kâ-ngîHawaiʻiעבריתहिन्दीFiji HindiHrvatskiHornjoserbsceKreyòl ayisyenMagyarՀայերենԱրեւմտահայերէնInterlinguaJaku IbanBahasa IndonesiaInterlingueIgboIgalaIñupiatunIlokanoГӀалгӀайIdoÍslenskaMedžuslovjanskyItalianoᐃᓄᒃᑎᑐᑦ / inuktitut日本語PatoisLa",
+    "The 4 Pillars of Success\nBuild an Expert Brand\nOptimize your profile, showcase case studies, and publish short insights that demonstrate domain knowledge.\nFind the Right People\nUse advanced search, boolean queries, and saved lists to identify true decision-makers and influencers.\nEngage with Insights\nShare timely ideas, commentary on industry news, and practical tips — add context, not a sales pitch.\nBuild Relationships",
+    "Helen Mirren",
+    "Archive\nStart a new article\nNominate an article\n\n\n\nIn the news",
+    "From Wikipedia, the free encyclopedia\n\n\n\n\n\nWelcome to Wikipedia,\nthe free encyclopedia that anyone can edit.\n258,083 active editors 7,235,776 articles in English\n\n\n\n\n\nFrom today's featured article",
+    "Example DomainExample DomainThis domain is for use in documentation examples without needing permission. Avoid use in operations.Learn more",
+    "Queen\", \"Bohemian Rhapsody\", \"Somebody to Love\", \"We Are the Champions\", \"Don't Stop Me Now\" and \"Crazy Little Thing Called Love\". His charismatic stage performances often saw him interact with the audience, as displayed at the 1985 Live Aid concert. This photograph shows Mercury performing in New Haven, Connecticut, in 1977.",
+    "direction of Queen. Born in 1946 in Zanzibar to Parsi-Indian parents, Mercury attended British boarding schools in India from the age of eight and returned to Zanzibar after secondary school. In 1964, his family fled the Zanzibar Revolution, moving to Middlesex, England. Having previously studied and written music, he formed Queen in 1970 with guitarist Brian May and drummer Roger Taylor. Mercury wrote numerous hits for Queen, including \"Killer Queen\", \"Bohemian Rhapsody\", \"Somebody to Love\",",
+    ".lojban.JawaქართულიQaraqalpaqshaTaqbaylitKarai-karaiJjuАдыгэбзэKabɩyɛTyapKongoKumoringGĩkũyũҚазақшаKalaallisutភាសាខ្មែរಕನ್ನಡYerwa Kanuri한국어Перем комиКъарачай-малкъарکٲشُرRipoarischKurdîKʋsaalКомиKernowekКыргызчаLatinaLadinoLëtzebuergeschЛаккуЛезгиLingua Franca NovaLugandaLimburgsLigureLadinLombardLingálaລາວLietuviųLatgaļuLatviešuMadhurâमगहीमैथिलीBasa BanyumasanМокшеньMalagasyОлык марийMāoriMinangkabauМакедонскиമലയാളംМонголꯃꯤꯇꯩ ꯂꯣꯟဘာသာမန်MooreमराठीКырык марыBahasa",
+    "АԥсшәаAcèhАдыгабзэAfrikaansAlemannischАлтай тилአማርኛPangcahAragonésÆngliscOboloअंगिकाالعربيةܐܪܡܝܐالدارجةمصرىঅসমীয়াAsturianuAtikamekwАварKotavaअवधीAymar aruAzərbaycancaتۆرکجهБашҡортсаBasa BaliBoarischŽemaitėškaBatak TobaBikol CentralBajau SamaБеларуская (тарашкевіца)БеларускаяBetawiБългарскиभोजपुरीBislamaBanjarပအိုဝ်ႏဘာႏသာႏBamanankanবাংলাབོད་ཡིགBòo pìkkàবিষ্ণুপ্রিয়া মণিপুরীBrezhonegBosanskiBatak MandailingBasa UgiБуряадCatalàChavacano de Zamboanga閩東語 /",
+    "Casablanca Fair poster1367 – Swa Saw Ke became the ruler of the Kingdom of Ava in Upper Myanmar.\n1915 – The Casablanca Fair (poster pictured) opened in the French protectorate in Morocco.\n1943 – World War II: American and Australian airborne forces landed at Nadzab as part of the New Guinea campaign against Japan.\n1977 – NASA launched the space probe Voyager 1, currently the farthest spacecraft from Earth, from Launch Complex 41 at Cape Canaveral Air Force Station.",
+    "UgiБуряадCatalàChavacano de Zamboanga閩東語 / Mìng-dĕ̤ng-ngṳ̄НохчийнCebuanoChamoruᏣᎳᎩTsetsêhestâheseکوردیCorsuNēhiyawēwin / ᓀᐦᐃᔭᐍᐏᐣQırımtatarcaČeštinaKaszëbscziСловѣньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟЧӑвашлаCymraegDanskDagbanliDeutschDagaareThuɔŋjäŋZazakiDolnoserbskiKadazandusunडोटेलीދިވެހިބަސްཇོང་ཁEʋegbeΕλληνικάEmiliàn e rumagnòlEsperantoEspañolEestiEuskaraEstremeñuفارسیMfantseFulfuldeSuomiVõroNa Vosa VakavitiFøroysktFɔ̀ngbèFrançaisArpetanNordfriiskFurlanFryskGaeilgeGagauz贛語Kriyòl",
+    "Archive\nBy email\nList of days of the year\nAbout\n\n\n\n\n\nToday's featured picture",
+    "On this day\n\nSeptember 5",
+    "Retrieved from \"https://en.wikipedia.org/w/index.php?title=Main_Page&oldid=1358980925\"\n\n\n\n\n349 languages",
+    "The Death of the Cold Call\n1\nWhy cold calls fail\n90% of buyers ignore unsolicited calls — attention is scarce and distrust is high.\n2\nSocial sellers win\n78% of reps using social platforms outperform peers — social proof and context matter.\n3\nBuyers research first\n57% of the buying journey happens before prospects contact sales — meet them earlier online.\nShift effort from interruption to discovery: be present where buyers already research.",
+    "Gloria Steinem in 1977\nAmerican journalist and feminist activist Gloria Steinem (pictured) dies at the age of 92.\nDuane Davis is convicted of orchestrating the 1996 murder of American rapper Tupac Shakur.\nIn a referendum, Icelanders reject European Union membership negotiations.\nThe Nancy Grace Roman Space Telescope is launched towards its Earth–Sun L2 operating orbit.\nAn attempted coup against the military junta in Niger fails.",
+    "Photograph credit: Carl Lender; restored by Lošmi",
+    "Recently featured: \nEgyptian goose\nThe Great Day of His Wrath\nAtmosphere of Pluto\n\n\nArchive\nMore featured pictures"
+  ]
+}
