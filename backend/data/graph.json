@@ -599,6 +599,1906 @@
       "id": "featured article",
       "type": "Concept",
       "properties": {}
+    },
+    {
+      "id": "Shadi.com",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Google",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Google Account",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "COVID-19",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "online matchmaking",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Religion",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Islam",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Sikh",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Nonreligious",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Bhori",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Buddhisim",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - Anglican",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - Baptist",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - Born Again",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - Catholic",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - Catholic Kananaya",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - Catholic Latin",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - Catholic Malankara",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - Catholic Roman",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - Catholic Syrian",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - CMS",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - CSI",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - Evangelical",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - Jacobite",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - Malayalam",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - Marthomite",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - Nadar",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - Orthodox",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - Pentacost",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - Protestant",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - Thai",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christianity - Tibetian",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Dawoodi Bhora",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Ganiga",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - 96K Kokanastha",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Adi Dravida",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Agamudayaar",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Agarwal",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Arora",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Arya Vysya",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Balija Naidu",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Bania",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Banjara",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Bengali",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Bhandari",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Billava",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Anavil",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Bengali",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Davadnya",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Deshastha",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Garhwali",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Gaur",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Gowd Saraswat",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Gujarati",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Havyaka",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Kanada Madhva",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Kanyakubja",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Kokanastha",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Kumoani",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Maharashtrian",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Maithil",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Nagar",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Pareek",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Punjabi",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Saryuparin",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Smartha",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Hindu - Brahmin Telugu",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Bramhan Bhumihar",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Bunt",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Byahut Kalwa",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Chandraseniya(CKP)",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Chandraseniya (CKP)",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Chettiar",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Coorgi",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Daraji",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Devadiga",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Devanga",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Dheevara",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Dhobi",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Digambar",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Ezhava",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Ezhuthassan",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Gold Smith",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Goswami",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Gounder",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Gowda",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Gujarati",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Gupta",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Hindu Nair Veluthedath",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Iyengar",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Iyer",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Jat",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Jatav",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Kamboj",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Kamma",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Kapu",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Kashmiri Pandit",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Kayastha",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Kerala Malaylee Namboodiri",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Khandelwal",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Malaylee Namboodiri",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Khatri",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Kongu Vellala Gounder",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Koshti",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Kshatriya",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Kumaoni",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Kumbara",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Kurmi",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Kuruhina Shetty",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Kushwaha",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Lingayat",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Lohana",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Maharashtrian",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Maheshwari",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Mallah Hindu",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Maratha",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Maruthuvar",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Marwari",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Matang",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Mathur",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Mathurvaishya",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Menon",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Mudaliar",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Mudaliar Arcot",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Mudaliar Saiva",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Mudaliar Senguntha",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Mukulathur",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Mutharaiyar",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Nadar",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Nai",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Naidu",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Nair",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Nambiar",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Nayaka",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Padmashali",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Pasi",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Patel",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Patel Desai",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Patel Kadva",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Patel Leva",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Pillai",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Prajapati",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Punjabi",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Raghuwanshi",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Rajput",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Reddy",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Saini",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Saiva Pillai",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Scheduled Caste",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Sindhi",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Sonar",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Sowrashtra",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Sozhiya Vellalar",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Tamil",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Tamil Yadava",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Telgu",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Teli",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Thevar",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Thiyya",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Udayar",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Vaishnav",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Vellalar",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Yadava",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Bangla",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Bania",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Bhatia",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Ismaili",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Jain",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Jain Digambar",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Shia",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Sunni",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Vania",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Vanjari",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Vanniyakullak Shatriya",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Vanniyar",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Varier",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Veerashaiva",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Vellama",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Vilakkithala Nair",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Vishwakarma",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Viswabrahmin",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Vokaliga",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Vysya",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Clean Shaven",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Gursikh",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Jain Swetamber",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Kesadhari",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Ramqharia",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Spiritualism",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Zoroastrain Parsi",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Associates",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Australia",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Bachelors",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Canada",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Country",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Education",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "High school",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "India",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "JD",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Masters",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "MBBS",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "MD",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "New Zealand",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Pakistan",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "PhD",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Technical school",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "UAE",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "UK",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "USA",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Afghanistan",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Armenia",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Austria",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Azerbaijan",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Bahrain",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Bangladesh",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Belgium",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Bhutan",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Botswana",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Brazil",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Brunei Darussalam",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Cambodia",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Cayman Islands",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "China",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Cuba",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Cyprus",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Czech Republic",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Denmark",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Ecuador",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Fiji",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Finland",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "France",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Georgia",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Germany",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Greece",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Greenland",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Hong Kong",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Hungary",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Indonesia",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Iran",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Iraq",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Ireland",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Italy",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Jamaica",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Japan",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Jordan",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Kazakhstan",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Korea, North",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Korea, South",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Kuwait",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Kyrgyzstan",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Laos",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Lebanon",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Libyan Arab Jamahiriya",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Luxembourg",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Malawi",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Malaysia",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Maldives",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Malta",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Mauritius",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Mexico",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Mongolia",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Myanmar",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Nepal",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Netherlands",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Nicaragua",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Norway",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Oman",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Palestinian Territory, Occupied",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Panama",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Peru",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Philippines",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Poland",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Portugal",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Qatar",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Saudi Arabia",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Singapore",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Slovakia",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "South Africa",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Spain",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Sri Lanka",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Sweden",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Switzerland",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Syria",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Taiwan",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Tajikistan",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Thailand",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Tonga",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Trinidad and Tobago",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Tunisia",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Turkey",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Turkmenistan",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Uganda",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Uruguay",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Uzbekistan",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Vietnam",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Yemen",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Zambia",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "SHADI®",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Indian",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Pakistani",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "matchmaking",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Muslim",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Christian",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Culture",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Values",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Dreams",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "doctors",
+      "type": "Person",
+      "properties": {}
+    },
+    {
+      "id": "engineers",
+      "type": "Person",
+      "properties": {}
+    },
+    {
+      "id": "entrepreneurs",
+      "type": "Person",
+      "properties": {}
+    },
+    {
+      "id": "IT specialists",
+      "type": "Person",
+      "properties": {}
+    },
+    {
+      "id": "finance experts",
+      "type": "Person",
+      "properties": {}
+    },
+    {
+      "id": "smart matchmaking system",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "Age",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Background",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Lifestyle",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Preferences",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Budhist",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Agarwal",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Arora",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Brahmin",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Swetambar",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "California",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "New York",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Texas",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "New Jersey",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Virginia",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Illinois",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Florida",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Pennsylvania",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Michigan",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "United States",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "United Kingdom",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "Netherland",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "PERSONALIZED MATCHMAKING FORBUSY PROFESSIONALS",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "PRIME ASSIST",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "PRIME PLUS",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "whatsapp service",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "Introduction service",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "customized membership",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "discreet personalized approach",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "RelationshipAdvise",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "relationships",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "marriage",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "dating",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "love",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "dating app",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "website",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "Best Matrimony Santa Ana",
+      "type": "Organization",
+      "properties": {}
+    },
+    {
+      "id": "Santa Ana",
+      "type": "Location",
+      "properties": {}
+    },
+    {
+      "id": "matchmaking site",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "matrimonial profile",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "phone",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "email verification",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "technology",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "fraud detention",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "SSL encryption",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "web service",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "Dating 101",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Dating 102",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "ego",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Waiters",
+      "type": "Person",
+      "properties": {}
+    },
+    {
+      "id": "valet",
+      "type": "Person",
+      "properties": {}
+    },
+    {
+      "id": "taxi drivers",
+      "type": "Person",
+      "properties": {}
+    },
+    {
+      "id": "cooks",
+      "type": "Person",
+      "properties": {}
+    },
+    {
+      "id": "Dating 103",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "First date rules",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Dating 104",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "Dating 105",
+      "type": "Project",
+      "properties": {}
+    },
+    {
+      "id": "handshake",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "hug",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "Respect Personal Space",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Build Trust",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Prioritize Consent",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Read Signals",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "Consider Context",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "Communicate Openly",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "Respect Boundaries",
+      "type": "Concept",
+      "properties": {}
     }
   ],
   "edges": [
@@ -786,63 +2686,692 @@
       "source": "Social selling",
       "relationship": "fills",
       "target": "pipeline"
+    },
+    {
+      "source": "Shadi.com",
+      "relationship": "supports sign-in via",
+      "target": "Google"
+    },
+    {
+      "source": "Google Account",
+      "relationship": "is used to sign in to",
+      "target": "Shadi.com"
+    },
+    {
+      "source": "COVID-19",
+      "relationship": "affects",
+      "target": "online matchmaking"
+    },
+    {
+      "source": "Christianity",
+      "relationship": "is a type of",
+      "target": "Religion"
+    },
+    {
+      "source": "Hindu",
+      "relationship": "is a type of",
+      "target": "Religion"
+    },
+    {
+      "source": "Islam",
+      "relationship": "is a type of",
+      "target": "Religion"
+    },
+    {
+      "source": "Sikh",
+      "relationship": "is a type of",
+      "target": "Religion"
+    },
+    {
+      "source": "Nonreligious",
+      "relationship": "is a type of",
+      "target": "Religion"
+    },
+    {
+      "source": "Hindu - Brahmin Anavil",
+      "relationship": "is a type of",
+      "target": "Hindu - Brahmin"
+    },
+    {
+      "source": "Hindu - Brahmin Bengali",
+      "relationship": "is a type of",
+      "target": "Hindu - Brahmin"
+    },
+    {
+      "source": "Hindu - Brahmin Davadnya",
+      "relationship": "is a type of",
+      "target": "Hindu - Brahmin"
+    },
+    {
+      "source": "Hindu - Brahmin Deshastha",
+      "relationship": "is a type of",
+      "target": "Hindu - Brahmin"
+    },
+    {
+      "source": "Hindu - Brahmin Garhwali",
+      "relationship": "is a type of",
+      "target": "Hindu - Brahmin"
+    },
+    {
+      "source": "Hindu - Brahmin Gaur",
+      "relationship": "is a type of",
+      "target": "Hindu - Brahmin"
+    },
+    {
+      "source": "Vellalar",
+      "relationship": "is_a",
+      "target": "Hindu"
+    },
+    {
+      "source": "Vellalar",
+      "relationship": "is_a",
+      "target": "Tamil"
+    },
+    {
+      "source": "Tamil",
+      "relationship": "is_a",
+      "target": "Hindu"
+    },
+    {
+      "source": "Tamil",
+      "relationship": "is_a",
+      "target": "Tamil"
+    },
+    {
+      "source": "Yadava",
+      "relationship": "is_a",
+      "target": "Hindu"
+    },
+    {
+      "source": "Yadava",
+      "relationship": "is_a",
+      "target": "Telgu"
+    },
+    {
+      "source": "Teli",
+      "relationship": "is_a",
+      "target": "Hindu"
+    },
+    {
+      "source": "Teli",
+      "relationship": "is_a",
+      "target": "Teli"
+    },
+    {
+      "source": "Thevar",
+      "relationship": "is_a",
+      "target": "Hindu"
+    },
+    {
+      "source": "Thevar",
+      "relationship": "is_a",
+      "target": "Thevar"
+    },
+    {
+      "source": "Thiyya",
+      "relationship": "is_a",
+      "target": "Hindu"
+    },
+    {
+      "source": "Thiyya",
+      "relationship": "is_a",
+      "target": "Thiyya"
+    },
+    {
+      "source": "Udayar",
+      "relationship": "is_a",
+      "target": "Hindu"
+    },
+    {
+      "source": "Udayar",
+      "relationship": "is_a",
+      "target": "Udayar"
+    },
+    {
+      "source": "Vaishnav",
+      "relationship": "is_a",
+      "target": "Hindu"
+    },
+    {
+      "source": "Vaishnav",
+      "relationship": "is_a",
+      "target": "Vaishnav"
+    },
+    {
+      "source": "Vania",
+      "relationship": "is_a",
+      "target": "Vanjari"
+    },
+    {
+      "source": "Vanniyakullak Shatriya",
+      "relationship": "is_a",
+      "target": "Vanniyar"
+    },
+    {
+      "source": "Varier",
+      "relationship": "is_a",
+      "target": "Veerashaiva"
+    },
+    {
+      "source": "Vellama",
+      "relationship": "is_a",
+      "target": "Vilakkithala Nair"
+    },
+    {
+      "source": "Vishwakarma",
+      "relationship": "is_a",
+      "target": "Viswabrahmin"
+    },
+    {
+      "source": "Vokaliga",
+      "relationship": "is_a",
+      "target": "Vysya"
+    },
+    {
+      "source": "Islam",
+      "relationship": "is_a",
+      "target": "Bangla"
+    },
+    {
+      "source": "Islam",
+      "relationship": "is_a",
+      "target": "Shia"
+    },
+    {
+      "source": "Islam",
+      "relationship": "is_a",
+      "target": "Sunni"
+    },
+    {
+      "source": "Jain",
+      "relationship": "is_a",
+      "target": "Jain Digambar"
+    },
+    {
+      "source": "Jain",
+      "relationship": "is_a",
+      "target": "Jain"
+    },
+    {
+      "source": "Sikh",
+      "relationship": "is_a",
+      "target": "Clean Shaven"
+    },
+    {
+      "source": "Sikh",
+      "relationship": "is_a",
+      "target": "Gursikh"
+    },
+    {
+      "source": "Sikh",
+      "relationship": "is_a",
+      "target": "Jat"
+    },
+    {
+      "source": "Sikh",
+      "relationship": "is_a",
+      "target": "Kesadhari"
+    },
+    {
+      "source": "Sikh",
+      "relationship": "is_a",
+      "target": "Khatri"
+    },
+    {
+      "source": "Sikh",
+      "relationship": "is_a",
+      "target": "Ramqharia"
+    },
+    {
+      "source": "High school",
+      "relationship": "is_a",
+      "target": "Education"
+    },
+    {
+      "source": "Bachelors",
+      "relationship": "is_a",
+      "target": "Education"
+    },
+    {
+      "source": "Masters",
+      "relationship": "is_a",
+      "target": "Education"
+    },
+    {
+      "source": "Associates",
+      "relationship": "is_a",
+      "target": "Education"
+    },
+    {
+      "source": "PhD",
+      "relationship": "is_a",
+      "target": "Education"
+    },
+    {
+      "source": "Technical school",
+      "relationship": "is_a",
+      "target": "Education"
+    },
+    {
+      "source": "MD",
+      "relationship": "is_a",
+      "target": "Education"
+    },
+    {
+      "source": "MBBS",
+      "relationship": "is_a",
+      "target": "Education"
+    },
+    {
+      "source": "JD",
+      "relationship": "is_a",
+      "target": "Education"
+    },
+    {
+      "source": "USA",
+      "relationship": "is_a",
+      "target": "Country"
+    },
+    {
+      "source": "UK",
+      "relationship": "is_a",
+      "target": "Country"
+    },
+    {
+      "source": "Canada",
+      "relationship": "is_a",
+      "target": "Country"
+    },
+    {
+      "source": "India",
+      "relationship": "is_a",
+      "target": "Country"
+    },
+    {
+      "source": "Pakistan",
+      "relationship": "is_a",
+      "target": "Country"
+    },
+    {
+      "source": "Australia",
+      "relationship": "is_a",
+      "target": "Country"
+    },
+    {
+      "source": "New Zealand",
+      "relationship": "is_a",
+      "target": "Country"
+    },
+    {
+      "source": "UAE",
+      "relationship": "is_a",
+      "target": "Country"
+    },
+    {
+      "source": "Shadi.com",
+      "relationship": "helps",
+      "target": "Indian"
+    },
+    {
+      "source": "Shadi.com",
+      "relationship": "helps",
+      "target": "Pakistani"
+    },
+    {
+      "source": "Indian",
+      "relationship": "are located across",
+      "target": "USA"
+    },
+    {
+      "source": "Indian",
+      "relationship": "are located across",
+      "target": "Canada"
+    },
+    {
+      "source": "Indian",
+      "relationship": "are located across",
+      "target": "UK"
+    },
+    {
+      "source": "Indian",
+      "relationship": "are located across",
+      "target": "Australia"
+    },
+    {
+      "source": "Indian",
+      "relationship": "are located across",
+      "target": "UAE"
+    },
+    {
+      "source": "Indian",
+      "relationship": "are located across",
+      "target": "Saudi Arabia"
+    },
+    {
+      "source": "Pakistani",
+      "relationship": "are located across",
+      "target": "USA"
+    },
+    {
+      "source": "Pakistani",
+      "relationship": "are located across",
+      "target": "Canada"
+    },
+    {
+      "source": "Pakistani",
+      "relationship": "are located across",
+      "target": "UK"
+    },
+    {
+      "source": "Pakistani",
+      "relationship": "are located across",
+      "target": "Australia"
+    },
+    {
+      "source": "Pakistani",
+      "relationship": "are located across",
+      "target": "UAE"
+    },
+    {
+      "source": "Pakistani",
+      "relationship": "are located across",
+      "target": "Saudi Arabia"
+    },
+    {
+      "source": "Hindu",
+      "relationship": "share",
+      "target": "Culture"
+    },
+    {
+      "source": "Hindu",
+      "relationship": "share",
+      "target": "Values"
+    },
+    {
+      "source": "Hindu",
+      "relationship": "share",
+      "target": "Dreams"
+    },
+    {
+      "source": "Muslim",
+      "relationship": "share",
+      "target": "Culture"
+    },
+    {
+      "source": "Muslim",
+      "relationship": "share",
+      "target": "Values"
+    },
+    {
+      "source": "Muslim",
+      "relationship": "share",
+      "target": "Dreams"
+    },
+    {
+      "source": "Sikh",
+      "relationship": "share",
+      "target": "Culture"
+    },
+    {
+      "source": "Sikh",
+      "relationship": "share",
+      "target": "Values"
+    },
+    {
+      "source": "Sikh",
+      "relationship": "share",
+      "target": "Dreams"
+    },
+    {
+      "source": "Christian",
+      "relationship": "share",
+      "target": "Culture"
+    },
+    {
+      "source": "Christian",
+      "relationship": "share",
+      "target": "Values"
+    },
+    {
+      "source": "Christian",
+      "relationship": "share",
+      "target": "Dreams"
+    },
+    {
+      "source": "smart matchmaking system",
+      "relationship": "guides based on",
+      "target": "Age"
+    },
+    {
+      "source": "smart matchmaking system",
+      "relationship": "guides based on",
+      "target": "Background"
+    },
+    {
+      "source": "smart matchmaking system",
+      "relationship": "guides based on",
+      "target": "Lifestyle"
+    },
+    {
+      "source": "smart matchmaking system",
+      "relationship": "guides based on",
+      "target": "Preferences"
+    },
+    {
+      "source": "Shadi.com",
+      "relationship": "uses",
+      "target": "smart matchmaking system"
+    },
+    {
+      "source": "PRIME ASSIST",
+      "relationship": "uses",
+      "target": "whatsapp service"
+    },
+    {
+      "source": "PRIME ASSIST",
+      "relationship": "provides",
+      "target": "Introduction service"
+    },
+    {
+      "source": "customized membership",
+      "relationship": "provides",
+      "target": "discreet personalized approach"
+    },
+    {
+      "source": "RelationshipAdvise",
+      "relationship": "writes blogs on",
+      "target": "relationships"
+    },
+    {
+      "source": "RelationshipAdvise",
+      "relationship": "writes blogs on",
+      "target": "marriage"
+    },
+    {
+      "source": "RelationshipAdvise",
+      "relationship": "writes blogs on",
+      "target": "dating"
+    },
+    {
+      "source": "RelationshipAdvise",
+      "relationship": "writes blogs on",
+      "target": "love"
+    },
+    {
+      "source": "dating app",
+      "relationship": "is used to find",
+      "target": "love"
+    },
+    {
+      "source": "website",
+      "relationship": "is used to find",
+      "target": "love"
+    },
+    {
+      "source": "Best Matrimony Santa Ana",
+      "relationship": "is located in",
+      "target": "Santa Ana"
+    },
+    {
+      "source": "Santa Ana",
+      "relationship": "is located in",
+      "target": "California"
+    },
+    {
+      "source": "California",
+      "relationship": "is located in",
+      "target": "USA"
+    },
+    {
+      "source": "Shadi.com",
+      "relationship": "is a type of",
+      "target": "matchmaking site"
+    },
+    {
+      "source": "matrimonial profile",
+      "relationship": "is created on",
+      "target": "matchmaking site"
+    },
+    {
+      "source": "Shadi.com",
+      "relationship": "uses for verification",
+      "target": "phone"
+    },
+    {
+      "source": "Shadi.com",
+      "relationship": "uses for verification",
+      "target": "email verification"
+    },
+    {
+      "source": "Shadi.com",
+      "relationship": "uses",
+      "target": "technology"
+    },
+    {
+      "source": "technology",
+      "relationship": "is for",
+      "target": "fraud detention"
+    },
+    {
+      "source": "technology",
+      "relationship": "is for",
+      "target": "SSL encryption"
+    },
+    {
+      "source": "Shadi.com",
+      "relationship": "provides",
+      "target": "web service"
+    },
+    {
+      "source": "Dating 102",
+      "relationship": "advises regarding",
+      "target": "ego"
     }
   ],
   "processed_chunks": [
-    "The Path Forward\nTransform from seller to trusted advisor: answer problems, not product questions. Prioritize depth of relationship and consistent micro-engagements.\n1\nShow Up\nBe present where prospects research — post, comment, and share useful ideas weekly.\n2\nAdd Value\nOffer insights, templates, or quick audits that solve immediate pain points.\n3\nMeasure What Matters\nTrack engagement quality (conversations, introductions) over vanity metrics.\n4\nRepeat",
-    "From today's featured article",
-    "Wikipedia's sister projects\n\nWikipedia is written by volunteer editors and hosted by the Wikimedia Foundation, a non-profit organization that also hosts a range of other volunteer projects:\n\n\n\n\nCommonsFree media repository\n\n\n\nMediaWikiWiki software development\n\n\n\nMeta-WikiWikimedia project coordination\n\n\n\nWikibooksFree textbooks and manuals\n\n\n\nWikidataFree knowledge base\n\n\n\nWikifunctionsCatalog of computer functions\n\n\n\nWikiquoteCollection of quotations\n\n\n\nWikisourceFree-content library",
-    "Privacy policy\nAbout Wikipedia\nDisclaimers\nContact Wikipedia\nLegal & safety contacts\nCode of Conduct\nDevelopers\nStatistics\nCookie statement\nMobile view\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSearch\n\n\n\n\n\n\n\n\n\n\n\n\n\nSearch\n\n\n\n\n\nMain Page\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n349 languages\n\n\nAdd topic",
     "This Wikipedia is written in English. Many other Wikipedias are available; some of the largest are listed below.\n\n\n\n\n1,000,000+ articles\n\n\n\nالعربية\nDeutsch\nEspañol\nفارسی‎\nFrançais\nItaliano\nNederlands\n日本語\nPolski\nPortuguês\nРусский\nSvenska\nУкраїнська\nTiếng Việt\n中文\n\n\n\n\n\n250,000+ articles",
-    "Edit links\n\n\n\n\n\n\n\n\n\n This page was last edited on 12 June 2026, at 07:37 (UTC).\nPage was rendered with Parsoid.\nText is available under the Creative Commons Attribution-ShareAlike 4.0 License;\nadditional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.",
-    "WikisourceFree-content library\n\n\n\nWikispeciesDirectory of species\n\n\n\nWikiversityFree learning tools\n\n\n\nWikivoyageFree travel guide\n\n\n\nWiktionaryDictionary and thesaurus\n\n\n\nWikipedia languages\n\nThis Wikipedia is written in English. Many other Wikipedias are available; some of the largest are listed below.\n\n\n\n\n1,000,000+ articles",
-    "The season was released on the streaming platform Paramount+ from February 23 to April 6, 2025. (Full article...)",
-    "/ inuktitut日本語PatoisLa .lojban.JawaქართულიQaraqalpaqshaTaqbaylitKarai-karaiJjuАдыгэбзэKabɩyɛTyapKongoKumoringGĩkũyũҚазақшаKalaallisutភាសាខ្មែរಕನ್ನಡYerwa Kanuri한국어Перем",
-    "Build Relationships\nFollow up with personalized value, celebrate milestones, and convert conversations into advisory relationships.",
-    "Ongoing: \nIran war (Lebanon war)\nRusso-Ukrainian war\ntimeline\nRecent deaths: \nDavid McDermott\nAntonino Fogliani\nRukidi IV of Tooro\nWendell Berry\nAda Yonath\nJaroslav Olejár\nMore current events\nNominate an article\n\nOn this day\n\nSeptember 5",
     "The series stars Helen Mirren (pictured), Harrison Ford, Brandon Sklenar, Julia Schlaepfer, Jerome Flynn, Darren Mann, Isabel May, Michelle Randolph, and Timothy Dalton. Sheridan wrote all eight of the second season's episodes. The series revolves around a generation of the Dutton family, and is set in the U.S. state of Montana between 1923 and 1924. The Duttons face the struggles of winter and attempt to protect their ranch against developers. The season was released on the streaming platform",
-    "Tools of the Trade\nBlend platform power with process. The right tools make social selling scalable and measurable.\nTip: Integrate alerts with your workflow to act within 24 hours of a trigger event.\nLinkedIn Sales Navigator\nPrecision prospecting: account lists, lead recommendations, and real-time updates.\nSocial Listening\nMonitor hashtags, industry news, and trigger events to engage at the right moment.\nCRM Integration",
-    "Wikipedia, the free encyclopedia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJump to content\n\n\n\n\n\n\n\nMain menu\n\n\n\n\n\nMain menu\nmove to sidebar\nhide\n\n\n\n\t\tNavigation\n\t\n\n\nMain pageContentsCurrent eventsRandom articleAbout WikipediaContact us\n\n\n\n\n\n\t\tContribute\n\t\n\n\nHelpLearn to editCommunity portalRecent changesUpload fileSpecial pages\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSearch\n\n\n\n\n\n\n\n\n\n\n\nSearch\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAppearance\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDonate\n\nCreate account\n\nLog in\n\n\n\n\n\n\n\n\nPersonal tools\n\n\n\n\n\n\nDonate\n\n\nCreate account",
-    "2005 – Mandala Airlines Flight 091 crashed shortly after take-off in Indonesia due to pilot error, killing 100 out of the 117 people on board along with 49 more on the ground.\nNap Lajoie  (b. 1874)Carmen Petra Basacopol (b. 1926)Freddie Mercury  (b. 1946)Adam Exner  (d. 2023)\nMore anniversaries: \nSeptember 4\nSeptember 5\nSeptember 6",
-    "faka-TongaToki ponaTok PisinTürkçeSeediqXitsongaТатарча / tatarçaChiTumbukaTwiReo tahitiТыва дылУдмуртئۇيغۇرچە / UyghurcheУкраїнськаاردوOʻzbekcha /",
-    "The Power of the Human Brand\nIn B2B the relationship is person-to-person. Individual credibility — expertise, consistency, and authenticity — often matters more than corporate marketing.\nPersonal authority creates trust faster than logo recognition.\nProspects are 5x more likely to engage through a mutual connection.\nConsistent content turns passive visitors into warm leads.\nAction: Audit your profile — headline, photo, and value-focused summary.",
-    "King Harald V of Norway dies at the age of 89 and is succeeded by Haakon VIII.",
-    "... that Drew Talbert's more than two decades as a server inspired him to create his TikTok sitcom series Bistro Huddy?\n... that a painting commissioned by Korean royalty is believed to have been looted by a Japanese general?\n... that journalist McKenzie Porter brought a photographer to a secret luncheon, prompting attendees to flee through a back exit?",
     "4\nRepeat\nSocial selling compounds: consistent effort builds reputation and fills the pipeline.\nReady to start? Pick one pillar this week and create a 30-day plan around it.",
-    "CRM Integration\nCapture social interactions, score engagement, and convert signals into actions inside your CRM.",
-    "faka-TongaToki ponaTok PisinTürkçeSeediqXitsongaТатарча / tatarçaChiTumbukaTwiReo tahitiТыва дылУдмуртئۇيغۇرچە / UyghurcheУкраїнськаاردوOʻzbekcha / ўзбекчаTshivendaVènetoVepsän kel’Tiếng ViệtWest-VlamsVolapükWalonWinarayWolof吴语ХальмгIsiXhosaმარგალურიייִדישYorùbáVahcuenghZeêuwsⵜⴰⵎⴰⵣⵉⵖⵜ ⵜⴰⵏⴰⵡⴰⵢⵜ文言閩南語 / Bân-lâm-gí粵語中文IsiZulu",
-    "... that Franz Schubert wrote Variations on \"Trockne Blumen\" for flute and piano while suffering from a relapse of syphilis?\n... that Swiss artist Martin Disler, a leading representative of the Neue Wilde movement, began painting while working as a nursing assistant at a psychiatric clinic?\n... that the mascot of a Mexican pharmacy chain evolved from often being tackled in the streets to a plush toy gifted to musicians during concerts?",
-    "250,000+ articles\n\n\n\nBahasa Indonesia\nBahasa Melayu\nBân-lâm-gú\nБългарски\nCatalà\nČeština\nDansk\nEesti\nΕλληνικά\nEsperanto\nEuskara\nעברית\nՀայերեն\n한국어\nMagyar\nNorsk bokmål\nRomână\nSimple English\nSlovenčina\nSrpski\nSrpskohrvatski\nSuomi\nTürkçe\nOʻzbekcha\n\n\n\n\n\n50,000+ articles\n\n\n\nAsturianu\nAzərbaycanca\nবাংলা\nBosanski\nکوردی\nFrysk\nGaeilge\nGalego\nHrvatski\nქართული\nKurdî\nLatviešu\nLietuvių\nമലയാളം\nМакедонски\nမြန်မာဘာသာ\nNorsk nynorsk\nਪੰਜਾਬੀ\nShqip\nSlovenščina\nไทย\nతెలుగు\nاردو",
-    "Content portals – A unique way to navigate the encyclopedia.",
-    "The second and final season of 1923, an American neo-Western television series, was announced in February 2023. As a limited-run series, 1923 was not originally intended to extend beyond its initial eight-episode order. The second season was developed after Taylor Sheridan, its creator and showrunner, decided that more episodes were needed to tell the story. A part of the Yellowstone franchise, 1923 is a sequel to 1883 and a prequel to Yellowstone. The series stars Helen Mirren (pictured),",
-    "Chantal Jaquet... that French philosopher Chantal Jaquet (pictured) coined the term \"transclass\" for people who move between social classes?\n... that Niko Resources pleaded guilty to bribery in Canada over the Chhatak Gas Field explosion, but the Bangladeshi officials whom it bribed were acquitted at home?\n... that NFL player Dan Garza was also a Navy SEAL and a dentist?",
-    "Personal tools\n\n\n\n\n\n\nDonate\n\n\nCreate account\n\n\nLog in\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMain Page\n\n\n\n\n\n\n\n\n\n\nMain Page\n\nTalk\n\n\n\n\n\n\nEnglish\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRead\n\nView source\n\nView history\n\n\n\n\n\n\n\n\n\nTools\n\n\n\n\n\nTools\nmove to sidebar\nhide\n\n\n\n\t\tActions\n\t\n\n\n\nRead\n\n\nView source\n\n\nView history\n\n\n\n\n\n\n\t\tGeneral\n\t\n\n\nWhat links hereRelated changesUpload filePermanent linkPage informationCite this pageGet shortened URLSwitch to legacy parser\n\n\n\n\n\n\t\tPrint/export\n\t\n\n\nDownload as PDFPrintable version",
-    "THANK YOU",
-    "ꯂꯣꯟဘာသာမန်MooreमराठीКырык марыBahasa MelayuMaltiMirandésမြန်မာဘာသာЭрзяньمازِرونیNāhuatlNapulitanoNedersaksiesPlattdüütschनेपालीनेपाल भाषाLi NihaNederlandsNorsk nynorskNorsk bokmålNovialߒߞߏIsiNdebele seSewulaNouormandSesotho sa LeboaNupeDiné bizaadChi-ChewaOccitanLivvinkarjalaOromooଓଡ଼ିଆИронਪੰਜਾਬੀPangasinanKapampanganPapiamentuPicardNaijáDeitschPälzischपालिPolskiPiemontèisپنجابیΠοντιακάNawatپښتوPortuguêsPinayuananRuna Simiရခိုင်RumantschRomani",
-    "Freddie Mercury (born Farrokh Bulsara; 5 September 1946 – 24 November 1991) was a British singer and songwriter who achieved global fame as the lead vocalist and pianist of the rock band Queen. Regarded as one of the greatest singers in the history of rock music, he was known for his flamboyant stage persona and four-octave vocal range. Mercury defied the conventions of a rock frontman with his theatrical style, influencing the artistic direction of Queen. Born in 1946 in Zanzibar to",
-    "Download as PDFPrintable version\n\n\n\n\n\n\t\tIn other projects\n\t\n\n\nAbstract WikipediaWikimedia CommonsWikimedia FoundationMediaWikiMeta-WikiWikimedia OutreachMultilingual WikisourceWikispeciesWikibooksWikidataWikifunctionsWikimaniaWikinewsWikiquoteWikisourceWikiversityWikivoyageWiktionaryWikidata item\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAppearance\nmove to sidebar\nhide\n\n\n\n\n\n\n\n\nFrom Wikipedia, the free encyclopedia",
-    "Other areas of Wikipedia\nCommunity portal – The central hub for editors, with resources, links, tasks, and announcements.\nVillage pump – Forum for discussions about Wikipedia itself, including policies and technical issues.\nSite news – Sources of news about Wikipedia and the broader Wikimedia movement.\nTeahouse – Ask basic questions about using or editing Wikipedia.\nHelp desk – Ask questions about using or editing Wikipedia.\nReference desk – Ask research questions about encyclopedic topics.",
-    "Simiရခိုင်RumantschRomani čhibIkirundiRomânăArmãneashtiTarandíneРускиРусскийРусиньскыйIkinyarwandaसंस्कृतम्Саха тылаᱥᱟᱱᱛᱟᱲᱤSarduSicilianuScotsسنڌيDavvisámegiellaSängöSrpskohrvatski / српскохрватскиTaclḥitတႆးසිංහලSimple EnglishSlovenčinaسرائیکیSlovenščinaGagana SamoaAnarâškielâChiShonaSoomaaligaShqipСрпски / srpskiSranantongoSiSwatiSesothoSeelterskSundaSvenskaKiswahiliꠍꠤꠟꠐꠤŚlůnskiSakizayaதமிழ்Tayalತುಳುᥖᥭᥰ ᥖᥬᥲ ᥑᥨᥒᥰతెలుగుTetunТоҷикӣไทยትግርኛትግሬTürkmençeTagalogTolışiSetswanaLea faka-TongaToki ponaTok",
-    "Recently featured: \nHeard Island and McDonald Islands\nHuhu beetle\nLaguna Miscanti\n\nArchive\nBy email\nMore featured articles\nAbout\n\nDid you know ...",
-    "The New Era of Prospecting: Mastering Social Selling\nMove beyond interruptions. Learn how to attract, engage, and convert modern buyers by using personal authority, targeted outreach, and consistent value-driven engagement.\nName-Sezal\nUID- 24BAI70653\nSection-24AML-3B\n.",
-    "gwiyannenGàidhligGalegoگیلکیAvañe'ẽगोंयची कोंकणी / Gõychi KonknniBahasa Hulontalo𐌲𐌿𐍄𐌹𐍃𐌺Ghanaian PidginગુજરાતીWayuunaikiFarefareGungbeGaelgHausa客家語 / Hak-kâ-ngîHawaiʻiעבריתहिन्दीFiji HindiHrvatskiHornjoserbsceKreyòl ayisyenMagyarՀայերենԱրեւմտահայերէնInterlinguaJaku IbanBahasa IndonesiaInterlingueIgboIgalaIñupiatunIlokanoГӀалгӀайIdoÍslenskaMedžuslovjanskyItalianoᐃᓄᒃᑎᑐᑦ / inuktitut日本語PatoisLa",
-    "The 4 Pillars of Success\nBuild an Expert Brand\nOptimize your profile, showcase case studies, and publish short insights that demonstrate domain knowledge.\nFind the Right People\nUse advanced search, boolean queries, and saved lists to identify true decision-makers and influencers.\nEngage with Insights\nShare timely ideas, commentary on industry news, and practical tips — add context, not a sales pitch.\nBuild Relationships",
-    "Helen Mirren",
-    "Archive\nStart a new article\nNominate an article\n\n\n\nIn the news",
-    "From Wikipedia, the free encyclopedia\n\n\n\n\n\nWelcome to Wikipedia,\nthe free encyclopedia that anyone can edit.\n258,083 active editors 7,235,776 articles in English\n\n\n\n\n\nFrom today's featured article",
-    "Example DomainExample DomainThis domain is for use in documentation examples without needing permission. Avoid use in operations.Learn more",
-    "Queen\", \"Bohemian Rhapsody\", \"Somebody to Love\", \"We Are the Champions\", \"Don't Stop Me Now\" and \"Crazy Little Thing Called Love\". His charismatic stage performances often saw him interact with the audience, as displayed at the 1985 Live Aid concert. This photograph shows Mercury performing in New Haven, Connecticut, in 1977.",
-    "direction of Queen. Born in 1946 in Zanzibar to Parsi-Indian parents, Mercury attended British boarding schools in India from the age of eight and returned to Zanzibar after secondary school. In 1964, his family fled the Zanzibar Revolution, moving to Middlesex, England. Having previously studied and written music, he formed Queen in 1970 with guitarist Brian May and drummer Roger Taylor. Mercury wrote numerous hits for Queen, including \"Killer Queen\", \"Bohemian Rhapsody\", \"Somebody to Love\",",
-    ".lojban.JawaქართულიQaraqalpaqshaTaqbaylitKarai-karaiJjuАдыгэбзэKabɩyɛTyapKongoKumoringGĩkũyũҚазақшаKalaallisutភាសាខ្មែរಕನ್ನಡYerwa Kanuri한국어Перем комиКъарачай-малкъарکٲشُرRipoarischKurdîKʋsaalКомиKernowekКыргызчаLatinaLadinoLëtzebuergeschЛаккуЛезгиLingua Franca NovaLugandaLimburgsLigureLadinLombardLingálaລາວLietuviųLatgaļuLatviešuMadhurâमगहीमैथिलीBasa BanyumasanМокшеньMalagasyОлык марийMāoriMinangkabauМакедонскиമലയാളംМонголꯃꯤꯇꯩ ꯂꯣꯟဘာသာမန်MooreमराठीКырык марыBahasa",
-    "АԥсшәаAcèhАдыгабзэAfrikaansAlemannischАлтай тилአማርኛPangcahAragonésÆngliscOboloअंगिकाالعربيةܐܪܡܝܐالدارجةمصرىঅসমীয়াAsturianuAtikamekwАварKotavaअवधीAymar aruAzərbaycancaتۆرکجهБашҡортсаBasa BaliBoarischŽemaitėškaBatak TobaBikol CentralBajau SamaБеларуская (тарашкевіца)БеларускаяBetawiБългарскиभोजपुरीBislamaBanjarပအိုဝ်ႏဘာႏသာႏBamanankanবাংলাབོད་ཡིགBòo pìkkàবিষ্ণুপ্রিয়া মণিপুরীBrezhonegBosanskiBatak MandailingBasa UgiБуряадCatalàChavacano de Zamboanga閩東語 /",
-    "Casablanca Fair poster1367 – Swa Saw Ke became the ruler of the Kingdom of Ava in Upper Myanmar.\n1915 – The Casablanca Fair (poster pictured) opened in the French protectorate in Morocco.\n1943 – World War II: American and Australian airborne forces landed at Nadzab as part of the New Guinea campaign against Japan.\n1977 – NASA launched the space probe Voyager 1, currently the farthest spacecraft from Earth, from Launch Complex 41 at Cape Canaveral Air Force Station.",
-    "UgiБуряадCatalàChavacano de Zamboanga閩東語 / Mìng-dĕ̤ng-ngṳ̄НохчийнCebuanoChamoruᏣᎳᎩTsetsêhestâheseکوردیCorsuNēhiyawēwin / ᓀᐦᐃᔭᐍᐏᐣQırımtatarcaČeštinaKaszëbscziСловѣньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟЧӑвашлаCymraegDanskDagbanliDeutschDagaareThuɔŋjäŋZazakiDolnoserbskiKadazandusunडोटेलीދިވެހިބަސްཇོང་ཁEʋegbeΕλληνικάEmiliàn e rumagnòlEsperantoEspañolEestiEuskaraEstremeñuفارسیMfantseFulfuldeSuomiVõroNa Vosa VakavitiFøroysktFɔ̀ngbèFrançaisArpetanNordfriiskFurlanFryskGaeilgeGagauz贛語Kriyòl",
+    "Recently featured: \nEgyptian goose\nThe Great Day of His Wrath\nAtmosphere of Pluto\n\n\nArchive\nMore featured pictures",
     "Archive\nBy email\nList of days of the year\nAbout\n\n\n\n\n\nToday's featured picture",
-    "On this day\n\nSeptember 5",
-    "Retrieved from \"https://en.wikipedia.org/w/index.php?title=Main_Page&oldid=1358980925\"\n\n\n\n\n349 languages",
-    "The Death of the Cold Call\n1\nWhy cold calls fail\n90% of buyers ignore unsolicited calls — attention is scarce and distrust is high.\n2\nSocial sellers win\n78% of reps using social platforms outperform peers — social proof and context matter.\n3\nBuyers research first\n57% of the buying journey happens before prospects contact sales — meet them earlier online.\nShift effort from interruption to discovery: be present where buyers already research.",
+    "Another ego issue is your treatment of people around you. Waiters, valet, taxi drivers, or cooks may not follow your instructions. Your interaction with these people will show her how you will act with her when the newness has worn out. Always be kind, generous, and forgiving. (that last one is something we should all aspire to all the time).",
     "Gloria Steinem in 1977\nAmerican journalist and feminist activist Gloria Steinem (pictured) dies at the age of 92.\nDuane Davis is convicted of orchestrating the 1996 murder of American rapper Tupac Shakur.\nIn a referendum, Icelanders reject European Union membership negotiations.\nThe Nancy Grace Roman Space Telescope is launched towards its Earth–Sun L2 operating orbit.\nAn attempted coup against the military junta in Niger fails.",
+    "gwiyannenGàidhligGalegoگیلکیAvañe'ẽगोंयची कोंकणी / Gõychi KonknniBahasa Hulontalo𐌲𐌿𐍄𐌹𐍃𐌺Ghanaian PidginગુજરાતીWayuunaikiFarefareGungbeGaelgHausa客家語 / Hak-kâ-ngîHawaiʻiעבריתहिन्दीFiji HindiHrvatskiHornjoserbsceKreyòl ayisyenMagyarՀայերենԱրեւմտահայերէնInterlinguaJaku IbanBahasa IndonesiaInterlingueIgboIgalaIñupiatunIlokanoГӀалгӀайIdoÍslenskaMedžuslovjanskyItalianoᐃᓄᒃᑎᑐᑦ / inuktitut日本語PatoisLa",
+    "Queen\", \"Bohemian Rhapsody\", \"Somebody to Love\", \"We Are the Champions\", \"Don't Stop Me Now\" and \"Crazy Little Thing Called Love\". His charismatic stage performances often saw him interact with the audience, as displayed at the 1985 Live Aid concert. This photograph shows Mercury performing in New Haven, Connecticut, in 1977.",
+    "Shadi.com is an international matchmaking platform. Through which people can find love and long lasting relationships. Our profiles are verified with cell phone and email verification.  We make use of the latest technology for fraud detention and SSL encryption. Non-active users are removed from our network. We are committed to providing a safe web service for like-minded singles in your region.\n\t\n\n\n\n\n\n\n\nMUST READ BEFORE FIRST DATE",
+    "The New Era of Prospecting: Mastering Social Selling\nMove beyond interruptions. Learn how to attract, engage, and convert modern buyers by using personal authority, targeted outreach, and consistent value-driven engagement.\nName-Sezal\nUID- 24BAI70653\nSection-24AML-3B\n.",
+    "Recently featured: \nHeard Island and McDonald Islands\nHuhu beetle\nLaguna Miscanti\n\nArchive\nBy email\nMore featured articles\nAbout\n\nDid you know ...",
+    "đźŤŞ We use cookies to improve your experience on Shadi.com. \n  By continuing to browse, you agree to our \n  Privacy Policy.\n  Accept",
+    "Edit links\n\n\n\n\n\n\n\n\n\n This page was last edited on 12 June 2026, at 07:37 (UTC).\nPage was rendered with Parsoid.\nText is available under the Creative Commons Attribution-ShareAlike 4.0 License;\nadditional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.",
+    "VellalarHindu - TamilHindu - Tamil YadavaHindu - TelguHindu - TeliHindu - ThevarHindu - ThiyyaHindu - UdayarHindu - VaishnavHindu - Vaishnav",
+    "- OrthodoxChristianity - PentacostChristianity - ProtestantChristianity - ThaiChristianity - TibetianDawoodi BhoraHinduHindu -  GanigaHindu - 96K KokanasthaHindu - Adi DravidaHindu - AgamudayaarHindu - AgarwalHindu - AroraHindu - Arya VysyaHindu - Balija NaiduHindu - BaniaHindu - BanjaraHindu - BengaliHindu - BhandariHindu - BillavaHindu - BrahminHindu - Brahmin AnavilHindu - Brahmin BengaliHindu - Brahmin DavadnyaHindu - Brahmin DeshasthaHindu - Brahmin GarhwaliHindu - Brahmin GaurHindu -",
+    "The Power of the Human Brand\nIn B2B the relationship is person-to-person. Individual credibility — expertise, consistency, and authenticity — often matters more than corporate marketing.\nPersonal authority creates trust faster than logo recognition.\nProspects are 5x more likely to engage through a mutual connection.\nConsistent content turns passive visitors into warm leads.\nAction: Audit your profile — headline, photo, and value-focused summary.",
+    "Helen Mirren",
+    "Most of our members are educated professionals - doctors, engineers, entrepreneurs, IT specialists, finance experts and more - who are ready to build a meaningful future with someone special. Our smart matchmaking system gently guides you toward compatible profiles based on age, background, lifestyle and preferences.",
+    "... that Franz Schubert wrote Variations on \"Trockne Blumen\" for flute and piano while suffering from a relapse of syphilis?\n... that Swiss artist Martin Disler, a leading representative of the Neue Wilde movement, began painting while working as a nursing assistant at a psychiatric clinic?\n... that the mascot of a Mexican pharmacy chain evolved from often being tackled in the streets to a plush toy gifted to musicians during concerts?",
+    "Build Relationships\nFollow up with personalized value, celebrate milestones, and convert conversations into advisory relationships.",
+    "WikisourceFree-content library\n\n\n\nWikispeciesDirectory of species\n\n\n\nWikiversityFree learning tools\n\n\n\nWikivoyageFree travel guide\n\n\n\nWiktionaryDictionary and thesaurus\n\n\n\nWikipedia languages\n\nThis Wikipedia is written in English. Many other Wikipedias are available; some of the largest are listed below.\n\n\n\n\n1,000,000+ articles",
+    "Shadi.com is not just another matchmaking site - it is a safe, respectful space for marriage-minded individuals who value family, trust, and companionship. Whether you are Hindu, Muslim, Sikh, Christian, or spiritually inclined, you will find profiles of people who share your culture, values, and dreams.",
+    "From Wikipedia, the free encyclopedia\n\n\n\n\n\nWelcome to Wikipedia,\nthe free encyclopedia that anyone can edit.\n258,083 active editors 7,235,776 articles in English\n\n\n\n\n\nFrom today's featured article",
+    "Chantal Jaquet... that French philosopher Chantal Jaquet (pictured) coined the term \"transclass\" for people who move between social classes?\n... that Niko Resources pleaded guilty to bribery in Canada over the Chhatak Gas Field explosion, but the Bangladeshi officials whom it bribed were acquitted at home?\n... that NFL player Dan Garza was also a Navy SEAL and a dentist?",
+    "Retrieved from \"https://en.wikipedia.org/w/index.php?title=Main_Page&oldid=1358980925\"\n\n\n\n\n349 languages",
+    ".lojban.JawaქართულიQaraqalpaqshaTaqbaylitKarai-karaiJjuАдыгэбзэKabɩyɛTyapKongoKumoringGĩkũyũҚазақшаKalaallisutភាសាខ្មែរಕನ್ನಡYerwa Kanuri한국어Перем комиКъарачай-малкъарکٲشُرRipoarischKurdîKʋsaalКомиKernowekКыргызчаLatinaLadinoLëtzebuergeschЛаккуЛезгиLingua Franca NovaLugandaLimburgsLigureLadinLombardLingálaລາວLietuviųLatgaļuLatviešuMadhurâमगहीमैथिलीBasa BanyumasanМокшеньMalagasyОлык марийMāoriMinangkabauМакедонскиമലയാളംМонголꯃꯤꯇꯩ ꯂꯣꯟဘာသာမန်MooreमराठीКырык марыBahasa",
+    "The second and final season of 1923, an American neo-Western television series, was announced in February 2023. As a limited-run series, 1923 was not originally intended to extend beyond its initial eight-episode order. The second season was developed after Taylor Sheridan, its creator and showrunner, decided that more episodes were needed to tell the story. A part of the Yellowstone franchise, 1923 is a sequel to 1883 and a prequel to Yellowstone. The series stars Helen Mirren (pictured),",
+    "The 4 Pillars of Success\nBuild an Expert Brand\nOptimize your profile, showcase case studies, and publish short insights that demonstrate domain knowledge.\nFind the Right People\nUse advanced search, boolean queries, and saved lists to identify true decision-makers and influencers.\nEngage with Insights\nShare timely ideas, commentary on industry news, and practical tips — add context, not a sales pitch.\nBuild Relationships",
+    "ZealandNicaraguaNorwayOmanPakistanPalestinian Territory, OccupiedPanamaPeruPhilippinesPolandPortugalQatarSaudi ArabiaSingaporeSlovakiaSouth AfricaSpainSri LankaSwedenSwitzerlandSyriaTaiwanTajikistanThailandTongaTrinidad and TobagoTunisiaTurkeyTurkmenistanUAEUgandaUKUruguayUSAUzbekistanVietnamYemenZambia",
+    "Education\nHigh school\nBachelors\nMasters\nAssociates\nPhD\nTechnical school\nMD\nMBBS\nJD\n\n\n\n\n\nCountry\nUSA\nUK\nCanada\nIndia\nPakistan\nAustralia\nNew Zealand\nUAE",
+    "Getting started is free and effortless. Create your profile, add a photo, verify your contact details, and explore real people looking for real love. Unlike other platforms, every new member on Shadi.com may write one heartfelt message to someone they truly wish to connect with - a sincere beginning to something beautiful.\n\tYour soulmate may just be a message away. Let your story begin with Shadi.com - where every match is made with honesty, dignity and hope.",
+    "Wikipedia's sister projects\n\nWikipedia is written by volunteer editors and hosted by the Wikimedia Foundation, a non-profit organization that also hosts a range of other volunteer projects:\n\n\n\n\nCommonsFree media repository\n\n\n\nMediaWikiWiki software development\n\n\n\nMeta-WikiWikimedia project coordination\n\n\n\nWikibooksFree textbooks and manuals\n\n\n\nWikidataFree knowledge base\n\n\n\nWikifunctionsCatalog of computer functions\n\n\n\nWikiquoteCollection of quotations\n\n\n\nWikisourceFree-content library",
+    "2005 – Mandala Airlines Flight 091 crashed shortly after take-off in Indonesia due to pilot error, killing 100 out of the 117 people on board along with 49 more on the ground.\nNap Lajoie  (b. 1874)Carmen Petra Basacopol (b. 1926)Freddie Mercury  (b. 1946)Adam Exner  (d. 2023)\nMore anniversaries: \nSeptember 4\nSeptember 5\nSeptember 6",
+    "- Mudaliar SengunthaHindu - MukulathurHindu - MutharaiyarHindu - NadarHindu - NaiHindu - NaiduHindu - NairHindu - NambiarHindu - NayakaHindu - PadmashaliHindu - PasiHindu - PatelHindu - Patel DesaiHindu - Patel KadvaHindu - Patel LevaHindu - PillaiHindu - PrajapatiHindu - PunjabiHindu - RaghuwanshiHindu - RajputHindu - ReddyHindu - SainiHindu - Saiva PillaiHindu - Scheduled CasteHindu - SindhiHindu - SonarHindu - SowrashtraHindu - Sozhiya VellalarHindu - TamilHindu - Tamil YadavaHindu -",
+    "SHADI® trademark notice",
+    "ABOUT SHADI®\n\nShadi®.com is a registered and trademarked corporation based in the USA. We are a leading international matchmaking company for singles globally. Through our  network we want to make the process of relationship  journey  relatively effortless. All profiles are checked manually with phone verification to ensure a safe environment for the users.",
+    "CRM Integration\nCapture social interactions, score engagement, and convert signals into actions inside your CRM.",
+    "MEET OUR MEMBERS - SUCCESSFULPROFESSIONAL SINGLES\n\n\n\n\n\tWe have members from all religions and ages. Our most popular age group is from 27 - 60. Almost all our singles  are successful professionals and businessmen. Creating a great profile is essential in online matchmaking and adding your best photo to your profile. We offer abundant tips and relationship advice through our blogs. It is our passion to help you in the best possible way.",
+    "Dating 105: Can I hold your hand?\n\t\tFirst dates can be exciting but tricky, especially regarding physical contact. Here's a guide to help:\n\t\t\nRespect Personal Space: Start with a handshake or friendly hug, based on cultural norms and comfort levels.\nBuild Trust: Focus on conversation and shared interests, allowing physical contact to develop naturally.\nPrioritize Consent: Always ask for permission before initiating any touch.",
+    "Day\n01\n02\n03\n04\n05\n06\n07\n08\n09\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n\n\nYear\n2008\n2007\n2006\n2005\n2004\n2003\n2002\n2001\n2000\n1999\n1998\n1997\n1996\n1995\n1994\n1993\n1992\n1991\n1990\n1989\n1988\n1987\n1986\n1985\n1984\n1983\n1982\n1981\n1980\n1979\n1978\n1977\n1976\n1975\n1974\n1973\n1972\n1971\n1970\n1969\n1968\n1967\n1966\n1965\n1964\n1963\n1962\n1961\n1960\n1959\n1958\n1957\n1956\n1955\n1954\n1953\n1952\n1951\n1950\n1949\n1948\n1947\n1946\n1945\n1944\n1943\n\n\n\n\n\n\nReligion\nChristianity\nHindu\nIslam\nSikh\nNonreligious",
+    "Millions of people register on Shadi.com looking for someone special. This site is for serious singles looking for a long lasting relationship.\n\n\n\n80% of our members are highly educated. Most of them are successful professionals in their selected fields.\n\n\n\nShadi.com uses a smart matchmaking system. We present you matches based on current location, education level & lifestyle choices.\n\n\n\n\n\n\nBROWSE MATRIMONIALPROFILES\n\n\n\n\n Religion \nHindu | Muslim | Christian | Sikh | Budhist | JainRead More",
+    "- Byahut KalwaHindu - Chandraseniya(CKP)Hindu - ChettiarHindu - CoorgiHindu - DarajiHindu - DevadigaHindu - DevangaHindu - DheevaraHindu - DhobiHindu -",
+    "/ inuktitut日本語PatoisLa .lojban.JawaქართულიQaraqalpaqshaTaqbaylitKarai-karaiJjuАдыгэбзэKabɩyɛTyapKongoKumoringGĩkũyũҚазақшаKalaallisutភាសាខ្មែរಕನ್ನಡYerwa Kanuri한국어Перем",
+    "faka-TongaToki ponaTok PisinTürkçeSeediqXitsongaТатарча / tatarçaChiTumbukaTwiReo tahitiТыва дылУдмуртئۇيغۇرچە / UyghurcheУкраїнськаاردوOʻzbekcha / ўзбекчаTshivendaVènetoVepsän kel’Tiếng ViệtWest-VlamsVolapükWalonWinarayWolof吴语ХальмгIsiXhosaმარგალურიייִדישYorùbáVahcuenghZeêuwsⵜⴰⵎⴰⵣⵉⵖⵜ ⵜⴰⵏⴰⵡⴰⵢⵜ文言閩南語 / Bân-lâm-gí粵語中文IsiZulu",
+    "Download as PDFPrintable version\n\n\n\n\n\n\t\tIn other projects\n\t\n\n\nAbstract WikipediaWikimedia CommonsWikimedia FoundationMediaWikiMeta-WikiWikimedia OutreachMultilingual WikisourceWikispeciesWikibooksWikidataWikifunctionsWikimaniaWikinewsWikiquoteWikisourceWikiversityWikivoyageWiktionaryWikidata item\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAppearance\nmove to sidebar\nhide\n\n\n\n\n\n\n\n\nFrom Wikipedia, the free encyclopedia",
+    "Sozhiya VellalarHindu - TamilHindu - Tamil YadavaHindu - TelguHindu - TeliHindu - ThevarHindu - ThiyyaHindu - UdayarHindu - VaishnavHindu - Vaishnav BaniaHindu - Vaishnav BhatiaHindu - Vaishnav VaniaHindu - VanjariHindu - Vanniyakullak ShatriyaHindu - VanniyarHindu - VarierHindu - VeerashaivaHindu - VellamaHindu - Vilakkithala NairHindu - VishwakarmaHindu - ViswabrahminHindu - VokaligaHindu - VysyaHindu - YadavIslamIslam - BanglaIslam - ShiaIslam - SunniIsmailiJainJain - Jain DigambarJain - Jain",
+    "Dating 102: Leave your ego at home. A lot of guys are too sensitive. If she giggles because you made a small mistake, instead of getting angry or defensive, try laughing at yourself. Remember she is as nervous as you are (or more!) and it could just be her nerves showing.",
+    "Dating 103: First date rules:\n\t\tFriends have set you up. What to do next?\n\t\tCall her or him and discuss the following: agree on where to go, what time, do you go together or meet there? What is the dress code? (that is kind of important to women). She does not want to dress to the nines and find you with old jeans and a faded T-shirt.\n\t\tThis phone call is important for another reason. It breaks the ice and allows both to feel out the other person. Keep it short (less than 10 minutes).",
+    "Simiရခိုင်RumantschRomani čhibIkirundiRomânăArmãneashtiTarandíneРускиРусскийРусиньскыйIkinyarwandaसंस्कृतम्Саха тылаᱥᱟᱱᱛᱟᱲᱤSarduSicilianuScotsسنڌيDavvisámegiellaSängöSrpskohrvatski / српскохрватскиTaclḥitတႆးසිංහලSimple EnglishSlovenčinaسرائیکیSlovenščinaGagana SamoaAnarâškielâChiShonaSoomaaligaShqipСрпски / srpskiSranantongoSiSwatiSesothoSeelterskSundaSvenskaKiswahiliꠍꠤꠟꠐꠤŚlůnskiSakizayaதமிழ்Tayalತುಳುᥖᥭᥰ ᥖᥬᥲ ᥑᥨᥒᥰతెలుగుTetunТоҷикӣไทยትግርኛትግሬTürkmençeTagalogTolışiSetswanaLea faka-TongaToki ponaTok",
+    "Archive\nStart a new article\nNominate an article\n\n\n\nIn the news",
+    "Unlike other sites, we have top notch infrastructure online which takes care of our member profiles. We have easy to navigate categories of countries, state, community, religion and\ncaste. This make it easy for those not too tech savvy and does not overwhelm them. Come now and join us, make you free profile and find your soulmate!\n\n\n\n\nNeed Help?\n\nMember LoginShadi® 101\nSign Up\nPartner Search\nMember Support\n\n\n\n\nCompany\n\nAbout Us\nBlog\nHelpful Tips\nSubmit story\n\n\n\n\n\nPrivacy & You",
+    "PERSONALIZED MATCHMAKING FORBUSY PROFESSIONALS\n\nPRIME ASSIST\nPRIME PLUS\n\n\n\n\nPRIME ASSIST MATCHMAKING FOR SINGLES IN MODERN STYLE\n\n\tThis service is for those members who want personal matchmaking using whatsapp service. Prime Assist is best for people who want an Introduction service with no emails flooding their mailbox. No special app required.\n\t\nRead More  \nJoin Now  \n\n\n\n\n\nPRIME PLUS MATCHMAKING FOR SINGLES IN CUSTOMIZED STYLE",
+    "People are looking for partners further afield. Whereas prior to COVID-19 people would look for partners only in their state, now people are looking for a good match anywhere inside their country and even overseas.\nMore time to communicate. Since COVID-19 the number of members communicating with other members has gone up by a lot. \nCLOSE",
+    "Privacy policy\nAbout Wikipedia\nDisclaimers\nContact Wikipedia\nLegal & safety contacts\nCode of Conduct\nDevelopers\nStatistics\nCookie statement\nMobile view\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSearch\n\n\n\n\n\n\n\n\n\n\n\n\n\nSearch\n\n\n\n\n\nMain Page\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n349 languages\n\n\nAdd topic",
+    "Read Signals: Pay attention to body language and verbal cues to gauge comfort.\nConsider Context: Adapt physical contact based on the setting, whether public or private.\nCommunicate Openly: Discuss expectations and comfort levels to avoid misunderstandings.\nRespect Boundaries: Honor your date's comfort level, even if it differs from yours.",
+    "Example DomainExample DomainThis domain is for use in documentation examples without needing permission. Avoid use in operations.Learn more",
+    "Tools of the Trade\nBlend platform power with process. The right tools make social selling scalable and measurable.\nTip: Integrate alerts with your workflow to act within 24 hours of a trigger event.\nLinkedIn Sales Navigator\nPrecision prospecting: account lists, lead recommendations, and real-time updates.\nSocial Listening\nMonitor hashtags, industry news, and trigger events to engage at the right moment.\nCRM Integration",
+    "The Path Forward\nTransform from seller to trusted advisor: answer problems, not product questions. Prioritize depth of relationship and consistent micro-engagements.\n1\nShow Up\nBe present where prospects research — post, comment, and share useful ideas weekly.\n2\nAdd Value\nOffer insights, templates, or quick audits that solve immediate pain points.\n3\nMeasure What Matters\nTrack engagement quality (conversations, introductions) over vanity metrics.\n4\nRepeat",
+    "BhoriBuddhisimChristianityChristianity - AnglicanChristianity - BaptistChristianity - Born AgainChristianity - CatholicChristianity - Catholic KananayaChristianity - Catholic LatinChristianity - Catholic MalankaraChristianity - Catholic RomanChristianity - Catholic SyrianChristianity - CMSChristianity - CSIChristianity - EvangelicalChristianity - JacobiteChristianity - MalayalamChristianity - MarthomiteChristianity - NadarChristianity - OrthodoxChristianity - PentacostChristianity -",
+    "Login \n\n\nJoin Now\n\n\n\nREGISTER NEW MEMBER\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGender\n\nFemale\n\nMale\n\n\n\n\n\nLooking for\n\nFemale\n\nMale\n\n\n\n\nDate of Birth\n\n\nMonth\nJan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug\nSep\nOct\nNov\nDec\n\n\nDay\n01\n02\n03\n04\n05\n06\n07\n08\n09\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31",
+    "On this day\n\nSeptember 5",
+    "SHADI.COM BEST ONLINEMATRIMONY SITE",
+    "Matrimony Site for Indian & Pakistani Professionals | Shadi.com\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx\n\n\n\nSign in with Google\n\nUse your Google Accountto sign in to Shadi\n\n        No more passwords to remember.\n        Signing in is fast, simple and secure.",
+    "UgiБуряадCatalàChavacano de Zamboanga閩東語 / Mìng-dĕ̤ng-ngṳ̄НохчийнCebuanoChamoruᏣᎳᎩTsetsêhestâheseکوردیCorsuNēhiyawēwin / ᓀᐦᐃᔭᐍᐏᐣQırımtatarcaČeštinaKaszëbscziСловѣньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟЧӑвашлаCymraegDanskDagbanliDeutschDagaareThuɔŋjäŋZazakiDolnoserbskiKadazandusunडोटेलीދިވެހިބަސްཇོང་ཁEʋegbeΕλληνικάEmiliàn e rumagnòlEsperantoEspañolEestiEuskaraEstremeñuفارسیMfantseFulfuldeSuomiVõroNa Vosa VakavitiFøroysktFɔ̀ngbèFrançaisArpetanNordfriiskFurlanFryskGaeilgeGagauz贛語Kriyòl",
+    "- SunniIsmailiJainJain - Jain DigambarJain - Jain SwetamberNonreligiousSikhSikh - Clean ShavenSikh - GursikhSikh - JatSikh - KesadhariSikh - KhatriSikh - RamqhariaSpiritualismZoroastrain Parsi",
+    "RelationshipAdvise\n\n\nHere we have experts who work hard to write blogs on relationships, marriage, dating and finding love, giving you vista and motivation to have a great love life. Following these tips and advice can help you in your relationship journey. Nowadays, people find their love by socializing, traveling or using a dating app / website.read more",
+    "MUST READ BEFORE FIRST DATE\n\n\n\nDating 101: When on a date, switch off your phone. Nothing is more insulting to a girl than a man answering every call while on a date. You are allowed to make a small deal about turning off your phone at the start of the date with a comment like \"Now we will not be disturbed\". Power down your phone or lose your date. Can't have both.",
+    "Look, that was supposed to be like a private personal thing between us. Okay, Ross, Phoebe is my girlfriend, okay?",
+    "АԥсшәаAcèhАдыгабзэAfrikaansAlemannischАлтай тилአማርኛPangcahAragonésÆngliscOboloअंगिकाالعربيةܐܪܡܝܐالدارجةمصرىঅসমীয়াAsturianuAtikamekwАварKotavaअवधीAymar aruAzərbaycancaتۆرکجهБашҡортсаBasa BaliBoarischŽemaitėškaBatak TobaBikol CentralBajau SamaБеларуская (тарашкевіца)БеларускаяBetawiБългарскиभोजपुरीBislamaBanjarပအိုဝ်ႏဘာႏသာႏBamanankanবাংলাབོད་ཡིགBòo pìkkàবিষ্ণুপ্রিয়া মণিপুরীBrezhonegBosanskiBatak MandailingBasa UgiБуряадCatalàChavacano de Zamboanga閩東語 /",
+    "direction of Queen. Born in 1946 in Zanzibar to Parsi-Indian parents, Mercury attended British boarding schools in India from the age of eight and returned to Zanzibar after secondary school. In 1964, his family fled the Zanzibar Revolution, moving to Middlesex, England. Having previously studied and written music, he formed Queen in 1970 with guitarist Brian May and drummer Roger Taylor. Mercury wrote numerous hits for Queen, including \"Killer Queen\", \"Bohemian Rhapsody\", \"Somebody to Love\",",
+    "Ongoing: \nIran war (Lebanon war)\nRusso-Ukrainian war\ntimeline\nRecent deaths: \nDavid McDermott\nAntonino Fogliani\nRukidi IV of Tooro\nWendell Berry\nAda Yonath\nJaroslav Olejár\nMore current events\nNominate an article\n\nOn this day\n\nSeptember 5",
+    "By prioritizing respect, communication, and consent, you can ensure a positive and respectful first date experience.\n\t\t\n\n\n\n\n\n\n\nSHADI.COM BEST ONLINEMATRIMONY SITE",
+    "King Harald V of Norway dies at the age of 89 and is succeeded by Haakon VIII.",
+    "Wikipedia, the free encyclopedia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJump to content\n\n\n\n\n\n\n\nMain menu\n\n\n\n\n\nMain menu\nmove to sidebar\nhide\n\n\n\n\t\tNavigation\n\t\n\n\nMain pageContentsCurrent eventsRandom articleAbout WikipediaContact us\n\n\n\n\n\n\t\tContribute\n\t\n\n\nHelpLearn to editCommunity portalRecent changesUpload fileSpecial pages\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSearch\n\n\n\n\n\n\n\n\n\n\n\nSearch\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAppearance\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDonate\n\nCreate account\n\nLog in\n\n\n\n\n\n\n\n\nPersonal tools\n\n\n\n\n\n\nDonate\n\n\nCreate account",
+    "THANK YOU",
+    "Submit\n  \n\n    Cancel\n  \n\n\n\n\n\n \n\n\n\nSIGNUP\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSign in\nForgot your password?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSHADI® trademark notice",
+    "The season was released on the streaming platform Paramount+ from February 23 to April 6, 2025. (Full article...)",
+    "Content portals – A unique way to navigate the encyclopedia.",
+    "Personal tools\n\n\n\n\n\n\nDonate\n\n\nCreate account\n\n\nLog in\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMain Page\n\n\n\n\n\n\n\n\n\n\nMain Page\n\nTalk\n\n\n\n\n\n\nEnglish\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRead\n\nView source\n\nView history\n\n\n\n\n\n\n\n\n\nTools\n\n\n\n\n\nTools\nmove to sidebar\nhide\n\n\n\n\t\tActions\n\t\n\n\n\nRead\n\n\nView source\n\n\nView history\n\n\n\n\n\n\n\t\tGeneral\n\t\n\n\nWhat links hereRelated changesUpload filePermanent linkPage informationCite this pageGet shortened URLSwitch to legacy parser\n\n\n\n\n\n\t\tPrint/export\n\t\n\n\nDownload as PDFPrintable version",
+    "250,000+ articles\n\n\n\nBahasa Indonesia\nBahasa Melayu\nBân-lâm-gú\nБългарски\nCatalà\nČeština\nDansk\nEesti\nΕλληνικά\nEsperanto\nEuskara\nעברית\nՀայերեն\n한국어\nMagyar\nNorsk bokmål\nRomână\nSimple English\nSlovenčina\nSrpski\nSrpskohrvatski\nSuomi\nTürkçe\nOʻzbekcha\n\n\n\n\n\n50,000+ articles\n\n\n\nAsturianu\nAzərbaycanca\nবাংলা\nBosanski\nکوردی\nFrysk\nGaeilge\nGalego\nHrvatski\nქართული\nKurdî\nLatviešu\nLietuvių\nമലയാളം\nМакедонски\nမြန်မာဘာသာ\nNorsk nynorsk\nਪੰਜਾਬੀ\nShqip\nSlovenščina\nไทย\nతెలుగు\nاردو",
+    "happy endings. Our commitment lies in helping  members meet someone special  for long lasting relationship. Today, Shadi.com is known worldwide as one of the top introductions and matrimonial services provider. We are happy to welcome you to our matchmaking network and wish you success every step of the way.",
+    "... that Drew Talbert's more than two decades as a server inspired him to create his TikTok sitcom series Bistro Huddy?\n... that a painting commissioned by Korean royalty is believed to have been looted by a Japanese general?\n... that journalist McKenzie Porter brought a photographer to a secret luncheon, prompting attendees to flee through a back exit?",
+    "Byahut KalwaHindu - Chandraseniya(CKP)Hindu - ChettiarHindu - CoorgiHindu - DarajiHindu - DevadigaHindu - DevangaHindu - DheevaraHindu - DhobiHindu - DigambarHindu - EzhavaHindu - EzhuthassanHindu - Gold SmithHindu - GoswamiHindu - GounderHindu - GowdaHindu - GujaratiHindu - GuptaHindu - Hindu Nair VeluthedathHindu - IyengarHindu - IyerHindu - JatHindu - JatavHindu - KambojHindu - KammaHindu - KapuHindu - Kashmiri PanditHindu - KayasthaHindu - Kerala Malaylee NamboodiriHindu - KhandelwalHindu -",
+    "PRIME PLUS MATCHMAKING FOR SINGLES IN CUSTOMIZED STYLE\n\n\tYour customized membership at Prime Plus is a unique concept. We offer you a discreet personalized approach. We do the search for you and introduce you to selected potential matches. While you concentrate on your work!\n\tRead More  \nJoin Now  \n\n\n\n\n\n\n\n\n \n \n\n\n\nRelationshipAdvise",
+    "The Death of the Cold Call\n1\nWhy cold calls fail\n90% of buyers ignore unsolicited calls — attention is scarce and distrust is high.\n2\nSocial sellers win\n78% of reps using social platforms outperform peers — social proof and context matter.\n3\nBuyers research first\n57% of the buying journey happens before prospects contact sales — meet them earlier online.\nShift effort from interruption to discovery: be present where buyers already research.",
     "Photograph credit: Carl Lender; restored by Lošmi",
-    "Recently featured: \nEgyptian goose\nThe Great Day of His Wrath\nAtmosphere of Pluto\n\n\nArchive\nMore featured pictures"
+    "Freddie Mercury (born Farrokh Bulsara; 5 September 1946 – 24 November 1991) was a British singer and songwriter who achieved global fame as the lead vocalist and pianist of the rock band Queen. Regarded as one of the greatest singers in the history of rock music, he was known for his flamboyant stage persona and four-octave vocal range. Mercury defied the conventions of a rock frontman with his theatrical style, influencing the artistic direction of Queen. Born in 1946 in Zanzibar to",
+    "Find Someone Special Near You\nWelcome To Best Matrimony Santa Ana, California, USAConnect with your soul mate that can be nearby or within your city. Our members are committed to looking for long-term healthy relationships. This platform will help you to find love and give you a taste of meaningful connection. read more\n\nHow To Make A Great Matrimonial Profile",
+    "faka-TongaToki ponaTok PisinTürkçeSeediqXitsongaТатарча / tatarçaChiTumbukaTwiReo tahitiТыва дылУдмуртئۇيغۇرچە / UyghurcheУкраїнськаاردوOʻzbekcha /",
+    "How To Make A Great Matrimonial Profile\n\n\n\n\n\n\n\t\tCreating an effective profile on a matchmaking site like Shadi.com is crucial for finding a meaningful relationship. This blog offers valuable tips for crafting a compelling profile, emphasizing the importance of honesty, clear intentions, and positive language.read more\n\n\n\n\n\n\nMEET OUR MEMBERS - SUCCESSFULPROFESSIONAL SINGLES",
+    "From today's featured article",
+    "Casablanca Fair poster1367 – Swa Saw Ke became the ruler of the Kingdom of Ava in Upper Myanmar.\n1915 – The Casablanca Fair (poster pictured) opened in the French protectorate in Morocco.\n1943 – World War II: American and Australian airborne forces landed at Nadzab as part of the New Guinea campaign against Japan.\n1977 – NASA launched the space probe Voyager 1, currently the farthest spacecraft from Earth, from Launch Complex 41 at Cape Canaveral Air Force Station.",
+    "COVID-19 and how it affects online matchmaking.\nPeople have the time to look over and improve their profile. The number of photos being uploaded has exceeded all previous levels. More people are improving their profiles and giving a lot of thought about the kind of person they would like to be their life partner.",
+    "CASTE \n\nAgarwal | \nArora | \nBrahmin | \nGupta | \nKhatri | \nIyer | \nKayastha | \nMaratha | \nRajput | \nSunni | \nSwetambar\n\nRead More\n\n\n\n\n\n\n STATES\nCalifornia | New York | Texas | New Jersey |  Virginia | Illinois | Florida | Pennsylvania | Michigan | GeorgiaRead More\n\n\n\n\n\n\n International \nUnited States | Canada | United Kingdom | Australia | India | UAE Pakistan | Switzerland | France | Netherland | Singapore\nRead More\n\n\n\n\n\n\n\n\n\nPERSONALIZED MATCHMAKING FORBUSY PROFESSIONALS",
+    "Privacy & You\n\nTerms of Use\nPrivacy Policy\nContact Us\n\n\n\n\n\nMore\n\nAdvance Search\nTop Ranking Cities\nParent Involved\nIntimate Cozy Wedding\nSite Map\n\n\n\n\n\n\n\n\n\n\n\n\nFollow us on:\n\n\n\n\n\n\n\n\nSHADI® is a registered trademark and should not be used without permission\n© Copyrights Shadi.com 1997 - 2026. All rights reserved. \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJoin us.\n\n\n\n\n\n\n\nUserName\n\n\n\n\nPassword\n\n\n\n\n\n\n\n\nForgot Password?   Create New Account",
+    "AfghanistanArmeniaAustraliaAustriaAzerbaijanBahrainBangladeshBelgiumBhutanBotswanaBrazilBrunei DarussalamCambodiaCanadaCayman IslandsChinaCubaCyprusCzech RepublicDenmarkEcuadorFijiFinlandFranceGeorgiaGermanyGreeceGreenlandHong KongHungaryIndiaIndonesiaIranIraqIrelandItalyJamaicaJapanJordanKazakhstanKorea, NorthKorea, SouthKuwaitKyrgyzstanLaosLebanonLibyan Arab JamahiriyaLuxembourgMalawiMalaysiaMaldivesMaltaMauritiusMexicoMongoliaMyanmarNepalNetherlandsNew",
+    "ꯂꯣꯟဘာသာမန်MooreमराठीКырык марыBahasa MelayuMaltiMirandésမြန်မာဘာသာЭрзяньمازِرونیNāhuatlNapulitanoNedersaksiesPlattdüütschनेपालीनेपाल भाषाLi NihaNederlandsNorsk nynorskNorsk bokmålNovialߒߞߏIsiNdebele seSewulaNouormandSesotho sa LeboaNupeDiné bizaadChi-ChewaOccitanLivvinkarjalaOromooଓଡ଼ିଆИронਪੰਜਾਬੀPangasinanKapampanganPapiamentuPicardNaijáDeitschPälzischपालिPolskiPiemontèisپنجابیΠοντιακάNawatپښتوPortuguêsPinayuananRuna Simiရခိုင်RumantschRomani",
+    "- Brahmin GarhwaliHindu - Brahmin GaurHindu - Brahmin Gowd SaraswatHindu - Brahmin GujaratiHindu - Brahmin HavyakaHindu - Brahmin Kanada MadhvaHindu - Brahmin KanyakubjaHindu - Brahmin KokanasthaHindu - Brahmin KumoaniHindu - Brahmin MaharashtrianHindu - Brahmin MaithilHindu - Brahmin NagarHindu - Brahmin PareekHindu - Brahmin PunjabiHindu - Brahmin SaryuparinHindu - Brahmin SmarthaHindu - Brahmin TeluguHindu - Bramhan BhumiharHindu - BuntHindu - Byahut KalwaHindu - Chandraseniya(CKP)Hindu -",
+    "Find Love with Shadi.com - Where Serious Hearts Meet\n\tLove is a beautiful journey, and at Shadi.com, we believe every heart deserves a companion who truly understands it. Since 1997, we have been helping Indian and Pakistani singles across the USA, Canada, UK, Australia, UAE, Saudi Arabia, and beyond find genuine, lifelong partners.",
+    "Dating 104: When you meet each other for your date, the guy should have a present for the girl. Shadi.com suggests a bouquet of flowers for the first date. A small one if you meet her somewhere or a larger one if you are picking her up at home.",
+    "Other areas of Wikipedia\nCommunity portal – The central hub for editors, with resources, links, tasks, and announcements.\nVillage pump – Forum for discussions about Wikipedia itself, including policies and technical issues.\nSite news – Sources of news about Wikipedia and the broader Wikimedia movement.\nTeahouse – Ask basic questions about using or editing Wikipedia.\nHelp desk – Ask questions about using or editing Wikipedia.\nReference desk – Ask research questions about encyclopedic topics.",
+    "Malaylee NamboodiriHindu - KhandelwalHindu - KhatriHindu - Kongu Vellala GounderHindu - KoshtiHindu - KshatriyaHindu - KumaoniHindu - KumbaraHindu - KurmiHindu - Kuruhina ShettyHindu - KushwahaHindu - LingayatHindu - LohanaHindu - MaharashtrianHindu - MaheshwariHindu - Mallah Hindu - MarathaHindu - MaruthuvarHindu - MarwariHindu - MatangHindu - MathurHindu - MathurvaishyaHindu - MenonHindu - MudaliarHindu - Mudaliar ArcotHindu - Mudaliar SaivaHindu - Mudaliar SengunthaHindu - MukulathurHindu -",
+    "We have been making memorable memories through matchmaking for more than 20 years. It all began with creating many successful marriages for family and friends in upstate New York. To take the essence of matchmaking to the next level Shadi.com was created. Most important component of our network is that users find their match through our platform. We are proud to mention that millions of users have been impacted with our online marriage portal with happy endings. Our commitment lies in helping"
   ]
 }

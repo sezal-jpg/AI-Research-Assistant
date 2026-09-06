@@ -46,5 +46,14 @@ class CLIPService:
             results.sort(key=lambda item: item['score'],reverse=True)
             return results
         
-clip_service=CLIPService()        
+clip_service = None
+
+
+def get_clip_service():
+    global clip_service
+
+    if clip_service is None:
+        clip_service = CLIPService()
+
+    return clip_service   
             

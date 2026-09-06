@@ -4,7 +4,7 @@ from langchain_core.documents import Document
 from app.core.logger import logger
 from app.services.whisper_service import whisper_service
 from app.services.ocr_services import ocr_service
-from app.services.blip_service import blip_service
+from app.services.blip_service import get_blip_service
 
 class VideoLoader:
     
@@ -43,7 +43,7 @@ class VideoLoader:
             
             text=ocr_service.extract_text(str(frame_path))
             
-            caption=blip_service.generate_caption(str(frame_path))
+            caption=get_blip_service.generate_caption(str(frame_path))
             combined=[]
             if text.strip():
                 combined.append(f'Visible text: {text}')

@@ -4,8 +4,8 @@ from app.core.logger import logger
 from app.core.app_state import state
 from app.services.vision_service import vision_service
 from app.services.ocr_services import ocr_service
-from app.services.blip_service import blip_service
-from app.services.clip_service import clip_service
+from app.services.blip_service import get_blip_service
+from app.services.clip_service import get_clip_service
 
 class ImageLoader:
     
@@ -16,9 +16,9 @@ class ImageLoader:
         
         description=vision_service.analyze_image(str(file_path))
         
-        caption=blip_service.generate_caption(str(file_path))
+        caption=get_blip_service.generate_caption(str(file_path))
         
-        clip_embedding=clip_service.image_embedding(str(file_path))
+        clip_embedding=get_clip_service.image_embedding(str(file_path))
         state.clip_embeddings[file_path.name]=(clip_embedding)
         
         content_parts=[]

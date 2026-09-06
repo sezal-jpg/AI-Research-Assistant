@@ -29,4 +29,12 @@ class BLIPService:
             
             return ""
         
-blip_service=BLIPService()        
+blip_service=None
+
+def get_blip_service():
+    global blip_service
+    
+    if blip_service is None:
+        blip_service=BLIPService()
+        
+    return blip_service           

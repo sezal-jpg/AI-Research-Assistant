@@ -1,13 +1,28 @@
 fastapi
 uvicorn
+
 numpy<2
+
 google-generativeai
+
 chromadb==0.5.23
+
 langchain==0.3.27
 langchain-community==0.3.27
 langchain-text-splitters==0.3.9
+langgraph
 
 sentence-transformers==2.7.0
+transformers
+torch==2.2.2
+
+pillow
+pytesseract
+
+faster-whisper
+
+beautifulsoup4
+requests
 
 pypdf
 python-dotenv
@@ -18,4 +33,13 @@ openpyxl
 pandas
 xlrd
 odfpy
+
 rank-bm25
+
+opencv-python-headless
+
+pyttsx3
+
+youtube-transcript-api
+
+pydantic
