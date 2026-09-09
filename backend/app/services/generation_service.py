@@ -1,4 +1,4 @@
-from app.core.config import model
+from app.core.config import client,model
 from app.core.gemini_utils import log_gemini_error
 
 class GenerationService:
@@ -49,7 +49,7 @@ Question:
 Answer:
 """
     try:
-     response = model.generate_content(prompt)
+     response = client.models.generate_content(model=model,contents=prompt)
      return response.text
     
     except Exception as e:
