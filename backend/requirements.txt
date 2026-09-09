@@ -43,3 +43,4 @@ pyttsx3
 youtube-transcript-api
 
 pydantic
+google-genai==2.16.0
