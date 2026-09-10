@@ -45,7 +45,9 @@ jobs:
           cd backend
           python -c "import fastapi"
           python -c "import chromadb"
-          python -c "import langchain"
+          python -c "import langchain_community"
+          python -c "import langchain_text_splitters"
+          python -c "import langgraph"
 
       - name: Backend Check Complete
         run: echo "Backend validation successful!"
