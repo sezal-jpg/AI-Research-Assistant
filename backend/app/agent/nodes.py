@@ -6,7 +6,7 @@ from app.services.generation_service import generation_service
 from app.services.memory_service import memory_service
 from app.core.gemini_utils import log_gemini_error
 from app.services.graph_retrieval_service import graph_retrieval_service
-from app.core.config import model
+from app.core.config import client,model
 import re
 
 
@@ -495,8 +495,8 @@ Rules:
         logger.info(
             'Query refinement Gemini call started'
         )
-        response = model.generate_content(
-            refinement_prompt
+        response = client.models.generate_content(
+            model=model,contents=refinement_prompt
         )
         refined_query = response.text.strip()
 

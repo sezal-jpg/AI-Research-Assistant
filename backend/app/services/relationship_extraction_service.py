@@ -1,5 +1,5 @@
 import json
-from app.core.config import model
+from app.core.config import client,model
 from app.core.logger import logger
 from app.core.gemini_utils import log_gemini_error
 
@@ -70,7 +70,7 @@ Return ONLY valid JSON in this format:
                 'Relationship extraction Gemini call started'
             )
 
-            response = model.generate_content(prompt)
+            response = client.models.generate_content(model=model,contents=prompt)
 
             result = response.text.strip()
 
@@ -226,8 +226,8 @@ Return ONLY valid JSON in this format:
                     f'call started for {len(valid_documents)} oocuments'
                 )
 
-                response = model.generate_content(
-                    prompt
+                response = client.models.generate_content(
+                   model=model,contents= prompt
                 )
                 result = response.text.strip()
 

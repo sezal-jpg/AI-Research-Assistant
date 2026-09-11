@@ -1,5 +1,5 @@
 from PIL import Image
-from app.core.config import model
+from app.core.config import client,model
 from app.core.logger import logger
 
 class VisionService:
@@ -25,7 +25,7 @@ Extract:
 Return a detailed description.
         
         """
-        response=model.generate_content([prompt,image])
+        response=client.models.generate_content(model=model,contents=[prompt,image])
         return response.text
     
 vision_service=VisionService()    

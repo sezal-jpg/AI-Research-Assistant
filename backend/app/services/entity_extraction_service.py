@@ -1,5 +1,5 @@
 import json
-from app.core.config import model
+from app.core.config import client,model
 from app.core.logger import logger
 from app.core.gemini_utils import log_gemini_error
 
@@ -53,7 +53,7 @@ TEXT:
 """
         try:
             logger.info('Entity extraction Gemini call started')
-            response=model.generate_content(prompt)
+            response=client.models.generate_content(model=model,contents=prompt)
             result=response.text.strip()
          
             if result.startswith("```"):
@@ -140,7 +140,7 @@ DOCUMENTS:
             logger.info(f'Btch entity extraction Gemini call started'
                         f"for{len(valid_documents)} documents")
             
-            response=model.generate_content(prompt)
+            response=client.models.generate_content(model=model,contents=prompt)
             result=response.text.strip()
             
             if result.startswith("```"):
