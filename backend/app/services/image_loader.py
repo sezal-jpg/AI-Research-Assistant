@@ -16,9 +16,9 @@ class ImageLoader:
         
         description=vision_service.analyze_image(str(file_path))
         
-        caption=get_blip_service.generate_caption(str(file_path))
+        caption=get_blip_service().generate_caption(str(file_path))
         
-        clip_embedding=get_clip_service.image_embedding(str(file_path))
+        clip_embedding=get_clip_service().image_embedding(str(file_path))
         state.clip_embeddings[file_path.name]=(clip_embedding)
         
         content_parts=[]

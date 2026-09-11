@@ -25,6 +25,7 @@ class CLIPService:
             image_features=self.model.get_image_features(**inputs) 
             
         image_features=image_features/(image_features.norm(p=2,dim=-1,keepdim=True))
+        return image_features
     
     def image_text_similarity(self,image_path:str,texts:list[str]):
         logger.info(f'Comparing image with {len(texts)} texts')
