@@ -43,7 +43,7 @@ class VideoLoader:
             
             text=ocr_service.extract_text(str(frame_path))
             
-            caption=get_blip_service.generate_caption(str(frame_path))
+            caption=get_blip_service().generate_caption(str(frame_path))
             combined=[]
             if text.strip():
                 combined.append(f'Visible text: {text}')
