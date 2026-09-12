@@ -37,7 +37,6 @@ opencv-python-headless
 
 google-cloud-texttospeech
 
-youtube-transcript-api
 
 pydantic
 google-genai==2.16.0

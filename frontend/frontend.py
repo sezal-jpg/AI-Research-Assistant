@@ -378,6 +378,7 @@ st.markdown(
     '</div>',
     unsafe_allow_html=True)
 
+
 # Session state
 if 'website_urls' not in st.session_state:
     st.session_state.website_urls=[]
@@ -614,6 +615,14 @@ with website_tab:
 with youtube_tab:
 
     st.subheader("Add YouTube Source")
+    
+    st.info(
+    "ℹ️ **Current YouTube limitation:** We currently index the video's "
+    "transcript/spoken content. Text, images, slides, and other visual "
+    "content in the video are not indexed yet. "
+    "**Multimodal YouTube video analysis is coming soon.**"
+)
+    
     youtube_url = st.text_input(
         "YouTube URL",
         placeholder="https://www.youtube.com/watch?v=...",
@@ -632,55 +641,54 @@ with youtube_tab:
 
             try:
                 with st.spinner(
-                    "Processing YouTube video..."
+                    "Processing youtube video..."
                 ):
-
-                    response = requests.post(
-                        f"{API_URL}/youtube/upload",
-                        json={
-                            "url": youtube_url
-                        },
-                        timeout=300
-                    )
-
-                if response.status_code == 200:
-                    result = response.json()
-
-                    st.success(
+                    response=requests.post(f"{API_URL}/youtube/upload",
+                        json={"url": youtube_url },timeout=300)
+                   
+                    if response.status_code == 200:
+                     result = response.json()
+                     
+                     if result.get('documents',0)>0:
+                        st.success(
                         result.get(
                             "message",
                             "YouTube indexed successfully") )
 
-                    st.write(
+                        st.write(
                         f"📄 Documents: "
                         f"{result.get('documents', 0)}" )
 
-                    st.write(
+                        st.write(
                         f"🧩 Chunks: "
                         f"{result.get('chunks', 0)}")
 
-                    if youtube_url not in st.session_state.youtube_sources:
-                        st.session_state.youtube_sources.append(
-                            youtube_url
-                        )
+                        if (youtube_url not in st.session_state.youtube_sources):
+                         st.session_state.youtube_sources.append( youtube_url )
 
-                else:
-
-                    st.error(
+                     else:
+                      st.error(result.get('message','could not extract youtube transcript'))   
+                      
+                    else: 
+                      st.error(
                         f"YouTube error "
                         f"({response.status_code})"
                     )
 
-                    try:
+                      try:
                         st.json(response.json())
-                    except:
+                        
+                      except Exception:
                         st.text(response.text)
 
-            except Exception as e:
+            except requests.exceptions.Timeout:
 
                 st.error(
-                    f"YouTube upload error: {e}"
+                   'youtube processing timed out.'
                 )
+            
+            except Exception as e:
+                st.error(f'Youtube uploaded error: {e}')    
              
 # Research source
 st.subheader("🔎 Research Source ")

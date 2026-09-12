@@ -2,6 +2,7 @@ from typing import List
 from pathlib import Path
 from fastapi import UploadFile
 from app.core.logger import logger
+from langchain_core.documents import Document
 from app.services.indexing_service import indexing_service
 from app.services.loader_factory import loader_factory
 from app.services.youtube_service import youtube_service
@@ -69,7 +70,41 @@ class IngestionService:
         
         return {'message':'YouTube indexed successfully','documents':len(docs),'chunks':len(chunks),}
     
+    async def process_youtube_transcript(self,url:str,transcript:str):
+        logger.info(f'Processing youtube transcript: {url}')
+        video_id=youtube_service.extract_video_id(url)
         
+        if not video_id:
+            logger.error('could not extract youtube video id')
+            return {'message':'Invalid Youtube URL',
+                    'documents':0,
+                    'chunks':0}
+            
+        transcript=transcript.strip()
+        if not transcript:
+            logger.warning('Youtube transcript is empty')
+            return{
+                'message':'Youtube transcript is empty',
+                'documents':0,
+                'chunks':0
+            }
+            
+        docs=[Document(page_content=transcript,metadata={
+            'source_type':'youtube',
+            'source_file':f'youtube:{video_id}',
+            'source_url':url,
+            'video_id':video_id,})]    
+        
+        chunks=indexing_service.index_documents(docs)
+        logger.info(f'Youtube transcript documents" {len(docs)}')
+        logger.info(f'Youtube transcript chunks: {len(chunks)}')
+        
+        return {
+            'message':'Youtube indexed successfully',
+            'documents':len(docs),
+            'chunks':len(chunks)
+        }
+                    
     def add_metadata(self,docs,filename):
         for doc in docs:
             doc.metadata['source_file']=filename
