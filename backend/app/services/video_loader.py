@@ -39,7 +39,15 @@ class VideoLoader:
             if not success:
                 break
             frame_path=(Path('temp_frames')/f'{file_path.stem}_{frame_number}.jpg')
-            frame_path.parent.mkdir(exist_ok=True)
+            frame_path.parent.mkdir(parents=True,exist_ok=True)
+            
+            saved=cv2.imwrite(str(frame_path),frame)
+            if not saved:
+                logger.error(f'Failed to save video frame: {frame_path}')
+                frame_number+=1
+                current_time+=interval
+                continue
+            logger.info(f'Saved video frame: {frame_path}')
             
             text=ocr_service.extract_text(str(frame_path))
             
@@ -52,7 +60,7 @@ class VideoLoader:
                 combined.append(f'Visual description: {caption}') 
                 
             if combined:
-                documents.append(Document(page_content='\n'.jooin(combined),metadata={'source_file':file_path.name,'source_type':'video','timestamp':current_time,}))    
+                documents.append(Document(page_content='\n'.join(combined),metadata={'source_file':file_path.name,'source_type':'video','timestamp':current_time,}))    
             
             frame_number+=1
             current_time+=interval
