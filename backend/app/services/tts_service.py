@@ -1,40 +1,40 @@
-import pyttsx3
+from google.cloud import texttospeech
 from app.core.logger import logger
 
 class TTSService:
-        
-   def speak_to_file(self, text: str, output_path: str):
-    logger.info(f'Generating speech: {output_path}')
-    engine = None
 
-    try:
-        engine = pyttsx3.init()
-        voices = engine.getProperty('voices')
-        for voice in voices:
-            if 'Zira' in voice.name:
-                engine.setProperty('voice', voice.id)
-                break
+    def __init__(self):
+        logger.info("Initializing Google Cloud TTS")
+        self.client = texttospeech.TextToSpeechClient()
+        logger.info("Google Cloud TTS initialized successfully")
 
-        engine.setProperty('rate', 160)
-        engine.setProperty('volume', 1.0)
+    def speak_to_file(self, text: str, output_path: str):
+        logger.info(f"Generating speech: {output_path}")
 
-        engine.save_to_file(text, output_path)
-        engine.runAndWait()
-        engine.stop()
+        try:
+            input_text = texttospeech.SynthesisInput(text=text)
+            voice = texttospeech.VoiceSelectionParams(
+                language_code="en-US",
+                name="en-US-Chirp3-HD-Charon")
 
-        logger.info('Speech generated successfully')
-        return output_path
+            audio_config = texttospeech.AudioConfig(
+                audio_encoding=texttospeech.AudioEncoding.MP3 )
 
-    except Exception as e:
-        logger.error(f'TTS failed: {e}')
-        return None
+            response = self.client.synthesize_speech(
+                input=input_text,
+                voice=voice,
+                audio_config=audio_config )
 
-    finally:
-        if engine is not None:
-            try:
-                engine.stop()
-            except:
-                pass 
-        
-tts_service=TTSService()        
-                
+            with open(output_path, "wb") as out:
+                out.write(response.audio_content)
+
+            logger.info("Speech generated successfully")
+            logger.info(f"Audio saved to {output_path}")
+
+            return output_path
+
+        except Exception as e:
+            logger.error(f"TTS failed: {e}")
+            return None
+
+tts_service = TTSService()

@@ -4,6 +4,7 @@ from fastapi.responses import FileResponse
 from app.services.tts_service import tts_service
 
 router=APIRouter(prefix="",tags=['Text to speech'])
+
 OUTPUT_DIR=Path('generated_audio')
 OUTPUT_DIR.mkdir(exist_ok=True)
 
@@ -14,9 +15,9 @@ def generate_speech(request: dict):
     if not text:
         return {'error:'"Text is required"}
     
-    output_path=(OUTPUT_DIR/'answer.wav')
+    output_path=(OUTPUT_DIR/'answer.mp3')
     result=tts_service.speak_to_file(text,str(output_path))
     
     if result is None:
         return{'error':'TTS generation failed'}
-    return FileResponse(result,media_type='audio/wav',filename='answer.wav')
+    return FileResponse(result,media_type='audio/mpeg',filename='answer.mp3')

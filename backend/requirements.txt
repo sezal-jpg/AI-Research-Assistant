@@ -35,7 +35,7 @@ rank-bm25
 
 opencv-python-headless
 
-pyttsx3
+google-cloud-texttospeech
 
 youtube-transcript-api
 
