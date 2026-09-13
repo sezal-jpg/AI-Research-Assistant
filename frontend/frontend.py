@@ -378,6 +378,8 @@ st.markdown(
     '</div>',
     unsafe_allow_html=True)
 
+LARGE_FILE_WARNING_MB=20
+MAX_UPLOAD_SIZE_MB=30
 
 # Session state
 if 'website_urls' not in st.session_state:
@@ -443,37 +445,82 @@ with file_tab:
             "mkv",
             "webm",
         ],
-        accept_multiple_files=True
+        accept_multiple_files=True,
+        max_upload_size=MAX_UPLOAD_SIZE_MB
     )
 
     if uploaded_files:
-        st.info(
-            f"{len(uploaded_files)} file(s) selected")
+     st.info(f"{len(uploaded_files)} file(s) selected")
 
-        if st.button(
-            "Upload Files",
-            key="upload_files_button"
-        ):
+     large_files = []
+
+     for file in uploaded_files:
+        file_size_mb = file.size / (1024 * 1024)
+
+        if file_size_mb >= LARGE_FILE_WARNING_MB:
+            large_files.append(
+                (file.name, file_size_mb)
+            )
+
+    # Large-file warning
+     if large_files:
+
+        st.warning(
+            "⚠️ Large file detected. "
+            "Smaller files are recommended because large files "
+            "require more processing and may increase Gemini API "
+            "usage depending on the enabled processing features. "
+            "This can consume or exhaust available quota."
+        )
+
+        for name, size_mb in large_files:
+            st.caption(
+                f"• {name}: {size_mb:.2f} MB"
+            )
+
+        continue_upload = st.checkbox(
+            "I understand the processing and quota impact "
+            "and want to continue.",
+            key="large_file_confirmation"
+        )
+
+     else:
+        continue_upload = True
+
+    # Upload button is always visible
+     if st.button(
+        "Upload Files",
+        key="upload_files_button"
+    ):
+
+        # Stop upload if large-file confirmation was not given
+        if large_files and not continue_upload:
+
+            st.info(
+                "Upload cancelled. "
+                "Please select smaller files or confirm "
+                "that you want to continue."
+            )
+
+        else:
 
             try:
                 files = []
 
                 for file in uploaded_files:
+
                     file_bytes = file.getvalue()
+
                     files.append(
                         (
                             "files",
                             (
                                 file.name,
                                 file_bytes,
-                                file.type
-                            )
-                        )
-                    )
+                                file.type  ) ) )
 
                 with st.spinner(
-                    "Processing and indexing files..."
-                ):
+                    "Processing and indexing files..."):
 
                     response = requests.post(
                         f"{API_URL}/upload",
@@ -482,16 +529,24 @@ with file_tab:
                     )
 
                 if response.status_code == 200:
+
                     st.success(
-                        "Files uploaded and indexed successfully!"
-                    )
+                        "Files uploaded and indexed successfully!" )
+
                     for file in uploaded_files:
-                      if file.name not in st.session_state.uploaded_file_names:
-                         st.session_state.uploaded_file_names.append(file.name )    
+
+                        if (
+                            file.name
+                            not in st.session_state.uploaded_file_names
+                        ):
+                            st.session_state.uploaded_file_names.append(
+                                file.name
+                            )
 
                     try:
-                       st.json(response.json())
-                    except:
+                        st.json(response.json())
+
+                    except Exception:
                         st.write(response.text)
 
                 else:
@@ -504,20 +559,20 @@ with file_tab:
                     try:
                         st.json(response.json())
 
-                    except:
+                    except Exception:
                         st.text(response.text)
 
             except requests.exceptions.Timeout:
+
                 st.error(
                     "Upload request timed out. "
                     "The backend did not finish "
-                    "processing in time."
-                )
-            except Exception as e:
-                st.error(
-                    f"Upload error: {e}"
-                )
+                    "processing in time."  )
 
+            except Exception as e:
+
+                st.error(
+                    f"Upload error: {e}")
 # WEBSITE
 
 with website_tab:

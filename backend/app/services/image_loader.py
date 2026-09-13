@@ -6,6 +6,8 @@ from app.services.vision_service import vision_service
 from app.services.ocr_services import ocr_service
 from app.services.blip_service import get_blip_service
 from app.services.clip_service import get_clip_service
+from app.services.content_safety_service import content_safety_service
+
 
 class ImageLoader:
     

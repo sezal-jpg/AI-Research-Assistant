@@ -37,9 +37,9 @@ class RetrievalService:
             
            # YouTube Source
         elif selected_file.startswith( "https://www.youtube.com/") or selected_file.startswith("https://youtu.be/"):
-            semantic_docs=(state.vectorstore.similarity_search(question,k=8,filter={'source_url':selected_file}))
+            semantic_docs=(state.vectorstore.similarity_search(question,k=8,filter={'source':selected_file}))
             filtered_chunks=[chunk for chunk in state.all_chunks
-                             if chunk.metadata.get('source_url')==selected_file]
+                             if chunk.metadata.get('source')==selected_file]
             
             if not filtered_chunks:
                 logger.warning(f'No chunks found for youtube:' f'{selected_file}')
@@ -197,7 +197,7 @@ class RetrievalService:
             )
 
             source_url = doc.metadata.get(
-                "source_url"
+                "source_url",doc.metadata.get('source')
             )
 
             logger.info(

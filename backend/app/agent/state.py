@@ -5,6 +5,10 @@ class AgentState(TypedDict,total=False):
     question:str
     selected_file:str
     
+     # Security
+    prompt_injection_detected: bool
+    prompt_injection_reason: str
+    
     #Search query used by retrieval
     search_query:str
     previous_query:str

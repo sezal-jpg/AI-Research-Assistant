@@ -7,8 +7,31 @@ from app.services.memory_service import memory_service
 from app.core.gemini_utils import log_gemini_error
 from app.services.graph_retrieval_service import graph_retrieval_service
 from app.core.config import client,model
+from app.services.prompt_injection_service import prompt_injection_service
 import re
 
+def prompt_injection_node(state):
+    logger.info("Agent node: prompt injection check started")
+
+    question = state.get("question", "")
+    result = prompt_injection_service.check_prompt(question)
+
+    if result["detected"]:
+        logger.warning(
+            f"Prompt injection blocked: {result['reason']}")
+
+        return {
+            "prompt_injection_detected": True,
+            "prompt_injection_reason": result["reason"],
+            "decision": "blocked"
+        }
+
+    logger.info("Prompt injection check passed")
+
+    return {
+        "prompt_injection_detected": False,
+        "prompt_injection_reason": ""
+    }
 
 def retrieve_node(state):
     logger.info("Agent node: retrieval started")
@@ -349,6 +372,11 @@ def evaluate_context_node(state):
     overlap = meaningful_tokens.intersection(context_tokens)
     logger.info(
         f"Content-bearing overlap count: {len(overlap)}" )
+    
+    has_visual_evidence=bool(re.search(  r"\bvisual description\s*:",context_normalized))
+    
+    if has_visual_evidence:
+        logger.info('Visual evidence detected in retrieved context')
 
     relationship_patterns = [
         r"\brelationship between\b",
@@ -386,7 +414,8 @@ def evaluate_context_node(state):
                 "decision": "generate",
                 "retry_count": retry_count
             }
-
+    
+        
         if len(overlap) >= 2:
             logger.info(
                 "No graph evidence, but textual context "
@@ -396,14 +425,19 @@ def evaluate_context_node(state):
                 "decision": "generate",
                 "retry_count": retry_count
             }
-
-        logger.warning(
-            "Relationship question has insufficient evidence"
-        )
+            
+        logger.warning( "Relationship question has insufficient evidence" )   
+        
         return {
-            "decision": "retry",
-            "retry_count": retry_count + 1
-        }
+                    "decision": "retry",
+                    "retry_count": retry_count + 1
+                } 
+                   
+    if has_visual_evidence:
+            logger.info('Retrieved context contains visual evidence suitable for generation')      
+            return {
+                    'decision':'generate',
+                     'retry_count':retry_count  }  
         
     if len(overlap) >= 2:
 
@@ -539,11 +573,25 @@ Rules:
      
  
 def insufficient_context_node(state):
-    logger.warning('Unable to find sufficient relevant context')
-    
+    if state.get('prompt_injection_detected', False):
+        logger.warning(
+            'Returning prompt injection blocked response')
+
+        return {
+            'answer': (
+                'Request blocked: a potential prompt-injection '
+                'attempt was detected.'
+            )
+        }
+
+    logger.warning(
+        'Unable to find sufficient relevant context'
+    )
+
     return {
-        'answer':("I couldn't find this information" 
-                  "in the uploaded document(s).")
-    }    
+        'answer': (
+            "I couldn't find this information in the uploaded document(s)"
+        )
+    }
     
     
