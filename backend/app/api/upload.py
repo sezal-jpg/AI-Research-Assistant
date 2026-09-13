@@ -1,17 +1,24 @@
 from typing import List
-from fastapi import APIRouter,UploadFile,File
+from fastapi import APIRouter,UploadFile,File,HTTPException
 from app.services.ingestion_service import ingestion_service
 from app.core.app_state import state
+from app.core.logger import logger
 
 router=APIRouter(prefix="",tags=['Uploaded'])
 
 @router.post("/upload")
 async def upload_pdfs(files: List[UploadFile]=File(...)):
-    return await ingestion_service.process_documents(files)
+    try:
+     return await ingestion_service.process_documents(files)
+ 
+    except ValueError as e:
+        logger.warning(f'Upload blocked: {e}')
+        raise HTTPException(status_code=400,detail=str(e))
 
 @router.get("/sources")
 async def get_sources():
     sources=set()
+    
     for chunk in state.all_chunks:
          source=chunk.metadata.get('source_file')
          
