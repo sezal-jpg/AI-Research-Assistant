@@ -903,6 +903,177 @@
         "parent_id": "Entrepreneurship_certificates.pdf_13",
         "chunk_type": "parent"
       }
+    },
+    {
+      "parent_id": "aml_exp-4.pdf_0",
+      "page_content": "1  \n  \n  \nCHANDIGARH UNIVERSITY  \nDepartment of Computer Science & Engineering (AIML)  \nPractical  \nBranch:   \nSubject: Advanced Machine Learning  \nSubject Code: 24CSH- 338  \n  \n  \nSubmitted by :                                             Submitted to :  \nName : Sezal                                                          Mr. Dayal Chandra Sati  \nUID :   24BAI70653         \nSection: 24-AML-3(B)",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 0,
+        "page_label": "1",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_0",
+        "chunk_type": "parent"
+      }
+    },
+    {
+      "parent_id": "aml_exp-4.pdf_1",
+      "page_content": "2  \n  \n \n  \nEXPERIMENT : 04 \n \nAIM : \nTo implement a Self-Organizing Map (SOM) using Python and apply it for clustering and \nvisualization of high-dimensional data. \n \nOBJECTIVES : \n1. To understand the concept of Self-Organizing Map. \n2. To implement SOM using Python. \n3. To apply SOM on high-dimensional data. \n4. To cluster similar data points using SOM. \n5. To visualize high-dimensional data on a two-dimensional map. \n6. To analyze the role of Best Matching Unit and neighborhood learning. \n \nTOOLS REQUIRED : \n• Python 3.x \n• Jupyter Notebook / Google Colab \n• NumPy \n• Pandas \n• Matplotlib \n• Scikit-learn \n• MiniSom library \n \nTHEORY : \nA Self-Organizing Map (SOM) is an unsupervised neural network technique used for \nclustering and visualization of high-dimensional data. It is also known as a Kohonen Map. \nSOM maps high-dimensional input data onto a low-dimensional grid, usually a two-\ndimensional grid, while preserving the topological relationship between data points. Similar \ndata points are placed close to each other on the map. \nSOM uses competitive learning. For each input vector, the neuron whose weight vector is \nclosest to the input is selected. This neuron is called the Best Matching Unit (BMU). The \nBMU and its neighboring neurons are updated to become more similar to the input vector. \nThe basic weight update rule is: \nW_new = W_old + α(t) × h(t) × [X − W_old] \nWhere: \n• W_new = updated weight vector \n• W_old = old weight vector",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 1,
+        "page_label": "2",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_1",
+        "chunk_type": "parent"
+      }
+    },
+    {
+      "parent_id": "aml_exp-4.pdf_2",
+      "page_content": "The basic weight update rule is: \nW_new = W_old + α(t) × h(t) × [X − W_old] \nWhere: \n• W_new = updated weight vector \n• W_old = old weight vector \n• α(t) = learning rate at iteration t \n• h(t) = neighborhood function at iteration t",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 1,
+        "page_label": "2",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_2",
+        "chunk_type": "parent"
+      }
+    },
+    {
+      "parent_id": "aml_exp-4.pdf_3",
+      "page_content": "3  \n  \n• X = input vector \nThe learning rate and neighborhood radius generally decrease during training. This allows \nthe SOM to first organize broad regions of the map and then fine-tune the weights around \nindividual data patterns. \nSOM is useful for clustering, visualization, dimensionality reduction, anomaly detection, \nand pattern recognition. MiniSom is a minimal NumPy-based Python implementation of \nSelf-Organizing Maps. \n \nDATASET : \nDataset used: Digits Dataset from Scikit-learn. \nThe digits dataset contains handwritten digit images. Each data point is an 8 × 8 image, \nconverted into a feature vector of length 64. The dataset contains 1797 samples, 10 classes, \nand 64 features. Each image represents a digit from 0 to 9. \n \nMETHODOLOGY : \n1. Import the required Python libraries. \n2. Load the Digits dataset from Scikit-learn. \n3. Display the dataset dimensions and sample records. \n4. Normalize the 64-dimensional pixel features. \n5. Initialize a 10 × 10 Self-Organizing Map. \n6. Train the SOM using the input digit data. \n7. Find the Best Matching Unit for every data point. \n8. Assign cluster labels based on the BMU position. \n9. Visualize the SOM using the distance map. \n10. Plot the distribution of digit samples on the two-dimensional SOM grid. \n11. Calculate a silhouette score for the obtained BMU-based clusters when valid. \n12. Analyze the clustering and visualization results. \n \nCODE & OUTPUTS : \n1. Install and Import Libraries \n!pip install minisom",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 2,
+        "page_label": "3",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_3",
+        "chunk_type": "parent"
+      }
+    },
+    {
+      "parent_id": "aml_exp-4.pdf_4",
+      "page_content": "12. Analyze the clustering and visualization results. \n \nCODE & OUTPUTS : \n1. Install and Import Libraries \n!pip install minisom \n \nimport numpy as np \nimport pandas as pd \nimport matplotlib.pyplot as plt \n \nfrom sklearn.datasets import load_digits \nfrom sklearn.preprocessing import MinMaxScaler \nfrom sklearn.metrics import silhouette_score \nfrom minisom import MiniSom \n2. Load Dataset \ndigits = load_digits() \n \nX = digits.data \ny = digits.target \n \nprint(\"Dataset shape:\", X.shape)",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 2,
+        "page_label": "3",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_4",
+        "chunk_type": "parent"
+      }
+    },
+    {
+      "parent_id": "aml_exp-4.pdf_5",
+      "page_content": "4  \n  \nprint(\"Number of classes:\", len(np.unique(y))) \nprint(\"Number of features:\", X.shape[1]) \n \nprint(\"First 5 target labels:\") \nprint(y[:5]) \n3. Normalize the Data \nscaler = MinMaxScaler() \nX_scaled = scaler.fit_transform(X) \n \nprint(\"Scaled data shape:\", X_scaled.shape) \nprint(\"Minimum value:\", X_scaled.min()) \nprint(\"Maximum value:\", X_scaled.max()) \n4. Initialize the SOM \nsom_x = 10 \nsom_y = 10 \n \nsom = MiniSom( \n    x=som_x, \n    y=som_y, \n    input_len=X_scaled.shape[1], \n    sigma=1.0, \n    learning_rate=0.5, \n    random_seed=42 \n) \n \nsom.random_weights_init(X_scaled) \nprint(\"SOM initialized with\", som_x * som_y, \"nodes.\") \n5. Train the SOM \nnum_iterations = 5000 \nsom.train_random(X_scaled, num_iterations) \n \nprint(\"SOM training completed successfully.\") \n6. Find the Best Matching Unit (BMU) \nbmu_positions = np.array([som.winner(x) for x in X_scaled]) \n \nbmu_x = bmu_positions[:, 0] \nbmu_y = bmu_positions[:, 1] \n \nprint(\"First 10 BMU positions:\") \nprint(bmu_positions[:10]) \n7. Assign Cluster Labels \ncluster_labels = bmu_x * som_y + bmu_y \n \ndf_som = pd.DataFrame({ \n    \"Actual Digit\": y, \n    \"BMU X\": bmu_x, \n    \"BMU Y\": bmu_y, \n    \"Cluster Label\": cluster_labels \n}) \n \ndisplay(df_som.head(10)) \n8. Calculate Silhouette Score \nunique_clusters = np.unique(cluster_labels) \n \nif len(unique_clusters) > 1 and len(unique_clusters) < len(X_scaled):",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 3,
+        "page_label": "4",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_5",
+        "chunk_type": "parent"
+      }
+    },
+    {
+      "parent_id": "aml_exp-4.pdf_6",
+      "page_content": "5  \n  \n    score = silhouette_score(X_scaled, cluster_labels) \n    print(\"Silhouette Score:\", score) \nelse: \n    print(\"Silhouette Score cannot be calculated for the obtained BMU \nclusters.\") \n9. Visualize the SOM Distance Map \nplt.figure(figsize=(9, 8)) \n \nplt.pcolor(som.distance_map().T, cmap=\"bone_r\") \nplt.colorbar(label=\"Distance\") \n \nplt.title(\"SOM Distance Map (U-Matrix)\") \nplt.xlabel(\"SOM X\") \nplt.ylabel(\"SOM Y\") \n \nplt.show() \n10. Plot Data Distribution on the SOM Grid \nplt.figure(figsize=(10, 8)) \n \nplt.pcolor(som.distance_map().T, cmap=\"bone_r\") \nplt.colorbar(label=\"Distance\") \n \nscatter = plt.scatter( \n    bmu_x + 0.5, \n    bmu_y + 0.5, \n    c=y, \n    cmap=\"tab10\", \n    s=20, \n    alpha=0.8 \n) \n \nplt.title(\"Digits Mapped on the SOM Grid\") \nplt.xlabel(\"SOM X\") \nplt.ylabel(\"SOM Y\") \nplt.colorbar(scatter, label=\"Actual Digit\") \n \nplt.show() \n \nRESULT :",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 4,
+        "page_label": "5",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_6",
+        "chunk_type": "parent"
+      }
+    },
+    {
+      "parent_id": "aml_exp-4.pdf_7",
+      "page_content": "6",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 5,
+        "page_label": "6",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_7",
+        "chunk_type": "parent"
+      }
+    },
+    {
+      "parent_id": "aml_exp-4.pdf_8",
+      "page_content": "7  \n  \n \n \nOUTCOME OF THE EXPERIMENT : \n• Self-Organizing Map was successfully implemented using Python. \n• High-dimensional handwritten digit data was mapped onto a two-dimensional SOM grid. \n• The Best Matching Unit was identified for each input sample. \n• Data points were clustered based on their BMU positions. \n• The SOM distance map helped visualize cluster boundaries and the organization of the \ndata. \n• SOM demonstrated its usefulness for clustering and visualization of high-dimensional \ndata. \n \nLEARNING OUTCOMES : \nAfter completing this experiment: \n1. We learned the concept and working principle of Self-Organizing Maps. \n2. We learned how to preprocess and normalize high-dimensional input data. \n3. We learned how to initialize and train a SOM using the MiniSom library. \n4. We learned how to identify the Best Matching Unit for each input sample. \n5. We learned how neighborhood learning helps preserve the topology of the input data. \n6. We learned how to visualize high-dimensional data using a two-dimensional SOM \ndistance map. \n7. We learned how SOM can be used for clustering, pattern recognition, and exploratory \ndata analysis.",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 6,
+        "page_label": "7",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_8",
+        "chunk_type": "parent"
+      }
     }
   ],
   "children": [
@@ -115610,6 +115781,386 @@
         "chunk_type": "child",
         "parent_index": 13,
         "child_index": 0
+      }
+    },
+    {
+      "page_content": "1  \n  \n  \nCHANDIGARH UNIVERSITY  \nDepartment of Computer Science & Engineering (AIML)  \nPractical  \nBranch:   \nSubject: Advanced Machine Learning  \nSubject Code: 24CSH- 338  \n  \n  \nSubmitted by :                                             Submitted to :  \nName : Sezal                                                          Mr. Dayal Chandra Sati  \nUID :   24BAI70653         \nSection: 24-AML-3(B)",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 0,
+        "page_label": "1",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_0",
+        "chunk_type": "child",
+        "parent_index": 0,
+        "child_index": 0
+      }
+    },
+    {
+      "page_content": "2  \n  \n \n  \nEXPERIMENT : 04 \n \nAIM : \nTo implement a Self-Organizing Map (SOM) using Python and apply it for clustering and \nvisualization of high-dimensional data. \n \nOBJECTIVES : \n1. To understand the concept of Self-Organizing Map. \n2. To implement SOM using Python. \n3. To apply SOM on high-dimensional data. \n4. To cluster similar data points using SOM. \n5. To visualize high-dimensional data on a two-dimensional map. \n6. To analyze the role of Best Matching Unit and neighborhood learning.",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 1,
+        "page_label": "2",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_1",
+        "chunk_type": "child",
+        "parent_index": 1,
+        "child_index": 0
+      }
+    },
+    {
+      "page_content": "TOOLS REQUIRED : \n• Python 3.x \n• Jupyter Notebook / Google Colab \n• NumPy \n• Pandas \n• Matplotlib \n• Scikit-learn \n• MiniSom library \n \nTHEORY : \nA Self-Organizing Map (SOM) is an unsupervised neural network technique used for \nclustering and visualization of high-dimensional data. It is also known as a Kohonen Map. \nSOM maps high-dimensional input data onto a low-dimensional grid, usually a two-\ndimensional grid, while preserving the topological relationship between data points. Similar",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 1,
+        "page_label": "2",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_1",
+        "chunk_type": "child",
+        "parent_index": 1,
+        "child_index": 1
+      }
+    },
+    {
+      "page_content": "data points are placed close to each other on the map. \nSOM uses competitive learning. For each input vector, the neuron whose weight vector is \nclosest to the input is selected. This neuron is called the Best Matching Unit (BMU). The \nBMU and its neighboring neurons are updated to become more similar to the input vector. \nThe basic weight update rule is: \nW_new = W_old + α(t) × h(t) × [X − W_old] \nWhere: \n• W_new = updated weight vector \n• W_old = old weight vector",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 1,
+        "page_label": "2",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_1",
+        "chunk_type": "child",
+        "parent_index": 1,
+        "child_index": 2
+      }
+    },
+    {
+      "page_content": "The basic weight update rule is: \nW_new = W_old + α(t) × h(t) × [X − W_old] \nWhere: \n• W_new = updated weight vector \n• W_old = old weight vector \n• α(t) = learning rate at iteration t \n• h(t) = neighborhood function at iteration t",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 1,
+        "page_label": "2",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_2",
+        "chunk_type": "child",
+        "parent_index": 2,
+        "child_index": 0
+      }
+    },
+    {
+      "page_content": "3  \n  \n• X = input vector \nThe learning rate and neighborhood radius generally decrease during training. This allows \nthe SOM to first organize broad regions of the map and then fine-tune the weights around \nindividual data patterns. \nSOM is useful for clustering, visualization, dimensionality reduction, anomaly detection, \nand pattern recognition. MiniSom is a minimal NumPy-based Python implementation of \nSelf-Organizing Maps. \n \nDATASET : \nDataset used: Digits Dataset from Scikit-learn.",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 2,
+        "page_label": "3",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_3",
+        "chunk_type": "child",
+        "parent_index": 3,
+        "child_index": 0
+      }
+    },
+    {
+      "page_content": "Dataset used: Digits Dataset from Scikit-learn. \nThe digits dataset contains handwritten digit images. Each data point is an 8 × 8 image, \nconverted into a feature vector of length 64. The dataset contains 1797 samples, 10 classes, \nand 64 features. Each image represents a digit from 0 to 9. \n \nMETHODOLOGY : \n1. Import the required Python libraries. \n2. Load the Digits dataset from Scikit-learn. \n3. Display the dataset dimensions and sample records.",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 2,
+        "page_label": "3",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_3",
+        "chunk_type": "child",
+        "parent_index": 3,
+        "child_index": 1
+      }
+    },
+    {
+      "page_content": "4. Normalize the 64-dimensional pixel features. \n5. Initialize a 10 × 10 Self-Organizing Map. \n6. Train the SOM using the input digit data. \n7. Find the Best Matching Unit for every data point. \n8. Assign cluster labels based on the BMU position. \n9. Visualize the SOM using the distance map. \n10. Plot the distribution of digit samples on the two-dimensional SOM grid. \n11. Calculate a silhouette score for the obtained BMU-based clusters when valid.",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 2,
+        "page_label": "3",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_3",
+        "chunk_type": "child",
+        "parent_index": 3,
+        "child_index": 2
+      }
+    },
+    {
+      "page_content": "12. Analyze the clustering and visualization results. \n \nCODE & OUTPUTS : \n1. Install and Import Libraries \n!pip install minisom",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 2,
+        "page_label": "3",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_3",
+        "chunk_type": "child",
+        "parent_index": 3,
+        "child_index": 3
+      }
+    },
+    {
+      "page_content": "12. Analyze the clustering and visualization results. \n \nCODE & OUTPUTS : \n1. Install and Import Libraries \n!pip install minisom \n \nimport numpy as np \nimport pandas as pd \nimport matplotlib.pyplot as plt \n \nfrom sklearn.datasets import load_digits \nfrom sklearn.preprocessing import MinMaxScaler \nfrom sklearn.metrics import silhouette_score \nfrom minisom import MiniSom \n2. Load Dataset \ndigits = load_digits() \n \nX = digits.data \ny = digits.target \n \nprint(\"Dataset shape:\", X.shape)",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 2,
+        "page_label": "3",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_4",
+        "chunk_type": "child",
+        "parent_index": 4,
+        "child_index": 0
+      }
+    },
+    {
+      "page_content": "4  \n  \nprint(\"Number of classes:\", len(np.unique(y))) \nprint(\"Number of features:\", X.shape[1]) \n \nprint(\"First 5 target labels:\") \nprint(y[:5]) \n3. Normalize the Data \nscaler = MinMaxScaler() \nX_scaled = scaler.fit_transform(X) \n \nprint(\"Scaled data shape:\", X_scaled.shape) \nprint(\"Minimum value:\", X_scaled.min()) \nprint(\"Maximum value:\", X_scaled.max()) \n4. Initialize the SOM \nsom_x = 10 \nsom_y = 10 \n \nsom = MiniSom( \n    x=som_x, \n    y=som_y, \n    input_len=X_scaled.shape[1],",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 3,
+        "page_label": "4",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_5",
+        "chunk_type": "child",
+        "parent_index": 5,
+        "child_index": 0
+      }
+    },
+    {
+      "page_content": "y=som_y, \n    input_len=X_scaled.shape[1], \n    sigma=1.0, \n    learning_rate=0.5, \n    random_seed=42 \n) \n \nsom.random_weights_init(X_scaled) \nprint(\"SOM initialized with\", som_x * som_y, \"nodes.\") \n5. Train the SOM \nnum_iterations = 5000 \nsom.train_random(X_scaled, num_iterations) \n \nprint(\"SOM training completed successfully.\") \n6. Find the Best Matching Unit (BMU) \nbmu_positions = np.array([som.winner(x) for x in X_scaled]) \n \nbmu_x = bmu_positions[:, 0] \nbmu_y = bmu_positions[:, 1]",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 3,
+        "page_label": "4",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_5",
+        "chunk_type": "child",
+        "parent_index": 5,
+        "child_index": 1
+      }
+    },
+    {
+      "page_content": "bmu_y = bmu_positions[:, 1] \n \nprint(\"First 10 BMU positions:\") \nprint(bmu_positions[:10]) \n7. Assign Cluster Labels \ncluster_labels = bmu_x * som_y + bmu_y \n \ndf_som = pd.DataFrame({ \n    \"Actual Digit\": y, \n    \"BMU X\": bmu_x, \n    \"BMU Y\": bmu_y, \n    \"Cluster Label\": cluster_labels \n}) \n \ndisplay(df_som.head(10)) \n8. Calculate Silhouette Score \nunique_clusters = np.unique(cluster_labels) \n \nif len(unique_clusters) > 1 and len(unique_clusters) < len(X_scaled):",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 3,
+        "page_label": "4",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_5",
+        "chunk_type": "child",
+        "parent_index": 5,
+        "child_index": 2
+      }
+    },
+    {
+      "page_content": "5  \n  \n    score = silhouette_score(X_scaled, cluster_labels) \n    print(\"Silhouette Score:\", score) \nelse: \n    print(\"Silhouette Score cannot be calculated for the obtained BMU \nclusters.\") \n9. Visualize the SOM Distance Map \nplt.figure(figsize=(9, 8)) \n \nplt.pcolor(som.distance_map().T, cmap=\"bone_r\") \nplt.colorbar(label=\"Distance\") \n \nplt.title(\"SOM Distance Map (U-Matrix)\") \nplt.xlabel(\"SOM X\") \nplt.ylabel(\"SOM Y\") \n \nplt.show() \n10. Plot Data Distribution on the SOM Grid",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 4,
+        "page_label": "5",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_6",
+        "chunk_type": "child",
+        "parent_index": 6,
+        "child_index": 0
+      }
+    },
+    {
+      "page_content": "10. Plot Data Distribution on the SOM Grid \nplt.figure(figsize=(10, 8)) \n \nplt.pcolor(som.distance_map().T, cmap=\"bone_r\") \nplt.colorbar(label=\"Distance\") \n \nscatter = plt.scatter( \n    bmu_x + 0.5, \n    bmu_y + 0.5, \n    c=y, \n    cmap=\"tab10\", \n    s=20, \n    alpha=0.8 \n) \n \nplt.title(\"Digits Mapped on the SOM Grid\") \nplt.xlabel(\"SOM X\") \nplt.ylabel(\"SOM Y\") \nplt.colorbar(scatter, label=\"Actual Digit\") \n \nplt.show() \n \nRESULT :",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 4,
+        "page_label": "5",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_6",
+        "chunk_type": "child",
+        "parent_index": 6,
+        "child_index": 1
+      }
+    },
+    {
+      "page_content": "6",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 5,
+        "page_label": "6",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_7",
+        "chunk_type": "child",
+        "parent_index": 7,
+        "child_index": 0
+      }
+    },
+    {
+      "page_content": "7  \n  \n \n \nOUTCOME OF THE EXPERIMENT : \n• Self-Organizing Map was successfully implemented using Python. \n• High-dimensional handwritten digit data was mapped onto a two-dimensional SOM grid. \n• The Best Matching Unit was identified for each input sample. \n• Data points were clustered based on their BMU positions. \n• The SOM distance map helped visualize cluster boundaries and the organization of the \ndata. \n• SOM demonstrated its usefulness for clustering and visualization of high-dimensional",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 6,
+        "page_label": "7",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_8",
+        "chunk_type": "child",
+        "parent_index": 8,
+        "child_index": 0
+      }
+    },
+    {
+      "page_content": "data. \n \nLEARNING OUTCOMES : \nAfter completing this experiment: \n1. We learned the concept and working principle of Self-Organizing Maps. \n2. We learned how to preprocess and normalize high-dimensional input data. \n3. We learned how to initialize and train a SOM using the MiniSom library. \n4. We learned how to identify the Best Matching Unit for each input sample. \n5. We learned how neighborhood learning helps preserve the topology of the input data.",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 6,
+        "page_label": "7",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_8",
+        "chunk_type": "child",
+        "parent_index": 8,
+        "child_index": 1
+      }
+    },
+    {
+      "page_content": "6. We learned how to visualize high-dimensional data using a two-dimensional SOM \ndistance map. \n7. We learned how SOM can be used for clustering, pattern recognition, and exploratory \ndata analysis.",
+      "metadata": {
+        "producer": "Microsoft® Word 2021",
+        "creator": "Microsoft® Word 2021",
+        "creationdate": "2026-09-03T10:55:10+05:30",
+        "title": "Microsoft Word - AML_ EXP _ Format(1)",
+        "author": "minazpreetk@gmail.com",
+        "moddate": "2026-09-03T10:55:10+05:30",
+        "source": "uploads\\aml_exp-4.pdf",
+        "total_pages": 7,
+        "page": 6,
+        "page_label": "7",
+        "source_file": "aml_exp-4.pdf",
+        "parent_id": "aml_exp-4.pdf_8",
+        "chunk_type": "child",
+        "parent_index": 8,
+        "child_index": 2
       }
     }
   ]
