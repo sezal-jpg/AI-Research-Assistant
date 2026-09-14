@@ -54,136 +54,284 @@ class IngestionService:
             saved_files.append(file_path)
         return saved_files
 
-    async def process_documents(
-        self,
-        files: List[UploadFile]  ):
+    async def process_documents( self,files: List[UploadFile]):
 
-        saved_files = await self.save_uploaded_files(files)
-        all_docs = []
-        image_extensions = {
-            ".png",
-            ".jpg",
-            ".jpeg",
-            ".bmp",
-            ".webp"
-        }
+     saved_files = await self.save_uploaded_files(files)
 
-        video_extensions = {
-            ".mp4",
-            ".avi",
-            ".mov",
-            ".mkv",
-            ".webm"
-        }
+     all_docs = []
 
-        for file_path in saved_files:
+     image_extensions = {
+        ".png",
+        ".jpg",
+        ".jpeg",
+        ".bmp",
+        ".webp"
+    }
+
+     video_extensions = {
+        ".mp4",
+        ".avi",
+        ".mov",
+        ".mkv",
+        ".webm"
+    }
+
+     for file_path in saved_files:
+
+        logger.info(
+            f"Processing {file_path.name}"
+        )
+
+        suffix = file_path.suffix.lower()
+
+        if suffix in image_extensions:
+
             logger.info(
-                f"Processing {file_path.name}"
+                f"Running content safety check "
+                f"for image: {file_path.name}"
             )
 
-            suffix = file_path.suffix.lower()
+            safety_result = (
+                content_safety_service.check_image(
+                    str(file_path)
+                 ) )
 
-            if suffix in image_extensions:
-                logger.info(
-                    f"Running content safety check "
-                    f"for image: {file_path.name}")
-                safety_result = (
-                    content_safety_service.check_image(
-                        str(file_path)
-                    ))
+            if not safety_result["safe"]:
 
-                if not safety_result["safe"]:
-                    logger.warning(
-                        f"Unsafe image blocked: "
-                        f"{file_path.name}"  )
-
-                    file_path.unlink(
-                        missing_ok=True)
-
-                    raise ValueError(
-                        "Upload blocked because the image "
-                        "was detected as sexually explicit "
-                        "or otherwise unsafe."
-                    )
-                logger.info(
-                    f"Image safety check passed: "
-                    f"{file_path.name}"
-                )
-
-            elif suffix in video_extensions:
-                logger.info(
-                    f"Running content safety check "
-                    f"for video: {file_path.name}"   )
-
-                safety_result = (
-                    content_safety_service.check_video(
-                        str(file_path)
-                    ))
-
-                if not safety_result["safe"]:
-                    logger.warning(
-                        f"Unsafe video blocked: "
-                        f"{file_path.name}"  )
-
-                    file_path.unlink(
-                        missing_ok=True )
-
-                    raise ValueError(
-                        "Upload blocked because the video "
-                        "was detected as sexually explicit "
-                        "or otherwise unsafe.")
-
-                logger.info(
-                    f"Video safety check passed: "
-                    f"{file_path.name}"
-                )
-
-            loader = loader_factory.get_loader(
-                file_path)
-
-            if loader is None:
                 logger.warning(
-                    f"Unsupported file: "
+                    f"Unsafe image blocked: "
+                    f"{file_path.name}"   )
+
+                file_path.unlink(
+                    missing_ok=True
+                )
+
+                raise ValueError(
+                    "Upload blocked because the image "
+                    "was detected as sexually explicit "
+                    "or otherwise unsafe."
+                )
+
+            logger.info(
+                f"Image safety check passed: "
+                f"{file_path.name}"
+            )
+
+        elif suffix in video_extensions:
+
+            logger.info(
+                f"Running content safety check "
+                f"for video: {file_path.name}"
+            )
+
+            safety_result = (
+                content_safety_service.check_video(
+                    str(file_path)
+                )
+            )
+
+            if not safety_result["safe"]:
+
+                logger.warning(
+                    f"Unsafe video blocked: "
+                    f"{file_path.name}"
+                )
+
+                file_path.unlink(
+                    missing_ok=True
+                )
+
+                raise ValueError(
+                    "Upload blocked because the video "
+                    "was detected as sexually explicit "
+                    "or otherwise unsafe."
+                )
+
+            logger.info(
+                f"Video safety check passed: "
+                f"{file_path.name}"
+            )
+            
+        elif suffix == ".pdf":
+
+            logger.info(
+                f"Running PDF embedded image safety check "
+                f"for: {file_path.name}")
+
+            safety_result = (
+                content_safety_service
+                .check_pdf_embedded_images(
+                    str(file_path)
+                )
+            )
+
+            if not safety_result["safe"]:
+
+                logger.warning(
+                    f"Unsafe PDF embedded image blocked: "
                     f"{file_path.name}" )
 
-                continue
-            docs = loader.load(file_path)
-            docs = self.add_metadata(
-                docs,
-                file_path.name)
+                file_path.unlink(
+                    missing_ok=True
+                )
 
-            all_docs.extend(docs)
+                raise ValueError(
+                    "Upload blocked because the PDF "
+                    "contains a sexually explicit or "
+                    "otherwise unsafe embedded image."
+                )
 
-        chunks = indexing_service.index_documents(
-            all_docs )
+            logger.info(
+                f"PDF embedded image safety check passed: "
+                f"{file_path.name}"  )
 
-        logger.info(
-            f"total documents : {len(all_docs)}" )
+        elif suffix in {".docx", ".pptx"}:
 
-        logger.info(
-            f"total chunks : {len(chunks)}" )
+            logger.info(
+                f"Running embedded image safety check "
+                f"for: {file_path.name}"
+            )
 
-        return {
-            "message": "Documents indexed successfully",
-            "uploaded_files": len(saved_files),
-            "documents": len(all_docs),
-            "chunks": len(chunks),
-        }
+            safety_result = (
+                content_safety_service
+                .check_document_embedded_images(
+                    str(file_path)
+                )
+            )
 
-    async def process_youtube(
-        self,
-        url: str ):
+            if not safety_result["safe"]:
 
-        logger.info(
-            f"Processing YouTube URL: {url}"  )
+                logger.warning(
+                    f"Unsafe embedded image blocked: "
+                    f"{file_path.name}" )
 
-        docs = youtube_service.get_transcript(
-            url  )
+                file_path.unlink(
+                    missing_ok=True
+                )
 
-        if not docs:
+                raise ValueError(
+                    "Upload blocked because the document "
+                    "contains a sexually explicit or "
+                    "otherwise unsafe embedded image."
+                )
+
+            logger.info(
+                f"Embedded image safety check passed: "
+                f"{file_path.name}"
+            )
+
+            if not safety_result["safe"]:
+                logger.warning(
+                    f"Unsafe embedded image blocked: "
+                    f"{file_path.name}" )
+
+                file_path.unlink(
+                    missing_ok=True  )
+
+                raise ValueError(
+                    "Upload blocked because the document "
+                    "contains a sexually explicit or "
+                    "otherwise unsafe embedded image."
+                )
+
+            logger.info(
+                f"Embedded image safety check passed: "
+                f"{file_path.name}" )
+
+        loader = loader_factory.get_loader(
+            file_path
+        )
+
+        if loader is None:
 
             logger.warning(
-                "No YouTube transcript found")
+                f"Unsupported file: "
+                f"{file_path.name}"
+            )
+
+            continue
+
+        docs = loader.load(
+            file_path)
+
+        docs = self.add_metadata(
+            docs,
+            file_path.name )
+
+        if docs:
+
+            combined_text = "\n\n".join(
+                doc.page_content
+                for doc in docs
+                if doc.page_content
+                and doc.page_content.strip()
+            )
+
+            if combined_text.strip():
+
+                logger.info(
+                    f"Running text content safety "
+                    f"check for: {file_path.name}"
+                )
+
+                safety_result = (
+                    content_safety_service.check_text(
+                        combined_text
+                    )
+                )
+
+                if not safety_result["safe"]:
+
+                    logger.warning(
+                        f"Unsafe text content blocked: "
+                        f"{file_path.name}"
+                    )
+
+                    file_path.unlink(
+                        missing_ok=True
+                    )
+
+                    raise ValueError(
+                        "Upload blocked because the document "
+                        "was detected as containing sexually "
+                        "explicit or otherwise unsafe content."
+                    )
+
+                logger.info(
+                    f"Text content safety check passed: "
+                    f"{file_path.name}"
+                )
+
+        all_docs.extend(
+            docs )
+
+     chunks = indexing_service.index_documents(
+        all_docs)
+
+     logger.info(
+        f"total documents : {len(all_docs)}")
+
+     logger.info(
+        f"total chunks : {len(chunks)}")
+
+     return {
+        "message": "Documents indexed successfully",
+        "uploaded_files": len(saved_files),
+        "documents": len(all_docs),
+        "chunks": len(chunks),
+    }
+
+    async def process_youtube( self,url: str):
+        
+        logger.info(
+            f"Processing YouTube URL: {url}" )
+
+        docs = youtube_service.get_transcript(
+            url)
+
+        if not docs:
+            logger.warning(
+                "No YouTube transcript found"  )
 
             return {
                 "message": "could not extract YouTube transcript",
@@ -191,11 +339,46 @@ class IngestionService:
                 "chunks": 0,
             }
 
+      
+        combined_text = "\n\n".join(
+            doc.page_content
+            for doc in docs
+            if doc.page_content
+            and doc.page_content.strip() )
+
+        if combined_text.strip():
+
+            logger.info(
+                "Running text content safety "
+                "check for YouTube transcript"
+            )
+
+            safety_result = (
+                content_safety_service.check_text(
+                    combined_text
+                )  )
+
+            if not safety_result["safe"]:
+
+                logger.warning(
+                    "Unsafe YouTube transcript blocked"
+                )
+
+                raise ValueError(
+                    "YouTube content was blocked because "
+                    "the transcript was detected as sexually "
+                    "explicit or otherwise unsafe."
+                )
+
+            logger.info(
+                "YouTube transcript safety check passed" )
+
         chunks = indexing_service.index_documents(
             docs )
 
         logger.info(
             f"YouTube documents: {len(docs)}" )
+
         logger.info(
             f"YouTube chunks: {len(chunks)}" )
 
@@ -205,21 +388,17 @@ class IngestionService:
             "chunks": len(chunks),
         }
 
-    async def process_youtube_transcript(
-        self,
-        url: str,
-        transcript: str ):
+    async def process_youtube_transcript(self,url: str,transcript: str ):
 
-        logger.info(
+         logger.info(
             f"Processing youtube transcript: {url}" )
 
-        video_id = youtube_service.extract_video_id(
-            url  )
+         video_id = youtube_service.extract_video_id(  url)
 
-        if not video_id:
+         if not video_id:
 
             logger.error(
-                "could not extract youtube video id" )
+                "could not extract youtube video id"  )
 
             return {
                 "message": "Invalid Youtube URL",
@@ -227,12 +406,11 @@ class IngestionService:
                 "chunks": 0
             }
 
-        transcript = transcript.strip()
+         transcript = transcript.strip()
 
-        if not transcript:
-
+         if not transcript:
             logger.warning(
-                "Youtube transcript is empty")
+                "Youtube transcript is empty"  )
 
             return {
                 "message": "Youtube transcript is empty",
@@ -240,7 +418,30 @@ class IngestionService:
                 "chunks": 0
             }
 
-        docs = [
+         logger.info(
+            "Running text content safety check "
+            "for YouTube transcript" )
+
+         safety_result = (
+            content_safety_service.check_text(
+                transcript
+            ) )
+
+         if not safety_result["safe"]:
+
+            logger.warning(
+                "Unsafe YouTube transcript blocked" )
+
+            raise ValueError(
+                "YouTube content was blocked because "
+                "the transcript was detected as sexually "
+                "explicit or otherwise unsafe."
+            )
+
+         logger.info(
+            "YouTube transcript safety check passed"  )
+
+         docs = [
             Document(
                 page_content=transcript,
                 metadata={
@@ -252,18 +453,19 @@ class IngestionService:
             )
         ]
 
-        chunks = indexing_service.index_documents(
-            docs)
+         chunks = indexing_service.index_documents(
+            docs )
 
-        logger.info(
+         logger.info(
             f"YouTube transcript documents: "
             f"{len(docs)}" )
 
-        logger.info(
+         logger.info(
             f"YouTube transcript chunks: "
-            f"{len(chunks)}" )
+            f"{len(chunks)}"
+        )
 
-        return {
+         return {
             "message": "YouTube indexed successfully",
             "documents": len(docs),
             "chunks": len(chunks)
