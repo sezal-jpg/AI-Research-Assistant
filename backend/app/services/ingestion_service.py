@@ -4,6 +4,7 @@ from pathlib import Path
 from fastapi import UploadFile
 from langchain_core.documents import Document
 from app.core.logger import logger
+from app.core.app_state import state
 from app.services.indexing_service import indexing_service
 from app.services.loader_factory import loader_factory
 from app.services.youtube_service import youtube_service
@@ -19,7 +20,7 @@ class IngestionService:
 
     async def save_uploaded_files(
         self,
-        files: List[UploadFile]
+        files: List[UploadFile],existing_sources:set
     ) -> List[Path]:
 
         saved_files = []
@@ -27,6 +28,11 @@ class IngestionService:
         for file in files:
 
             filename = Path(file.filename or "uploaded_file").name
+            
+            if filename in existing_sources:
+                logger.info(f'Skipping already indexed file: {filename}')
+                continue
+            
             file_path = self.upload_dir / filename
             logger.info(f"saving {filename}")
 
@@ -55,8 +61,12 @@ class IngestionService:
         return saved_files
 
     async def process_documents( self,files: List[UploadFile]):
-
-     saved_files = await self.save_uploaded_files(files)
+     
+     existing_sources={chunk.metadata.get('source_file')
+                       for chunk in (state.all_chunks or [])
+                       if chunk.metadata.get('source_file')
+                       }
+     saved_files=await self.save_uploaded_files(files,existing_sources)
 
      all_docs = []
 
@@ -325,6 +335,25 @@ class IngestionService:
         
         logger.info(
             f"Processing YouTube URL: {url}" )
+        
+        video_id=youtube_service.extract_video_id(url)
+        
+        if not video_id:
+            logger.error('Could not extract YouTube video ID')
+            return {'message':'Invalid YouTube URL',
+                    'documents':0,
+                    'chunks':0}
+            
+        existing_sources={chunk.metadata.get('source_file')
+                             for chunk in (state.all_chunks or []) 
+                             if chunk.metadata.get('source_file')}
+        
+        youtube_source=f'youtube:{video_id}'
+        if youtube_source in existing_sources:
+            logger.info(f'Skipping already indexed YouTube video: {video_id}')
+            return {'message':'YouTube video already indexed',
+                    'document':0,
+                    'chunks':0}
 
         docs = youtube_service.get_transcript(
             url)
@@ -338,6 +367,11 @@ class IngestionService:
                 "documents": 0,
                 "chunks": 0,
             }
+            
+        for doc in docs:
+            doc.metadata['source_file']=youtube_source   
+            doc.metadata['source_url']=url
+            doc.metadata['video_id']=video_id 
 
       
         combined_text = "\n\n".join(
@@ -405,6 +439,21 @@ class IngestionService:
                 "documents": 0,
                 "chunks": 0
             }
+            
+         existing_sources={
+              chunk.metadata.get("source_file")
+              for chunk in (state.all_chunks or [])
+              if chunk.metadata.get("source_file")
+          }
+         
+         youtube_source=f'youtube:{video_id}'
+         
+         if youtube_source in existing_sources:
+             logger.info(f'Skipping already indexed YouTube video:{video_id}')
+             return {'message':'YouTube video already indexed',
+                     'documents':0,
+                     'chunks':0}
+         
 
          transcript = transcript.strip()
 

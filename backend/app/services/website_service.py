@@ -2,6 +2,7 @@ from app.core.logger import logger
 from app.services.website_loader import website_loader
 from app.services.crawler_service import crawler_service
 from app.services.indexing_service import indexing_service
+from app.core.app_state import state
 from app.services.content_safety_service import content_safety_service
 
 
@@ -10,6 +11,18 @@ class WebsiteService:
     def upload(self, request):
 
         logger.info(f"Website received: {request.url}")
+        
+        existing_sources={
+            chunk.metadata.get('source_file')
+            for chunk in state.all_chunks
+            if chunk.metadata.get('source_file')
+        }
+        if request.url in existing_sources:
+            logger.info(f'Skipping already indexed website: {request.url}')
+            
+            return {"message":"Website already indexed",
+                    'document':0,
+                    'chunks':0}
 
         if request.crawl:
             docs = crawler_service.crawl(
@@ -25,6 +38,9 @@ class WebsiteService:
             return {
                 "message": "No documents found"
             }
+            
+        for doc in docs:
+            doc.metadata['source_file']=request.url    
             
         logger.info(
             "Running text content safety check "
