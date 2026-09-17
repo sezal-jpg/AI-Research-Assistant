@@ -26,7 +26,7 @@ class CrawlerService:
                 docs=website_loader.load(current_url)
                 for doc in docs:
                   doc.metadata['source_url']=current_url
-                  doc.metadata['source_type']=website_loader
+                  doc.metadata['source_type']='website'
                 all_docs.extend(docs)
             
                 soup=BeautifulSoup(response.text,'html.parser')

@@ -1,3 +1,7 @@
+from urllib.parse import urlparse
+import requests
+import tempfile
+import os
 from app.core.logger import logger
 from app.services.website_loader import website_loader
 from app.services.crawler_service import crawler_service
@@ -5,11 +9,9 @@ from app.services.indexing_service import indexing_service
 from app.core.app_state import state
 from app.services.content_safety_service import content_safety_service
 
-
 class WebsiteService:
 
     def upload(self, request):
-
         logger.info(f"Website received: {request.url}")
         
         existing_sources={
@@ -39,6 +41,153 @@ class WebsiteService:
                 "message": "No documents found"
             }
             
+        logger.info(
+            "Running website media content safety check" )
+
+        for doc in docs:
+            image_urls = doc.metadata.get(
+                "image_urls", []
+            )
+            video_urls = doc.metadata.get(
+                "video_urls", []
+            )
+
+
+            for image_url in image_urls:
+
+                logger.info(
+                    f"Checking website image: {image_url}"
+                )
+
+                try:
+                    response = requests.get(
+                        image_url,
+                        timeout=15,
+                        headers={
+                            "User-Agent": "OmniResearch-AI/1.0"
+                        }
+                    )
+                    response.raise_for_status()
+
+                    with tempfile.NamedTemporaryFile(
+                        suffix=os.path.splitext(
+                            urlparse(image_url).path
+                        )[1] or ".jpg",
+                        delete=False
+                    ) as temp_file:
+
+                        temp_file.write(
+                            response.content
+                        )
+                        image_path = temp_file.name
+
+                    try:
+                        safety_result = (
+                            content_safety_service.check_image(
+                                image_path
+                            )
+                        )
+
+                        if not safety_result["safe"]:
+
+                            logger.warning(
+                                f"Unsafe website image blocked: "
+                                f"{image_url}"
+                            )
+
+                            raise ValueError(
+                                "Website content was blocked because "
+                                "an image was detected as sexually "
+                                "explicit or otherwise unsafe."
+                            )
+
+                    finally:
+                        if os.path.exists(image_path):
+                            os.remove(image_path)
+
+                except ValueError:
+                    raise
+
+                except Exception as e:
+                    logger.error(
+                        f"Website image safety check failed: "
+                        f"{image_url}: {e}"
+                    )
+
+                    raise ValueError(
+                        "Website content was blocked because "
+                        "an image could not be safely checked."
+                    )
+
+        
+            for video_url in video_urls:
+                logger.info(
+                    f"Checking website video: {video_url}"
+                )
+
+                try:
+                    response = requests.get(
+                        video_url,
+                        timeout=30,
+                        headers={
+                            "User-Agent": "OmniResearch-AI/1.0"
+                        }
+                    )
+                    response.raise_for_status()
+
+                    with tempfile.NamedTemporaryFile(
+                        suffix=os.path.splitext(
+                            urlparse(video_url).path
+                        )[1] or ".mp4",
+                        delete=False
+                    ) as temp_file:
+
+                        temp_file.write(
+                            response.content
+                        )
+                        video_path = temp_file.name
+                    try:
+                        safety_result = (
+                            content_safety_service.check_video(
+                                video_path
+                            )
+                        )
+
+                        if not safety_result["safe"]:
+                            logger.warning(
+                                f"Unsafe website video blocked: "
+                                f"{video_url}"
+                            )
+
+                            raise ValueError(
+                                "Website content was blocked because "
+                                "a video was detected as sexually "
+                                "explicit or otherwise unsafe."
+                            )
+
+                    finally:
+                        if os.path.exists(video_path):
+                            os.remove(video_path)
+
+                except ValueError:
+                    raise
+
+                except Exception as e:
+
+                    logger.error(
+                        f"Website video safety check failed: "
+                        f"{video_url}: {e}"
+                    )
+
+                    raise ValueError(
+                        "Website content was blocked because "
+                        "a video could not be safely checked."
+                    )
+
+        logger.info(
+            "Website media content safety check passed"
+        )
+                        
         for doc in docs:
             doc.metadata['source_file']=request.url    
             
