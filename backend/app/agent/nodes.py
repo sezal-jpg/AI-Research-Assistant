@@ -377,6 +377,23 @@ def evaluate_context_node(state):
     
     if has_visual_evidence:
         logger.info('Visual evidence detected in retrieved context')
+        
+       
+    top_docs = state.get("top_docs", [])
+    has_audio_context = any(
+        doc.metadata.get("source_type") == "audio"
+        for doc in top_docs
+    )
+    if has_audio_context:
+        logger.info(
+            "Audio transcript context detected - "
+            "proceeding to generation"
+        )
+
+        return {
+            "decision": "generate",
+            "retry_count": retry_count
+        }    
 
     relationship_patterns = [
         r"\brelationship between\b",
