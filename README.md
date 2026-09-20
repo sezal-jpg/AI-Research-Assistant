@@ -1470,12 +1470,14 @@ Audio safety currently evaluates the transcribed text rather than non-verbal aud
 The frontend currently enforces a 30 MB maximum upload size.
 
 🔮 Future Improvements
+
 🏗️ Infrastructure
 Durable cloud object storage
 Managed vector database
 Managed graph database
 Kubernetes deployment
 Horizontal scaling optimizations
+
 💻 Application
 Authentication
 User accounts
@@ -1487,6 +1489,7 @@ Admin dashboard
 Usage analytics
 User feedback system
 Citation highlighting
+
 🤖 AI
 Improved OCR
 Advanced multimodal reasoning
@@ -1497,6 +1500,7 @@ Automated evaluation pipelines
 Model selection and fallback strategies
 Visual analysis for YouTube sources
 Expanded website multimodal processing
+
 🧠 Learning Outcomes
 
 This project demonstrates practical experience with:
