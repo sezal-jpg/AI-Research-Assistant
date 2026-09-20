@@ -2,6 +2,7 @@ from urllib.parse import urlparse
 import requests
 import tempfile
 import os
+from PIL import Image
 from app.core.logger import logger
 from app.services.website_loader import website_loader
 from app.services.crawler_service import crawler_service
@@ -88,6 +89,14 @@ class WebsiteService:
                         image_path = temp_file.name
 
                     try:
+                        with Image.open(image_path) as image:
+                            width,height=image.size
+                            
+                        if width<=1 or height <=1:
+                            logger.info(f'Skipping tiny website image:' 
+                                        f'{image_url} ({width}x{height})')  
+                            continue  
+                                                    
                         safety_result = (
                             content_safety_service.check_image(
                                 image_path
