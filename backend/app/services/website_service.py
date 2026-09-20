@@ -58,6 +58,12 @@ class WebsiteService:
                 logger.info(
                     f"Checking website image: {image_url}"
                 )
+                
+                image_extension = os.path.splitext(urlparse(image_url).path)[1].lower()
+                
+                if image_extension == ".svg":
+                  logger.info(f"Skipping SVG website image: {image_url}" )
+                  continue
 
                 try:
                     response = requests.get(
