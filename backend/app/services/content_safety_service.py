@@ -223,6 +223,7 @@ class ContentSafetyService:
                     continue
 
                 result = results[0]
+                logger.info(f'Raw text safety result: {result}')
 
                 label = result[
                     "label"
