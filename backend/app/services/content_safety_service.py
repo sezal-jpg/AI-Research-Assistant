@@ -234,7 +234,7 @@ class ContentSafetyService:
 
                 sexual_score = (
                     score
-                    if label == "sexual"
+                    if label in { "sexual","label_1"}
                     else 0.0
                 )
 
