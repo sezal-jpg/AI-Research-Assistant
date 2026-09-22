@@ -16,7 +16,7 @@ class HtmlLoader:
             
         content=soup.get_text(separator='\n')
             
-        lines=[line.stript() for line in content.splitlines() if line.strip()]
+        lines=[line.strip() for line in content.splitlines() if line.strip()]
         content='\n'.join(lines)
                 
         if not content:

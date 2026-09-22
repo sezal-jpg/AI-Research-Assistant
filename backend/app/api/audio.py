@@ -32,6 +32,19 @@ async def transcribe_audio(
     )
 
     if not safety_result["safe"]:
+        if safety_result.get('error'):
+            
+            logger.error(f"Audio transcription safety analysis "
+            f"failed: {file.filename}: "
+            f"{safety_result['error']}")
+            
+            raise HTTPException(status_code=500,
+            detail=(
+                "Audio transcription could not be "
+                "fully processed because the transcript "
+                "could not be analyzed for content safety."
+            ))
+            
         logger.warning(
             f"Unsafe audio transcription blocked: "
             f"{file.filename}"

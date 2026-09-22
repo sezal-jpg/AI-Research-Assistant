@@ -11,7 +11,7 @@ class ExcelLoader:
         suffix=file_path.suffix.lower()
         
         if suffix=='.xlsx':
-            workbook=load_workbook(file_path,datat_only=True)
+            workbook=load_workbook(file_path,data_only=True)
             for sheet in workbook.worksheets:
                 rows=[]
                 

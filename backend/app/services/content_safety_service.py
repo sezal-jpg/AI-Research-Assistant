@@ -86,8 +86,9 @@ class ContentSafetyService:
 
             return {
                 "safe": False,
-                "nsfw_score": 1.0,
-                "error": str(e)
+                "nsfw_score": 0.0,
+                "error": str(e),
+                'scan_error':True
             }
 
     def check_image_object(
@@ -141,8 +142,9 @@ class ContentSafetyService:
 
             return {
                 "safe": False,
-                "nsfw_score": 1.0,
-                "error": str(e)
+                "nsfw_score": 0.0,
+                "error": str(e),
+                'scan_error':True
             }
 
     def _split_text(
@@ -442,6 +444,22 @@ class ContentSafetyService:
                     }
 
                 current_time += interval
+                
+        except Exception as e:
+            logger.error(f'Video content safety'
+                         f'analysis failed: {e}')
+            
+            return {
+                 "safe": False,
+                "nsfw_score": 0.0,
+                "frames_scanned":
+                    scanned_frames,
+                "reason":
+                    "Video could not be "
+                    "fully analyzed.",
+                "error": str(e),
+                "scan_error": True
+            }    
 
         finally:
 
@@ -536,13 +554,14 @@ class ContentSafetyService:
 
                         return {
                             "safe": False,
-                            "nsfw_score": 1.0,
+                            "nsfw_score": 0.0,
                             "page": page_number,
-                            "images_scanned":
-                                total_images,
+                            "images_scanned":total_images,
                             "reason":
                                 "PDF embedded image "
-                                "safety scan failed."
+                               "could not be analyzed.",
+                                "error": str(image_error),
+                                "scan_error": True
                         }
 
             logger.info(
@@ -568,10 +587,11 @@ class ContentSafetyService:
 
             return {
                 "safe": False,
-                "nsfw_score": 1.0,
+                "nsfw_score": 0.0,
                 "reason":
                     "PDF embedded image safety scan failed.",
-                "error": str(e)
+                "error": str(e),
+                'scan_error':True
             }    
         
     def check_document_embedded_images(self, file_path: str) -> dict:
@@ -609,10 +629,28 @@ class ContentSafetyService:
 
             for image_name in image_files:
                 try:
+                    if Path(image_name).suffix.lower()=='.svg':
+                        logger.info(f'Skipping SVG embedded image: {image_name}')
+                        continue
+                    
                     image_data = archive.read(image_name)
                     image = Image.open(BytesIO(image_data)).convert("RGB")
 
                     result = self.check_image_object(image)
+                    
+                    if result.get("error"):
+                        logger.error(
+                        f"Embedded image safety analysis failed "
+                        f"for {image_name}: "
+                        f"{result['error']}" )
+                        
+                        return {
+                        "safe": False,
+                       "nsfw_score": 0.0,
+                       "reason":
+                        "Embedded image could not be analyzed.",
+                        "error": result["error"],
+                        "scan_error": True }
 
                     if not result["safe"]:
                         logger.warning(
@@ -635,8 +673,11 @@ class ContentSafetyService:
                   
                     return {
                         "safe": False,
-                        "nsfw_score": 1.0,
-                        "reason": "Embedded image safety scan failed."
+                        "nsfw_score": 0.0,
+                        "reason":
+                            "Embedded image could not be analyzed.",
+                      "error": str(image_error),
+                       "scan_error": True
                     }
 
         return {
@@ -653,8 +694,10 @@ class ContentSafetyService:
 
         return {
             "safe": False,
-            "nsfw_score": 1.0,
-            "reason": "Embedded image safety scan failed."
+            "nsfw_score": 0.0,
+            "reason": "Embedded image safety scan failed.",
+            'error':str(e),
+            'scan_error':True
         }    
 
 content_safety_service = (ContentSafetyService())

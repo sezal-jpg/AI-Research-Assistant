@@ -104,6 +104,9 @@ class WebsiteService:
                         )
 
                         if not safety_result["safe"]:
+                            if safety_result.get('scan_error'):
+                                logger.warning(f'Website content could not be processed'
+                                               'because an image could not be analyzed for content safety')
 
                             logger.warning(
                                 f"Unsafe website image blocked: "
@@ -169,6 +172,14 @@ class WebsiteService:
                         )
 
                         if not safety_result["safe"]:
+                            if safety_result.get('scan_error'):
+                                logger.warning(f'Website video could not be analyzed:',
+                                               f'{video_url}')
+                                
+                                raise ValueError(   "Website content could not be processed "
+                                               "because a video could not be analyzed "
+                                                  "for content safety.")
+                                
                             logger.warning(
                                 f"Unsafe website video blocked: "
                                 f"{video_url}"

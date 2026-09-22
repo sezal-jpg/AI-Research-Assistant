@@ -23,6 +23,14 @@ class AudioLoader:
             ) )
 
         if not safety_result["safe"]:
+            if safety_result.get('error'):
+                logger.error(f"Audio transcript safety analysis "
+            f"failed: {file_path.name}: "
+            f"{safety_result['error']}")
+                
+                raise ValueError(  "Audio could not be fully processed "
+            "because its transcript could not be "
+            "analyzed for content safety." )
 
             logger.warning(
                 f"Unsafe audio transcript blocked: "
