@@ -8,7 +8,7 @@ class DocumentLoader:
         elif suffix=='.docx':
             loader=UnstructuredWordDocumentLoader(str(file_path))    
         elif suffix=='.pptx':
-            loader=UnstructuredWordDocumentLoader(str(file_path)) 
+            loader=UnstructuredPowerPointLoader(str(file_path)) 
         elif suffix=='.txt':
             loader=TextLoader(str(file_path),encoding='utf-8')
         elif suffix =='.md':

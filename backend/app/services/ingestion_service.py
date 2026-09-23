@@ -41,8 +41,9 @@ class IngestionService:
                 continue
 
             file_path = self.upload_dir / filename
+
             logger.info(
-                f"saving {filename}"
+                f"Saving {filename}"
             )
 
             with open(file_path, "wb") as f:
@@ -50,7 +51,9 @@ class IngestionService:
                 while True:
 
                     chunk = await file.read(
-                        1024 * 1024 )
+                        1024 * 1024
+                    )
+
                     if not chunk:
                         break
 
@@ -121,7 +124,6 @@ class IngestionService:
 
             suffix = file_path.suffix.lower()
 
-
             if suffix in image_extensions:
 
                 logger.info(
@@ -136,21 +138,28 @@ class IngestionService:
                 )
 
                 if not safety_result["safe"]:
-                    
+
                     file_path.unlink(
                         missing_ok=True
                     )
-                    
-                    if safety_result.get('scan_error'):
-                        logger.error( f"Image safety analysis failed: "
-                                       f"{file_path.name}: "
-                                       f"{safety_result.get('error')}")
-                        
-                        raise ValueError("The image could not be fully analyzed "
-                                         "for content safety.")
-                        
-                    logger.warning(f'insafe image blocked:'
-                                   f'{file_path.name}')    
+
+                    if safety_result.get("scan_error"):
+
+                        logger.error(
+                            f"Image safety analysis failed: "
+                            f"{file_path.name}: "
+                            f"{safety_result.get('error')}"
+                        )
+
+                        raise ValueError(
+                            "The image could not be fully "
+                            "analyzed for content safety."
+                        )
+
+                    logger.warning(
+                        f"Unsafe image blocked: "
+                        f"{file_path.name}"
+                    )
 
                     raise ValueError(
                         "Upload blocked because the image "
@@ -160,9 +169,8 @@ class IngestionService:
 
                 logger.info(
                     f"Image safety check passed: "
-                    f"{file_path.name}"
-                )
-
+                    f"{file_path.name}")
+       
             elif suffix in video_extensions:
 
                 logger.info(
@@ -181,17 +189,24 @@ class IngestionService:
                     file_path.unlink(
                         missing_ok=True
                     )
-                    
-                    if safety_result.get('scan_error'):
-                        logger.error(f"Video safety analysis failed:"
-                                     f"{file_path.name}:"
-                                     f"{safety_result.get('error')}")
-                        
-                        raise ValueError("The video could not be fully analyzed "
-                                         "for content safety.")
-                        
-                    logger.warning( f"Unsafe video blocked:" 
-                                   f"{file_path.name}")    
+
+                    if safety_result.get("scan_error"):
+
+                        logger.error(
+                            f"Video safety analysis failed: "
+                            f"{file_path.name}: "
+                            f"{safety_result.get('error')}"
+                        )
+
+                        raise ValueError(
+                            "The video could not be fully "
+                            "analyzed for content safety."
+                        )
+
+                    logger.warning(
+                        f"Unsafe video blocked: "
+                        f"{file_path.name}"
+                    )
 
                     raise ValueError(
                         "Upload blocked because the video "
@@ -215,8 +230,7 @@ class IngestionService:
                     content_safety_service
                     .check_pdf_embedded_images(
                         str(file_path)
-                    )
-                )
+                    ))
 
                 if not safety_result["safe"]:
 
@@ -226,15 +240,16 @@ class IngestionService:
 
                     if safety_result.get("scan_error"):
 
-                        logger.warning(
-                            f"PDF safety scan failed: "
-                            f"{file_path.name}"
+                        logger.error(
+                            f"PDF safety analysis failed: "
+                            f"{file_path.name}: "
+                            f"{safety_result.get('error')}"
                         )
 
                         raise ValueError(
                             "The PDF could not be fully analyzed "
-                            "for content safety because an embedded "
-                            "image could not be processed."
+                            "for content safety because an "
+                            "embedded image could not be processed."
                         )
 
                     logger.warning(
@@ -272,17 +287,25 @@ class IngestionService:
                     file_path.unlink(
                         missing_ok=True
                     )
-                    
-                    if safety_result.get('scan_error'):
-                        logger.error(f"Embedded image safety analysis failed: "
-                                     f"{file_path.name}: "
-                                     f"{safety_result.get('error')}")
-                        
-                        raise ValueError( "The document could not be fully analyzed "
-                                         "because an embedded image could not be processed.")
-                        
-                    logger.warning(f"Unsafe embedded image blocked: "
-                                    f"{file_path.name}")    
+
+                    if safety_result.get("scan_error"):
+
+                        logger.error(
+                            f"Embedded image safety analysis failed: "
+                            f"{file_path.name}: "
+                            f"{safety_result.get('error')}"
+                        )
+
+                        raise ValueError(
+                            "The document could not be fully analyzed "
+                            "because an embedded image could not be "
+                            "processed."
+                        )
+
+                    logger.warning(
+                        f"Unsafe embedded image blocked: "
+                        f"{file_path.name}"
+                    )
 
                     raise ValueError(
                         "Upload blocked because the document "
@@ -294,7 +317,7 @@ class IngestionService:
                     f"Embedded image safety check passed: "
                     f"{file_path.name}"
                 )
-
+                
             loader = loader_factory.get_loader(
                 file_path
             )
@@ -316,6 +339,7 @@ class IngestionService:
                 docs,
                 file_path.name
             )
+
 
             if docs:
 
@@ -340,17 +364,24 @@ class IngestionService:
                     )
 
                     if not safety_result["safe"]:
-                        
-                        file_path.unlink(missing_ok=True)
-                        
-                        if safety_result.get('error'):
-                            logger.error(f"Text content safety analysis failed: "
-                                  f"{file_path.name}: "
-                                  f"{safety_result['error']}")
-                            
-                            raise ValueError( "The document could not be fully processed "
-                                              "because its text could not be analyzed "
-                                              "for content safety.")
+
+                        file_path.unlink(
+                            missing_ok=True
+                        )
+
+                        if safety_result.get("scan_error"):
+
+                            logger.error(
+                                f"Text content safety analysis failed: "
+                                f"{file_path.name}: "
+                                f"{safety_result.get('error')}"
+                            )
+
+                            raise ValueError(
+                                "The document could not be fully "
+                                "processed because its text could "
+                                "not be analyzed for content safety."
+                            )
 
                         logger.warning(
                             f"Unsafe text content blocked: "
@@ -377,11 +408,11 @@ class IngestionService:
         )
 
         logger.info(
-            f"total documents : {len(all_docs)}"
+            f"Total documents: {len(all_docs)}"
         )
 
         logger.info(
-            f"total chunks : {len(chunks)}"
+            f"Total chunks: {len(chunks)}"
         )
 
         return {
@@ -390,6 +421,7 @@ class IngestionService:
             "documents": len(all_docs),
             "chunks": len(chunks),
         }
+
 
     async def process_youtube(
         self,
@@ -447,7 +479,7 @@ class IngestionService:
             )
 
             return {
-                "message": "could not extract YouTube transcript",
+                "message": "Could not extract YouTube transcript",
                 "documents": 0,
                 "chunks": 0,
             }
@@ -482,14 +514,20 @@ class IngestionService:
             )
 
             if not safety_result["safe"]:
-                if safety_result.get('error'):
-                    logger.error( "YouTube transcript safety analysis " 
-                                 "failed: "
-                                 f"{safety_result['error']}")
-                    
-                    raise ValueError(  "YouTube content could not be fully "
-                                      "processed because the transcript "
-                                      "could not be analyzed for content safety.")
+
+                if safety_result.get("scan_error"):
+
+                    logger.error(
+                        "YouTube transcript safety analysis "
+                        "failed: "
+                        f"{safety_result.get('error')}"
+                    )
+
+                    raise ValueError(
+                        "YouTube content could not be fully "
+                        "processed because the transcript "
+                        "could not be analyzed for content safety."
+                    )
 
                 logger.warning(
                     "Unsafe YouTube transcript blocked"
@@ -526,11 +564,10 @@ class IngestionService:
     async def process_youtube_transcript(
         self,
         url: str,
-        transcript: str
-    ):
+        transcript: str):
 
         logger.info(
-            f"Processing youtube transcript: {url}"
+            f"Processing YouTube transcript: {url}"
         )
 
         video_id = youtube_service.extract_video_id(
@@ -540,11 +577,11 @@ class IngestionService:
         if not video_id:
 
             logger.error(
-                "could not extract YouTube video ID"
+                "Could not extract YouTube video ID"
             )
 
             return {
-                "message": "Invalid Youtube URL",
+                "message": "Invalid YouTube URL",
                 "documents": 0,
                 "chunks": 0
             }
@@ -560,7 +597,7 @@ class IngestionService:
         if youtube_source in existing_sources:
 
             logger.info(
-                f"Skipping already indexed YouTube video:"
+                f"Skipping already indexed YouTube video: "
                 f"{video_id}"
             )
 
@@ -575,11 +612,11 @@ class IngestionService:
         if not transcript:
 
             logger.warning(
-                "Youtube transcript is empty"
+                "YouTube transcript is empty"
             )
 
             return {
-                "message": "Youtube transcript is empty",
+                "message": "YouTube transcript is empty",
                 "documents": 0,
                 "chunks": 0
             }
@@ -596,14 +633,20 @@ class IngestionService:
         )
 
         if not safety_result["safe"]:
-            if safety_result.get('error'):
-                logger.error("YouTube transcript safety analysis "
-                             "failed: "
-                            f"{safety_result['error']}")
-                
-                raise ValueError("YouTube content could not be fully "
-                                 "processed because the transcript "
-                                  "could not be analyzed for content safety.")
+
+            if safety_result.get("scan_error"):
+
+                logger.error(
+                    "YouTube transcript safety analysis "
+                    "failed: "
+                    f"{safety_result.get('error')}"
+                )
+
+                raise ValueError(
+                    "YouTube content could not be fully "
+                    "processed because the transcript "
+                    "could not be analyzed for content safety."
+                )
 
             logger.warning(
                 "Unsafe YouTube transcript blocked"
@@ -634,6 +677,7 @@ class IngestionService:
         chunks = indexing_service.index_documents(
             docs
         )
+
         logger.info(
             f"YouTube transcript documents: "
             f"{len(docs)}"
@@ -653,12 +697,12 @@ class IngestionService:
     def add_metadata(
         self,
         docs,
-        filename ):
+        filename):
 
         for doc in docs:
-
             doc.metadata["source_file"] = filename
 
         return docs
+
 
 ingestion_service = IngestionService()

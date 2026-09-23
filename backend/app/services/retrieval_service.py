@@ -2,7 +2,6 @@ from app.core.app_state import state
 from app.core.logger import logger
 from langchain_community.retrievers import BM25Retriever
 
-
 class RetrievalService:
 
     def retrieval(self, question, selected_file):
@@ -22,7 +21,6 @@ class RetrievalService:
         )
 
         # ALL FILES
-    
 
         if selected_file == "All Files":
 
@@ -36,6 +34,7 @@ class RetrievalService:
             )
             
            # YouTube Source
+           
         elif selected_file.startswith( "https://www.youtube.com/") or selected_file.startswith("https://youtu.be/"):
             semantic_docs=(state.vectorstore.similarity_search(question,k=8,filter={'source':selected_file}))
             filtered_chunks=[chunk for chunk in state.all_chunks
@@ -53,19 +52,11 @@ class RetrievalService:
 
         else:
 
-            # -------------------------------------------------
-            # Check whether selected source is a website
-            # -------------------------------------------------
-
             website_chunks = [
                 chunk
                 for chunk in state.all_chunks
                 if chunk.metadata.get("source_url") == selected_file
             ]
-
-            # -------------------------------------------------
-            # WEBSITE
-            # -------------------------------------------------
 
             if website_chunks:
 
@@ -90,10 +81,6 @@ class RetrievalService:
                 bm25_docs = filtered_bm25.invoke(
                     question
                 )
-
-            # -------------------------------------------------
-            # PDF / IMAGE / FILE
-            # -------------------------------------------------
 
             else:
 
@@ -132,11 +119,7 @@ class RetrievalService:
                 bm25_docs = filtered_bm25.invoke(
                     question
                 )
-
-        # =====================================================
-        # LOG RETRIEVAL RESULTS
-        # =====================================================
-
+                
         logger.info(
             f"Semantic results: {len(semantic_docs)}"
         )
@@ -184,17 +167,10 @@ class RetrievalService:
         
         unique_docs=[doc_map[content] for content in ranked_contents]   
         logger.info(f'Hybrid RRF results: {len(unique_docs)}')  
-               
-
-        # =====================================================
-        # LOG SOURCES
-        # =====================================================
-
+       
         for index, doc in enumerate(unique_docs):
 
-            source_file = doc.metadata.get(
-                "source_file"
-            )
+            source_file = doc.metadata.get("source_file" )
 
             source_url = doc.metadata.get(
                 "source_url",doc.metadata.get('source')
@@ -207,6 +183,5 @@ class RetrievalService:
             )
 
         return unique_docs
-
 
 retrieval_service = RetrievalService()

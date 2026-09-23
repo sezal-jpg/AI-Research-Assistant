@@ -163,7 +163,7 @@ def generation_node(state):
     if not context:
         logger.warning('No context available for generation') 
         return {'answer':( "I couldn't find this information "
-                "in the uploaded PDF(s)."),'history':history} 
+                "in the uploaded document(s)."),'history':history} 
         
     answer=generation_service.generate(question,context,history)
     logger.info('Agent answer generated successfully') 

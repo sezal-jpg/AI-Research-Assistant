@@ -32,7 +32,7 @@ async def transcribe_audio(
     )
 
     if not safety_result["safe"]:
-        if safety_result.get('error'):
+        if safety_result.get('scan_error'):
             
             logger.error(f"Audio transcription safety analysis "
             f"failed: {file.filename}: "

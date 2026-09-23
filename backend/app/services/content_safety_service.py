@@ -7,10 +7,10 @@ from pypdf import PdfReader
 from io import BytesIO
 
 NSFW_MODEL = "Falconsai/nsfw_image_detection"
-TEXT_SAFETY_MODEL = "uget/sexual_content_dection"
+TEXT_SAFETY_MODEL = "satyamsaf3ai/guardrail-roberta"
 
 NSFW_THRESHOLD = 0.90
-TEXT_SAFETY_THRESHOLD = 0.90
+TEXT_SAFETY_THRESHOLD = 0.75
 
 VIDEO_SAMPLE_SECONDS = 1.0
 MAX_VIDEO_SAFETY_FRAMES = 300
@@ -213,6 +213,8 @@ class ContentSafetyService:
             for index, chunk in enumerate(
                 text_chunks,
                 start=1 ):
+                
+                logger.info(f"TEXT SAFETY CHUNK {index} CONTENT: {chunk}"  )
 
                 results = classifier(
                     chunk,
@@ -234,7 +236,7 @@ class ContentSafetyService:
 
                 sexual_score = (
                     score
-                    if label in { "sexual","label_1"}
+                    if "sexual" in label
                     else 0.0
                 )
 
@@ -294,8 +296,9 @@ class ContentSafetyService:
 
             return {
                 "safe": False,
-                "sexual_score": 1.0,
-                "error": str(e)
+                "sexual_score": 0.0,
+                "error": str(e),
+                'scan_error':True
             }
 
     def check_video(
@@ -318,8 +321,11 @@ class ContentSafetyService:
                 f"scan: {video_path}"  )
 
             return {
-                "safe": False,
-                "reason": "Could not open video"
+                 "safe": False,
+                 "nsfw_score": 0.0,
+                 "reason": "Could not open video",
+                 "error": "Could not open video for safety scan.",
+                 "scan_error": True
             }
 
         fps = cap.get(
@@ -342,7 +348,10 @@ class ContentSafetyService:
 
             return {
                 "safe": False,
-                "reason": "Invalid video duration"
+                "nsfw_score": 0.0,
+                "reason": "Invalid video duration",
+                "error": "Video has an invalid or zero duration.",
+                "scan_error": True
             }
 
         interval = VIDEO_SAMPLE_SECONDS
@@ -521,6 +530,24 @@ class ContentSafetyService:
                             self.check_image_object(
                                 pil_image
                             )  )
+                        
+                        if result.get("scan_error"):
+
+                         logger.error(f"PDF embedded image safety analysis failed: "
+                           f"{Path(file_path).name}, "
+                           f"page={page_number}: "
+                           f"{result.get('error')}" )
+                         return {
+                               "safe": False,
+                               "nsfw_score": 0.0,
+                               "page": page_number,
+                               "images_scanned": total_images,
+                               "reason":
+                               "PDF embedded image "
+                               "could not be analyzed.",
+                               "error": result.get("error"),
+                               "scan_error": True
+    }
 
                         if not result["safe"]:
 

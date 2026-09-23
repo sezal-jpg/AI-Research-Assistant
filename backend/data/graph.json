@@ -1,0 +1,230 @@
+{
+  "nodes": [
+    {
+      "id": "Fuzzy Logic",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "Machine Learning",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "Neural Networks",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "Lotfi Zadeh",
+      "type": "Person",
+      "properties": {}
+    },
+    {
+      "id": "Fuzzy Sets",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "First fuzzy controller",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "Mamdani",
+      "type": "Person",
+      "properties": {}
+    },
+    {
+      "id": "Neuro-fuzzy systems",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "Sezal",
+      "type": "Person",
+      "properties": {}
+    },
+    {
+      "id": "Minazpreet",
+      "type": "Person",
+      "properties": {}
+    },
+    {
+      "id": "Crisp sets",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Classical (crisp) logic",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "membership function μ(x)",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Fuzzy system",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "Fuzzification",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "Inference engine",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "Defuzzification",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "Rule base",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "AIR-CONDITIONER CONTROLLER",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "Temperature",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Humidity",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "fuzzify",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "fire the rules",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "firing strength",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "fan",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "min",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "fuzzy logic",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "classical logic",
+      "type": "Technology",
+      "properties": {}
+    },
+    {
+      "id": "defuzzification",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "Weighted-average defuzzification",
+      "type": "Method",
+      "properties": {}
+    },
+    {
+      "id": "centre of gravity",
+      "type": "Concept",
+      "properties": {}
+    },
+    {
+      "id": "Fan speed",
+      "type": "Concept",
+      "properties": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "Fuzzy Logic",
+      "relationship": "fits alongside",
+      "target": "Machine Learning"
+    },
+    {
+      "source": "Fuzzy Logic",
+      "relationship": "fits alongside",
+      "target": "Neural Networks"
+    },
+    {
+      "source": "Lotfi Zadeh",
+      "relationship": "publishes",
+      "target": "Fuzzy Sets"
+    },
+    {
+      "source": "Mamdani",
+      "relationship": "developed",
+      "target": "First fuzzy controller"
+    },
+    {
+      "source": "Classical (crisp) logic",
+      "relationship": "applies to",
+      "target": "Crisp sets"
+    },
+    {
+      "source": "Fuzzy system",
+      "relationship": "has stage",
+      "target": "Fuzzification"
+    },
+    {
+      "source": "Fuzzy system",
+      "relationship": "has stage",
+      "target": "Inference engine"
+    },
+    {
+      "source": "Fuzzy system",
+      "relationship": "has stage",
+      "target": "Defuzzification"
+    },
+    {
+      "source": "Inference engine",
+      "relationship": "uses",
+      "target": "Rule base"
+    }
+  ],
+  "processed_chunks": [
+    "Thank You",
+    "2\nEvery decision is traceable.\nYou can name the rules that fired and by how much.\n3\nCost: the rules are hand-made.\nTeam membership shapes by hand does not scale.",
+    "Step 2 — firing strength of each rule,  α = min(antecedents)\nIF temp is\nAND humidity is\nTHEN fan is\nfiring strength α\nR1\nWarm\nMedium\nMedium (55%)\nmin(0.6, 0.4) = 0.4\nR2\nWarm\nHigh\nHigh (85%)\nmin(0.6, 0.6) = 0.6\nR3\nHot\nMedium\nHigh (85%)\nmin(0.4, 0.4) = 0.4\nR4\nHot\nHigh\nMax (100%)\nmin(0.4, 0.6) = 0.4",
+    "HOW A FUZZY SYSTEM IS BUILT\nFour stages: numbers in, rules in the middle, numbers out\nCrisp input\nT = 27°C\nH = 65%\nFuzzification\nConvert each reading\ninto memberships\nInference engine\nFire every rule,\ntake min / max\nDefuzzification\nCollapse the fuzzy\noutput to one number\nCrisp output\nFan speed\n= 82%\nRule base  (written by a human expert)\nIF temp is Warm AND humidity is High\nTHEN fan is High\n1\nNo training data is required.\nKnowledge enters as sentences, not as a labelled dataset.\n2",
+    "WORKED EXAMPLE  ·  CONTINUED\nStep 3 — aggregate the fired rules into one fan speed\nEach output set is represented by its centre: Medium = 55, High = 85, Max = 100. Weighted-average defuzzification then takes the centre of gravity.\nFan speed  =  Σ αᵢ zᵢ  /  Σ αᵢ\nnumerator  = 0.4(55) + 0.6(85) + 0.4(85) + 0.4(100)\n           = 22 + 51 + 34 + 40  =  147\ndenominator = 0.4 + 0.6 + 0.4 + 0.4  =  1.8\nfan speed  = 147 / 1.8  =  81.7",
+    "THE CORE IDEA\nCrisp sets say yes or no. Fuzzy sets say how much.\nClassical (crisp) logic\nIF temp > 28 THEN hot\n27.9°C → not hot (0)\n28.1°C → hot (1)\nFuzzy logic\nA membership function μ(x) maps every value to a degree in [0, 1].\nAt 27°C:   μ_Warm = 0.6   and   μ_Hot = 0.4\nThe reading belongs to both sets — no knife-edge, no jitter when the sensor wobbles by 0.2°.\nRead the chart at 27°C: the amber curve sits at 0.6, the red at 0.4 — the sum of memberships need not be 1, but here it is.",
+    "fan speed  = 147 / 1.8  =  81.7\nMamdani variant: aggregate the two High rules with max(0.6, 0.4) = 0.6 first, and the centroid gives 80.7 — the same control decision.\n≈ 82%\nfan speed. Nudge the room to 26°C and the output glides to roughly 74% — no step, no relay chatter, no oscillation around a threshold.",
+    "WHERE IT FITS\nWhere does the knowledge come from?\nFuzzy Logic\nClassical ML\nNeural Networks\nKnowledge source\nHuman expert writes the rules\nFeatures + labelled examples\nRaw data, learned end-to-end\nData needed\nNone to start\nThousands of rows\nTens of thousands upward\nTransparency\nFull — you can read every rule\nModerate — weights, splits\nLow — millions of parameters\nHandles vagueness\nBy design: “warm”, “mildly risky”\nOnly as probability\nImplicit in the representation\nAdapts on its own",
+    "Implicit in the representation\nAdapts on its own\nNo — rules are static\nYes — by retraining\nYes — by gradient descent\nStrongest at\nControl, safety limits, small expert domains\nTabular prediction, ranking\nVision, language, speech\nRule of thumb for the exam: fuzzy logic encodes knowledge you already have; machine learning extracts knowledge you don't.",
+    "XAI\nFuzzy explanation layers\nA rule base is fitted on top of a trained network so its behaviour can be described in words.\nTurns “0.87 risk” into “high BP AND high glucose”.\nInside ANFIS\nFuzzify\ninputs\nRule\nfiring α\nNormalise\nα\nWeighted\nconsequents\nSum →\noutput\nlayers 4–5 trained by least squares, layers 1–2 by backpropagation",
+    "Medical decision aids\nSymptom severity is naturally vague; rules stay readable for clinicians.\nTraffic signal control\nQueue length and waiting time in degrees rather than fixed cut-offs.\nTakeaway",
+    "degrees of truth, not 0 or 1\nFuzzy Logic in Modern AI\nWhere it fits alongside Machine Learning and Neural Networks\n1965\nLotfi Zadeh publishes\n“Fuzzy Sets”\n1974\nFirst fuzzy controller\n(steam engine, Mamdani)\nToday\nNeuro-fuzzy systems,\nexplainable control\nPresented By:- Sezal (24BAI70653)\n                            Minazpreet (24BAI70630)",
+    "THE INTERESTING PART\nModern systems combine them rather than choose\nANFIS\nNeuro-fuzzy inference\nA fuzzy rule base laid out as a 5-layer network, so membership-function parameters are trained by gradient descent.\nYou keep readable rules and still learn from data.\nFCM\nFuzzy c-means clustering\nEach point gets a membership in every cluster instead of one hard label — the soft cousin of k-means.\nUsed in MRI tissue segmentation.\nXAI\nFuzzy explanation layers",
+    "WORKED EXAMPLE  ·  AIR-CONDITIONER CONTROLLER\nStep 1 — fuzzify the sensors, then fire the rules\nSensor readings\nT = 27°C        H = 65%\nTemperature — triangles (15,20,25) (20,25,30) (25,30,35)\nμ_Cool(27) = 0\nμ_Warm(27) = (30 − 27) / 5 = 0.6\nμ_Hot(27)  = (27 − 25) / 5 = 0.4\nHumidity — triangles (0,25,50) (25,50,75) (50,75,100)\nμ_Low(65)  = 0\nμ_Med(65)  = (75 − 65) / 25 = 0.4\nμ_High(65) = (65 − 50) / 25 = 0.6\nTwo crisp numbers have become four non-zero memberships.",
+    "Takeaway\nFuzzy logic is not an older rival of machine learning — it is the part of AI that handles vagueness in human language and keeps decisions readable. Where data is scarce, rules are known, or an auditor must follow the reasoning, it still wins; everywhere else it now works as a layer inside a learning system.",
+    "WHERE YOU ALREADY MEET IT\nQuietly running in hardware you use every week\nWashing machines\nLoad, fabric and dirt level set the cycle time — Panasonic and Hitachi shipped this from the late 1980s.\nCamera autofocus\nContrast and motion cues are blended to decide how far to drive the lens.\nSendai subway\nFuzzy braking since 1987; passengers report noticeably smoother stops than manual driving.\nAnti-lock braking\nSlip ratio and wheel deceleration are graded, not thresholded.\nMedical decision aids",
+    "R4\nHot\nHigh\nMax (100%)\nmin(0.4, 0.6) = 0.4\nWhy min?  AND in fuzzy logic is the weakest link — a rule can only be as true as its least-satisfied condition. (OR would use max.) All four rules fire at once; classical logic would have picked exactly one."
+  ]
+}
