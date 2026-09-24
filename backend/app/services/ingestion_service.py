@@ -704,5 +704,4 @@ class IngestionService:
 
         return docs
 
-
 ingestion_service = IngestionService()

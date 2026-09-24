@@ -2,6 +2,7 @@ from urllib.parse import urlparse
 import requests
 import tempfile
 import os
+import json
 from PIL import Image
 from app.core.logger import logger
 from app.services.website_loader import website_loader
@@ -52,7 +53,18 @@ class WebsiteService:
             video_urls = doc.metadata.get(
                 "video_urls", []
             )
-
+            
+            if isinstance(image_urls,str):
+                try:
+                    image_urls=json.loads(image_urls)
+                except json.JSONDecodeError:
+                    image_urls=[]    
+                    
+            if isinstance(video_urls,str):
+                try:
+                    video_urls=json.loads(video_urls)
+                except json.JSONDecodeError:
+                    video_urls=[]            
 
             for image_url in image_urls:
 
