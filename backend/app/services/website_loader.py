@@ -2,6 +2,7 @@ from langchain_community.document_loaders import WebBaseLoader
 from app.core.logger import logger
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
+import json
 
 class WebsiteLoader:
 
@@ -89,8 +90,8 @@ class WebsiteLoader:
             doc.metadata["source_url"] = url
             doc.metadata["source_type"] = "website"
 
-            doc.metadata["image_urls"] = image_urls
-            doc.metadata["video_urls"] = video_urls
+            doc.metadata["image_urls"] = json.dumps(image_urls)
+            doc.metadata["video_urls"] = json.dumps(video_urls)
 
         return docs
     
