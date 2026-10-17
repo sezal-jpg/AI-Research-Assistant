@@ -1089,19 +1089,19 @@ Artifact Registry
 Cloud Run
 The Cloud Run deployment is currently unavailable. The local Docker Compose setup remains available for running the application locally.
 
-Current services:
+Previously configured services:
 
 Backend:  ai-backend
 
 Frontend: ai-frontend
 
-The frontend communicates with the deployed FastAPI backend through the backend service URL.
+In the previous deployment, the frontend communicated with the FastAPI backend through the backend service URL.
 
 The backend container is configured to listen on the Cloud Run-provided PORT environment variable and bind to 0.0.0.0.
 
 The backend Docker image uses CPU-based PyTorch dependencies and includes system packages required for supported processing workloads.
 
-⚠️ Cloud Run filesystem limitation: Local files written during runtime, including newly uploaded files and locally modified indexes, should not be treated as durable storage. Cloud Run instances use ephemeral local filesystems.
+⚠️ **Previous Cloud Run Deployment — Filesystem Limitation:** Local files written during runtime, including newly uploaded files and modified indexes, were not guaranteed to persist across Cloud Run instances because the local filesystem is ephemeral.
 
 🔐 Secret Management
 
@@ -1235,7 +1235,7 @@ Cloud Run frontend deployment
 ✅ Voice Input
 ✅ Speech-to-Text
 ✅ Text-to-Speech
-☁️ Deployment
+☁️ Previous Cloud Deployment
 ✅ Docker
 ✅ Docker Compose
 ✅ GitHub Actions CI
