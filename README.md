@@ -200,19 +200,6 @@ I couldn't find this information in the uploaded document(s).
 
 The generation stage is also instructed to use only information supported by the retrieved evidence and avoid guessing or fabricating unsupported information.
 
-🔒 Prompt Injection Protection
-
-User questions are checked for common prompt-injection patterns before entering the retrieval pipeline.
-
-The system detects attempts such as:
-
-Ignoring previous instructions
-Overriding system or developer instructions
-Requesting hidden or system prompts
-Attempting to change the assistant's role
-Attempting to reveal hidden instructions
-
-Detected prompt-injection attempts are blocked before retrieval and generation.
 
 🧱 Untrusted Context Protection
 
@@ -1111,7 +1098,7 @@ For local development:
 
 GEMINI_API_KEY=YOUR_API_KEY
 
-For Cloud Run deployment, the API key is stored in Google Secret Manager and provided to the backend through Cloud Run environment configuration.
+In the previous Cloud Run deployment, the API key was stored in Google Secret Manager and provided to the backend through Cloud Run environment configuration.
 
 🧪 Testing & Validation
 
@@ -1407,7 +1394,7 @@ This layered approach reduces the risk of unsafe content being indexed and helps
 
 ⚠️ Known Limitations
 
-Cloud Run instances use ephemeral local filesystems.
+The previous Cloud Run deployment used an ephemeral local filesystem.
 Durable cloud storage for uploaded files and persistent indexes requires an external persistent storage architecture.
 Some multimodal processing workloads are computationally expensive.
 Large document collections may require a managed vector database for horizontal scalability.
