@@ -1,24 +1,18 @@
 # 🌐 OmniResearch Assistant
 
-An AI-powered, multimodal research assistant that allows users to upload documents, images, audio, video, websites, and YouTube content, ask natural-language questions, and receive grounded, context-aware answers.
+OmniResearch Assistant is a multimodal, agentic RAG application that processes documents, images, audio, video, websites, and YouTube transcripts to answer natural-language questions using retrieved evidence.
 
-The system combines hybrid retrieval, semantic search, BM25 keyword retrieval, Reciprocal Rank Fusion (RRF), Cross-Encoder reranking, Graph RAG, hierarchical context construction, and Google Gemini to produce relevant and grounded responses.
+The system combines semantic search, BM25 keyword retrieval, Reciprocal Rank Fusion (RRF), Cross-Encoder reranking, Graph RAG, hierarchical context construction, and Google Gemini. It uses LangGraph to orchestrate the retrieval, evaluation, retry, and answer-generation workflow.
 
-It is implemented as an agentic RAG pipeline using LangGraph and deployed using Docker and Google Cloud Run.
+The application is built with Python, FastAPI, Streamlit, and Docker, with separate backend and frontend services.
 
-# 🚀 Live Demo
+# 🚀 Demo Status
 
-## 🖥️ Frontend — Streamlit
+The application was previously deployed on Google Cloud Run. The hosted demo is temporarily unavailable due to a cloud billing limitation.
 
-https://ai-frontend-286276858395.asia-south1.run.app/
+The project source code, Docker configuration, architecture documentation, and local setup instructions are available in this repository.
 
-## ⚙️ Backend API — FastAPI
-
-https://ai-backend-286276858395.asia-south1.run.app
-
-## 📖 API Documentation
-
-https://ai-backend-286276858395.asia-south1.run.app/docs
+For a local demonstration, follow the Docker Compose instructions below.
 
 
 # ✨ Key Features
@@ -80,27 +74,18 @@ During document processing:
 4. Relevant graph relationships are retrieved during question answering.
 5. Graph information is combined with retrieved textual context.
 
-Example:
+Example knowledge graph:
 
-```text
 Shadi.com
+  ├── uses → Smart matchmaking system
+  ├── provides → Web service
+  └── uses for verification → Email verification
 
-    │
-
-    ├── uses ──> smart matchmaking system
-
-    ├── provides ──> web service
-
-    └── uses for verification ──> email verification
 
 
 ## 🛡️ Security & Content Safety
 
 The application includes multiple security and content-safety controls across the ingestion and question-answering pipelines.
-
-### 🔒 Prompt Injection Protection
-
-User questions are checked for common prompt-injection patterns before entering the retrieval pipeline.
 
 The system detects attempts such as:
 
@@ -127,6 +112,7 @@ Retrieve  Request Blocked
    │
    ▼
 RAG Pipeline
+```
 
 🤖 Agentic RAG Pipeline
 
@@ -210,14 +196,9 @@ Graph evidence
 Retry limits
 
 If sufficient evidence cannot be established, the system can return:
-
 I couldn't find this information in the uploaded document(s).
 
 The generation stage is also instructed to use only information supported by the retrieved evidence and avoid guessing or fabricating unsupported information.
-
-🛡️ Security & Content Safety
-
-The application includes multiple security and content-safety controls across the ingestion and question-answering pipelines.
 
 🔒 Prompt Injection Protection
 
@@ -1104,14 +1085,17 @@ cd frontend
 pip install -r requirements.txt
 
 streamlit run frontend.py
-☁️ Google Cloud Deployment
 
-The application is deployed using:
+💭 Previous Deployment
 
-Google Cloud Run
-Google Artifact Registry
-Google Secret Manager
-Docker
+The application was previously deployed using:
+
+- Google Cloud Run
+- Google Artifact Registry
+- Google Secret Manager
+- Docker
+- 
+The hosted demo is currently unavailable due to a cloud billing limitation.
 
 GitHub Actions provides continuous integration by validating the backend and frontend and building both Docker images on pushes and pull requests to the main branch.
 
@@ -1130,13 +1114,7 @@ Artifact Registry
     ↓
 
 Cloud Run
-
-    ↓
-
-Live Application
-🚀 Cloud Run
-
-The backend and frontend are deployed as separate Cloud Run services.
+The Cloud Run deployment is currently unavailable. The local Docker Compose setup remains available for running the application locally.
 
 Current services:
 
@@ -1539,75 +1517,6 @@ GitHub Actions
 Continuous Integration (CI)
 Production-oriented AI system design
 
-🎯 Project Objective
-
-The goal of OmniResearch Assistant is to build a research-oriented AI system that goes beyond simple LLM question answering.
-
-Instead of relying only on the model's pretrained knowledge, the system:
-
-Ingests user-provided sources.
-Processes and indexes the information.
-Applies content-safety validation.
-Retrieves relevant evidence.
-Combines semantic and lexical retrieval.
-Reranks retrieved candidates.
-Retrieves relevant graph relationships.
-Builds hierarchical context.
-Checks user questions for prompt-injection attempts.
-Evaluates whether sufficient evidence exists.
-Refines and retries when necessary.
-Generates a grounded answer using Google Gemini.
-📌 Project Summary
-
-OmniResearch Assistant is a multimodal, agentic RAG system combining:
-
-Multimodal Ingestion
-
-        ↓
-
-Content Safety
-
-        ↓
-
-Hybrid Retrieval
-
-        ↓
-
-RRF + Reranking
-
-        ↓
-
-Graph RAG
-
-        ↓
-
-Hierarchical Context
-
-        ↓
-
-Prompt Injection Protection
-
-        ↓
-
-LangGraph Agent
-
-        ↓
-
-Grounding Evaluation
-
-        │
-
-        ├── Retry → Query Refine
-
-        │
-
-        └── Generate → Gemini
-
-                         ↓
-
-                    Final Answer
-
-The system is containerized using Docker and deployed to Google Cloud Run.
 
 👩‍💻 Author
 
