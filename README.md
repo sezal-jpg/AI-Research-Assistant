@@ -214,33 +214,6 @@ Attempting to reveal hidden instructions
 
 Detected prompt-injection attempts are blocked before retrieval and generation.
 
-User Question
-
-      │
-
-      ▼
-
-Prompt Injection Check
-
-      │
-
-   ┌──┴──┐
-
-   │     │
-
- Safe  Blocked
-
-   │     │
-
-   ▼     ▼
-
-Retrieve  Request Blocked
-
-   │
-
-   ▼
-
-RAG Pipeline
 🧱 Untrusted Context Protection
 
 Retrieved document content and conversation history are treated as untrusted data during answer generation.
@@ -541,7 +514,7 @@ Persistence Service
 
         Ready for Queries
 
-⚠️ Note: The current Cloud Run deployment packages the existing local index and database state with the backend container image. Cloud Run's local filesystem is ephemeral, so durable persistence for newly uploaded data requires an external storage architecture. This is planned as a future improvement.
+⚠️ Previous Cloud Run Deployment: The application previously packaged its existing local index and database state with the backend container image. Cloud Run's local filesystem is ephemeral, so durable persistence for newly uploaded data requires an external storage architecture. This remains a planned improvement.
 
 🏗️ System Architecture
 Streamlit Frontend
