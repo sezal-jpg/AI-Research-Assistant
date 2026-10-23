@@ -864,6 +864,7 @@ Generate         Retry        Insufficient
 🛠️ Technology Stack
 
 ⚙️ Backend
+
 Python
 FastAPI
 LangChain Community
@@ -877,6 +878,7 @@ Cross-Encoder
 Google Gemini using the Google GenAI SDK
 
 🖥️ Frontend
+
 Streamlit
 🤖 AI / Machine Learning
 Retrieval-Augmented Generation (RAG)
@@ -894,7 +896,9 @@ faster-whisper
 Text-to-Speech
 NSFW Image Classification
 Text Content-Safety Classification
+
 📊 Data Processing
+
 PyPDF
 python-docx
 python-pptx
@@ -910,6 +914,7 @@ Google Cloud Run
 Google Artifact Registry
 Google Secret Manager
 GitHub Actions CI
+
 🐳 Containerization
 Docker
 Docker Compose
@@ -1008,10 +1013,13 @@ docker compose up -d
 ⏹️ Stop
 docker compose down
 Frontend
+
 http://localhost:8501
 Backend
+
 http://localhost:8000
 ⚙️ Local Installation
+
 📥 Clone Repository
 git clone https://github.com/sezal-jpg/AI-Research-Assistant.git
 
@@ -1105,6 +1113,7 @@ In the previous Cloud Run deployment, the API key was stored in Google Secret Ma
 The system has been tested across multiple components.
 
 📥 Ingestion
+
 PDF/document ingestion
 PPT ingestion
 Website ingestion
@@ -1112,12 +1121,14 @@ Multiple source indexing
 PDF embedded-image safety
 DOCX embedded-image safety
 PPTX embedded-image safety
+
 🔍 Retrieval
 Semantic retrieval
 BM25 retrieval
 Hybrid retrieval
 Cross-Encoder reranking
 Graph retrieval
+
 🤖 Agent
 Normal question answering
 Prompt injection detection
@@ -1128,10 +1139,12 @@ Insufficient-information handling
 Grounding validation
 Untrusted retrieved-context handling
 Untrusted conversation-history handling
+
 📑 Source
 Selected-source retrieval
 All-source retrieval
 Source isolation
+
 🛡️ Security & Safety
 Prompt injection detection
 Prompt injection blocking
@@ -1148,6 +1161,7 @@ YouTube transcript safety
 Website text safety
 Large-file warning
 Frontend upload size limit
+
 🎤 Voice
 Voice transcription
 Audio transcript content-safety validation
@@ -1159,6 +1173,7 @@ Chunk restoration
 Parent/child restoration
 BM25 restoration
 Graph restoration
+
 ☁️ Deployment
 Docker backend startup
 Docker frontend startup
@@ -1167,7 +1182,9 @@ Production /docs
 Production /sources
 Cloud Run backend startup
 Cloud Run frontend deployment
+
 📊 Current Capabilities
+
 📚 Data Sources
 ✅ PDF
 ✅ DOCX
@@ -1191,20 +1208,26 @@ Cloud Run frontend deployment
 ✅ Hybrid Retrieval
 ✅ Reciprocal Rank Fusion
 ✅ Cross-Encoder Reranking
+
 🧠 RAG
+
 ✅ Hierarchical Context
 ✅ Source-Aware Retrieval
 ✅ Graph RAG
 ✅ Entity Extraction
 ✅ Relationship Extraction
+
 🤖 Agent
+
 ✅ LangGraph Workflow
 ✅ Prompt Injection Protection
 ✅ Query Refinement
 ✅ Retry Mechanism
 ✅ Grounding Evaluation
 ✅ Insufficient Information Handling
+
 🛡️ Safety
+
 ✅ Image Content Safety
 ✅ Video Frame Content Safety
 ✅ PDF Text Safety
@@ -1217,12 +1240,16 @@ Cloud Run frontend deployment
 ✅ YouTube Transcript Safety
 ✅ Website Text Safety
 ✅ Large File Warning
+
 👤 User Interaction
+
 ✅ Multi-turn Conversation
 ✅ Voice Input
 ✅ Speech-to-Text
 ✅ Text-to-Speech
+
 ☁️ Previous Cloud Deployment
+
 ✅ Docker
 ✅ Docker Compose
 ✅ GitHub Actions CI
@@ -1230,7 +1257,9 @@ Cloud Run frontend deployment
 ✅ Google Cloud Run
 ✅ Google Secret Manager
 📈 Engineering Highlights
+
 🔍 Multi-Stage Retrieval
+
 Semantic Search
 
        +
@@ -1395,16 +1424,27 @@ This layered approach reduces the risk of unsafe content being indexed and helps
 ⚠️ Known Limitations
 
 The previous Cloud Run deployment used an ephemeral local filesystem.
+
 Durable cloud storage for uploaded files and persistent indexes requires an external persistent storage architecture.
+
 Some multimodal processing workloads are computationally expensive.
+
 Large document collections may require a managed vector database for horizontal scalability.
+
 Current graph storage is application-managed rather than a dedicated managed graph database.
+
 Authentication and multi-user isolation are not currently implemented.
+
 Some external sources may depend on the availability of their APIs, transcripts, or web content.
+
 LLM-based extraction and generation can be affected by API quotas and model availability.
+
 YouTube ingestion currently relies on transcript information and does not perform visual video analysis.
+
 Website safety currently applies to extracted website text; embedded website images are not independently scanned.
+
 Audio safety currently evaluates the transcribed text rather than non-verbal audio characteristics.
+
 The frontend currently enforces a 30 MB maximum upload size.
 
 🔮 Future Improvements
