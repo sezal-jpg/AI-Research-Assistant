@@ -1123,6 +1123,7 @@ DOCX embedded-image safety
 PPTX embedded-image safety
 
 🔍 Retrieval
+
 Semantic retrieval
 BM25 retrieval
 Hybrid retrieval
@@ -1130,6 +1131,7 @@ Cross-Encoder reranking
 Graph retrieval
 
 🤖 Agent
+
 Normal question answering
 Prompt injection detection
 Prompt injection blocking before retrieval
@@ -1141,11 +1143,13 @@ Untrusted retrieved-context handling
 Untrusted conversation-history handling
 
 📑 Source
+
 Selected-source retrieval
 All-source retrieval
 Source isolation
 
 🛡️ Security & Safety
+
 Prompt injection detection
 Prompt injection blocking
 Image NSFW detection
@@ -1163,6 +1167,7 @@ Large-file warning
 Frontend upload size limit
 
 🎤 Voice
+
 Voice transcription
 Audio transcript content-safety validation
 Text-to-speech
@@ -1175,6 +1180,7 @@ BM25 restoration
 Graph restoration
 
 ☁️ Deployment
+
 Docker backend startup
 Docker frontend startup
 Backend Docker image build
@@ -1450,72 +1456,58 @@ The frontend currently enforces a 30 MB maximum upload size.
 🔮 Future Improvements
 
 🏗️ Infrastructure
+
 Durable cloud object storage
+
 Managed vector database
+
 Managed graph database
+
 Kubernetes deployment
+
 Horizontal scaling optimizations
 
 💻 Application
+
 Authentication
+
 User accounts
+
 Multi-user data isolation
+
 Persistent user chat history
+
 Streaming responses
+
 Improved UI/UX
+
 Admin dashboard
+
 Usage analytics
+
 User feedback system
+
 Citation highlighting
 
 🤖 AI
 Improved OCR
+
 Advanced multimodal reasoning
+
 Better image-based document processing
+
 Improved graph reasoning
+
 Retrieval evaluation metrics
+
 Automated evaluation pipelines
+
 Model selection and fallback strategies
+
 Visual analysis for YouTube sources
+
 Expanded website multimodal processing
 
-🧠 Learning Outcomes
-
-This project demonstrates practical experience with:
-
-Python
-FastAPI
-Streamlit
-LangChain Community
-LangGraph
-ChromaDB
-HuggingFace Embeddings
-Sentence Transformers
-E5 Embeddings
-BM25
-Reciprocal Rank Fusion
-Cross-Encoder Reranking
-Graph RAG
-Knowledge Graph Construction
-Entity Extraction
-Relationship Extraction
-Multimodal AI
-BLIP
-CLIP
-Whisper
-Google Gemini
-Retrieval-Augmented Generation
-Agentic AI
-Prompt Injection Protection
-Content Safety
-Docker
-Docker Compose
-Google Cloud Run
-Google Artifact Registry
-Google Secret Manager
-GitHub Actions
-Continuous Integration (CI)
-Production-oriented AI system design
 
 
 👩‍💻 Author
